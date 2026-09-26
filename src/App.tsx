@@ -15,32 +15,45 @@ import { PrivacyPolicyPage } from './pages/PrivacyPolicyPage';
 import { TermsPage } from './pages/TermsPage';
 import { NotFoundPage } from './pages/NotFoundPage';
 
+// Demo SaaS Template
+import Demo from '@/components/ui/demo';
+
 export const App: React.FC = () => {
   return (
     <Router>
       <ScrollToTop />
-      <div className="flex flex-col min-h-screen bg-white text-brand-bodyText selection:bg-brand-electricBlue selection:text-white">
-        <Navbar />
-        
-        <main className="flex-grow">
-          <Routes>
-            <Route path="/" element={<HomePage />} />
-            <Route path="/services" element={<ServicesPage />} />
-            <Route path="/about" element={<AboutPage />} />
-            <Route path="/portfolio" element={<PortfolioPage />} />
-            <Route path="/insights" element={<InsightsPage />} />
-            {/* Alias /blog to /insights */}
-            <Route path="/blog" element={<Navigate to="/insights" replace />} />
-            <Route path="/contact" element={<ContactPage />} />
-            <Route path="/privacy" element={<PrivacyPolicyPage />} />
-            <Route path="/terms" element={<TermsPage />} />
-            {/* Catch-all 404 */}
-            <Route path="*" element={<NotFoundPage />} />
-          </Routes>
-        </main>
+      <Routes>
+        {/* Fullscreen standalone route for the SaaS Template Demo */}
+        <Route path="/demo" element={<Demo />} />
+        <Route path="/saas-template" element={<Demo />} />
 
-        <Footer />
-      </div>
+        {/* Corporate Website Layout */}
+        <Route
+          path="*"
+          element={
+            <div className="flex flex-col min-h-screen bg-white text-brand-bodyText selection:bg-brand-electricBlue selection:text-white">
+              <Navbar />
+              <main className="flex-grow">
+                <Routes>
+                  <Route path="/" element={<HomePage />} />
+                  <Route path="/services" element={<ServicesPage />} />
+                  <Route path="/about" element={<AboutPage />} />
+                  <Route path="/portfolio" element={<PortfolioPage />} />
+                  <Route path="/insights" element={<InsightsPage />} />
+                  {/* Alias /blog to /insights */}
+                  <Route path="/blog" element={<Navigate to="/insights" replace />} />
+                  <Route path="/contact" element={<ContactPage />} />
+                  <Route path="/privacy" element={<PrivacyPolicyPage />} />
+                  <Route path="/terms" element={<TermsPage />} />
+                  {/* Catch-all 404 */}
+                  <Route path="*" element={<NotFoundPage />} />
+                </Routes>
+              </main>
+              <Footer />
+            </div>
+          }
+        />
+      </Routes>
     </Router>
   );
 };
