@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { ArrowRight, ChevronRight, Sparkles, CheckCircle, ShieldCheck, Cpu, Code2 } from 'lucide-react';
+import { ArrowRight, ChevronRight, CheckCircle, Sparkles, Layers } from 'lucide-react';
 import { SEOHead } from '../components/common/SEOHead';
 import { Button } from '../components/common/Button';
 import { SectionHeading } from '../components/common/SectionHeading';
@@ -28,26 +28,38 @@ export const HomePage: React.FC = () => {
         description="Teciaura Technologies helps businesses build digital experiences, modernize infrastructure, automate deployments, improve online visibility, and maintain reliable technology systems."
       />
 
-      {/* SECTION 1: HERO */}
+      {/* SECTION 1: HERO (Enhanced with Motion & Ambient Lighting) */}
       <section className="relative overflow-hidden pt-8 pb-16 lg:pt-16 lg:pb-24 bg-white">
         {/* Subtle grid pattern background */}
         <div className="absolute inset-0 bg-[radial-gradient(#DCE6F2_1px,transparent_1px)] [background-size:24px_24px] opacity-40 pointer-events-none" />
+
+        {/* Dynamic ambient gradient glow */}
+        <div className="absolute top-1/4 -left-20 w-96 h-96 bg-brand-cyanAccent/10 rounded-full blur-3xl pointer-events-none -z-10 animate-pulse-slow" />
+        <div className="absolute top-1/3 right-0 w-[30rem] h-[30rem] bg-brand-electricBlue/10 rounded-full blur-3xl pointer-events-none -z-10 animate-pulse-slow" />
 
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center">
             
             {/* Left Content Column (7 cols on lg) */}
             <div className="lg:col-span-7 space-y-6 text-left">
-              {/* Eyebrow */}
-              <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-brand-lightBg border border-brand-border text-xs font-semibold text-brand-electricBlue shadow-subtle">
-                <span className="w-2 h-2 rounded-full bg-brand-cyanAccent" />
-                <span className="tracking-widest uppercase">TECHNOLOGY + DIGITAL GROWTH</span>
+              
+              {/* Live Status Eyebrow Badge */}
+              <div className="inline-flex items-center gap-2.5 px-3.5 py-1.5 rounded-full bg-brand-lightBg border border-brand-border text-xs font-semibold text-brand-primaryNavy shadow-subtle hover:border-brand-electricBlue/40 transition-colors">
+                <span className="flex h-2 w-2 relative">
+                  <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75" />
+                  <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-500" />
+                </span>
+                <span className="tracking-widest uppercase text-[11px] font-bold text-brand-electricBlue">
+                  TECHNOLOGY + DIGITAL GROWTH
+                </span>
               </div>
 
               {/* Main Headline */}
               <h1 className="text-3xl sm:text-5xl lg:text-6xl font-extrabold text-brand-primaryNavy tracking-tight leading-[1.12]">
                 Build Your Digital Future with{' '}
-                <span className="text-brand-electricBlue">Teciaura Technologies.</span>
+                <span className="bg-gradient-to-r from-brand-electricBlue via-brand-electricBlue to-brand-cyanAccent bg-clip-text text-transparent">
+                  Teciaura Technologies.
+                </span>
               </h1>
 
               {/* Supporting Text */}
@@ -55,13 +67,14 @@ export const HomePage: React.FC = () => {
                 From cloud infrastructure and software development to digital marketing and IT support, we help businesses build, launch, and grow with confidence.
               </p>
 
-              {/* CTAs */}
+              {/* CTAs with Elevated Hover Effects */}
               <div className="pt-2 flex flex-col sm:flex-row items-stretch sm:items-center gap-3.5">
                 <Button
                   to="/contact"
                   variant="primary"
                   size="lg"
                   icon={<ArrowRight className="w-4 h-4" />}
+                  className="shadow-md hover:shadow-card-hover hover:scale-[1.02] transition-transform"
                 >
                   Start a Project
                 </Button>
@@ -70,6 +83,7 @@ export const HomePage: React.FC = () => {
                   variant="secondary"
                   size="lg"
                   icon={<ChevronRight className="w-4 h-4" />}
+                  className="hover:border-brand-electricBlue/40 hover:bg-slate-50 transition-colors"
                 >
                   Explore Our Services
                 </Button>
@@ -92,7 +106,7 @@ export const HomePage: React.FC = () => {
               </div>
             </div>
 
-            {/* Right Abstract Visual (5 cols on lg) */}
+            {/* Right Interactive Visual Console (5 cols on lg) */}
             <div className="lg:col-span-5 w-full">
               <HeroVisual />
             </div>

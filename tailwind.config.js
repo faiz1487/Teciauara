@@ -34,6 +34,33 @@ export default {
         'card': '0 4px 20px -2px rgba(11, 31, 68, 0.06), 0 2px 6px -1px rgba(11, 31, 68, 0.04)',
         'card-hover': '0 12px 30px -4px rgba(22, 119, 255, 0.12), 0 4px 12px -2px rgba(11, 31, 68, 0.06)',
         'elevated': '0 20px 40px -15px rgba(11, 31, 68, 0.15)',
+        'glow-cyan': '0 0 25px -5px rgba(0, 200, 232, 0.35)',
+        'glow-blue': '0 0 25px -5px rgba(22, 119, 255, 0.35)',
+      },
+      animation: {
+        'float-slow': 'float 5s ease-in-out infinite',
+        'float-delayed': 'float-delayed 6s ease-in-out infinite 1.5s',
+        'pulse-slow': 'pulse-slow 7s ease-in-out infinite',
+        'beam': 'beam 3s ease-in-out infinite',
+      },
+      keyframes: {
+        float: {
+          '0%, 100%': { transform: 'translateY(0px)' },
+          '50%': { transform: 'translateY(-8px)' },
+        },
+        'float-delayed': {
+          '0%, 100%': { transform: 'translateY(0px)' },
+          '50%': { transform: 'translateY(8px)' },
+        },
+        'pulse-slow': {
+          '0%, 100%': { opacity: '0.2', transform: 'scale(1)' },
+          '50%': { opacity: '0.4', transform: 'scale(1.08)' },
+        },
+        beam: {
+          '0%': { transform: 'translateY(-100%)', opacity: '0' },
+          '50%': { opacity: '1' },
+          '100%': { transform: 'translateY(100%)', opacity: '0' },
+        },
       }
     },
   },
