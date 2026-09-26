@@ -1,0 +1,64 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --primary-navy: #0B1F44;
+    --secondary-navy: #102A56;
+    --electric-blue: #1677FF;
+    --cyan-accent: #00C8E8;
+    --light-bg: #F4F8FC;
+    --border-color: #DCE6F2;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  }
+
+  body {
+    background-color: #FFFFFF;
+    color: #475569;
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+  }
+
+  #root {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    max-width: 100%;
+    margin: 0;
+    border: none;
+    text-align: left;
+  }
+}
+
+@layer utilities {
+  .gradient-text {
+    background: linear-gradient(135deg, #00C8E8 0%, #1677FF 60%, #0B1F44 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  .gradient-accent {
+    background: linear-gradient(135deg, #00C8E8 0%, #1677FF 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  .tech-grid-pattern {
+    background-size: 32px 32px;
+    background-image: 
+      linear-gradient(to right, rgba(22, 119, 255, 0.05) 1px, transparent 1px),
+      linear-gradient(to bottom, rgba(22, 119, 255, 0.05) 1px, transparent 1px);
+  }
+
+  .tech-dots-pattern {
+    background-image: radial-gradient(rgba(22, 119, 255, 0.12) 1px, transparent 1px);
+    background-size: 20px 20px;
+  }
+}

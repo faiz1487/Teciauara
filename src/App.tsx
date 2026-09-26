@@ -1,0 +1,48 @@
+import React from 'react';
+import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
+import { Navbar } from './components/common/Navbar';
+import { Footer } from './components/common/Footer';
+import { ScrollToTop } from './components/common/ScrollToTop';
+
+// Pages
+import { HomePage } from './pages/HomePage';
+import { ServicesPage } from './pages/ServicesPage';
+import { AboutPage } from './pages/AboutPage';
+import { PortfolioPage } from './pages/PortfolioPage';
+import { InsightsPage } from './pages/InsightsPage';
+import { ContactPage } from './pages/ContactPage';
+import { PrivacyPolicyPage } from './pages/PrivacyPolicyPage';
+import { TermsPage } from './pages/TermsPage';
+import { NotFoundPage } from './pages/NotFoundPage';
+
+export const App: React.FC = () => {
+  return (
+    <Router>
+      <ScrollToTop />
+      <div className="flex flex-col min-h-screen bg-white text-brand-bodyText selection:bg-brand-electricBlue selection:text-white">
+        <Navbar />
+        
+        <main className="flex-grow">
+          <Routes>
+            <Route path="/" element={<HomePage />} />
+            <Route path="/services" element={<ServicesPage />} />
+            <Route path="/about" element={<AboutPage />} />
+            <Route path="/portfolio" element={<PortfolioPage />} />
+            <Route path="/insights" element={<InsightsPage />} />
+            {/* Alias /blog to /insights */}
+            <Route path="/blog" element={<Navigate to="/insights" replace />} />
+            <Route path="/contact" element={<ContactPage />} />
+            <Route path="/privacy" element={<PrivacyPolicyPage />} />
+            <Route path="/terms" element={<TermsPage />} />
+            {/* Catch-all 404 */}
+            <Route path="*" element={<NotFoundPage />} />
+          </Routes>
+        </main>
+
+        <Footer />
+      </div>
+    </Router>
+  );
+};
+
+export default App;
