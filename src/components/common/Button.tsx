@@ -35,21 +35,21 @@ export const Button: React.FC<ButtonProps> = ({
   target,
   rel,
 }) => {
-  const baseClasses = 'inline-flex items-center justify-center font-medium transition-all duration-200 rounded-lg focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 disabled:opacity-60 disabled:cursor-not-allowed select-none active:scale-[0.98]';
+  const baseClasses = 'inline-flex items-center justify-center font-medium transition-all duration-200 rounded-xl focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-offset-[#050B17] disabled:opacity-60 disabled:cursor-not-allowed select-none active:scale-[0.98]';
 
   const sizeClasses = {
-    sm: 'text-xs px-3.5 py-1.5 gap-1.5 font-medium',
+    sm: 'text-xs px-3.5 py-2 gap-1.5 font-medium',
     md: 'text-sm px-5 py-2.5 gap-2 font-medium',
-    lg: 'text-base px-6 py-3 gap-2.5 font-semibold',
+    lg: 'text-base px-6 py-3.5 gap-2.5 font-semibold',
   };
 
   const variantClasses = {
-    primary: 'bg-brand-electricBlue hover:bg-brand-electricHover text-white shadow-sm hover:shadow-md focus-visible:ring-brand-electricBlue',
-    secondary: 'bg-white hover:bg-brand-lightBg text-brand-primaryNavy border border-brand-border shadow-subtle hover:border-brand-electricBlue/30 focus-visible:ring-brand-electricBlue',
-    outline: 'bg-transparent border border-brand-electricBlue text-brand-electricBlue hover:bg-brand-electricBlue/5 focus-visible:ring-brand-electricBlue',
-    dark: 'bg-brand-primaryNavy hover:bg-brand-secondaryNavy text-white shadow-sm hover:shadow focus-visible:ring-brand-primaryNavy',
-    cyan: 'bg-brand-cyanAccent hover:bg-brand-cyanHover text-brand-primaryNavy font-semibold shadow-sm focus-visible:ring-brand-cyanAccent',
-    ghost: 'bg-transparent hover:bg-slate-100 text-brand-bodyText hover:text-brand-primaryNavy focus-visible:ring-slate-300',
+    primary: 'bg-brand-electricBlue hover:bg-brand-electricHover text-white shadow-glow-blue hover:shadow-card-hover hover:scale-[1.02] border border-blue-400/30',
+    secondary: 'bg-slate-900/90 hover:bg-slate-800 text-white border border-slate-700/80 hover:border-brand-electricBlue/60 shadow-subtle hover:text-brand-cyanAccent backdrop-blur-sm',
+    outline: 'bg-transparent border border-brand-electricBlue/70 text-brand-cyanAccent hover:bg-brand-electricBlue/15 hover:border-brand-cyanAccent',
+    dark: 'bg-[#0B1528] hover:bg-[#10203D] text-white border border-slate-800 hover:border-brand-electricBlue/40 shadow-card',
+    cyan: 'bg-brand-cyanAccent hover:bg-brand-cyanHover text-brand-primaryNavy font-bold shadow-glow-cyan hover:scale-[1.02]',
+    ghost: 'bg-transparent hover:bg-slate-800/60 text-slate-300 hover:text-white',
   };
 
   const combinedClasses = `${baseClasses} ${sizeClasses[size]} ${variantClasses[variant]} ${className}`;

@@ -22,20 +22,20 @@ export const HomePage: React.FC = () => {
   const [selectedProject, setSelectedProject] = useState<ProjectItem | null>(null);
 
   return (
-    <>
+    <div className="bg-[#050B17] text-slate-300">
       <SEOHead
         title="Build Your Digital Future"
         description="Teciaura Technologies helps businesses build digital experiences, modernize infrastructure, automate deployments, improve online visibility, and maintain reliable technology systems."
       />
 
-      {/* SECTION 1: HERO (Enhanced with Motion & Ambient Lighting) */}
-      <section className="relative overflow-hidden pt-8 pb-16 lg:pt-16 lg:pb-24 bg-white">
+      {/* SECTION 1: HERO (Dark Theme with Atmospheric Motion & Ambient Lighting) */}
+      <section className="relative overflow-hidden pt-12 pb-20 lg:pt-20 lg:pb-28 bg-[#050B17]">
         {/* Subtle grid pattern background */}
-        <div className="absolute inset-0 bg-[radial-gradient(#DCE6F2_1px,transparent_1px)] [background-size:24px_24px] opacity-40 pointer-events-none" />
+        <div className="absolute inset-0 bg-[radial-gradient(rgba(22,119,255,0.08)_1px,transparent_1px)] [background-size:28px_28px] opacity-60 pointer-events-none" />
 
         {/* Dynamic ambient gradient glow */}
-        <div className="absolute top-1/4 -left-20 w-96 h-96 bg-brand-cyanAccent/10 rounded-full blur-3xl pointer-events-none -z-10 animate-pulse-slow" />
-        <div className="absolute top-1/3 right-0 w-[30rem] h-[30rem] bg-brand-electricBlue/10 rounded-full blur-3xl pointer-events-none -z-10 animate-pulse-slow" />
+        <div className="absolute top-1/4 -left-20 w-[32rem] h-[32rem] bg-brand-cyanAccent/15 rounded-full blur-[100px] pointer-events-none -z-10 animate-pulse-slow" />
+        <div className="absolute top-1/3 right-0 w-[36rem] h-[36rem] bg-brand-electricBlue/20 rounded-full blur-[120px] pointer-events-none -z-10 animate-pulse-slow" />
 
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center">
@@ -44,37 +44,36 @@ export const HomePage: React.FC = () => {
             <div className="lg:col-span-7 space-y-6 text-left">
               
               {/* Live Status Eyebrow Badge */}
-              <div className="inline-flex items-center gap-2.5 px-3.5 py-1.5 rounded-full bg-brand-lightBg border border-brand-border text-xs font-semibold text-brand-primaryNavy shadow-subtle hover:border-brand-electricBlue/40 transition-colors">
-                <span className="flex h-2 w-2 relative">
+              <div className="inline-flex items-center gap-2.5 px-4 py-1.5 rounded-full bg-[#0B1528] border border-slate-800 text-xs font-semibold shadow-card hover:border-brand-electricBlue/50 transition-all">
+                <span className="flex h-2.5 w-2.5 relative">
                   <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75" />
-                  <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-500" />
+                  <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-emerald-500" />
                 </span>
-                <span className="tracking-widest uppercase text-[11px] font-bold text-brand-electricBlue">
+                <span className="tracking-widest uppercase text-[11px] font-bold text-brand-cyanAccent font-mono">
                   TECHNOLOGY + DIGITAL GROWTH
                 </span>
               </div>
 
-              {/* Main Headline */}
-              <h1 className="text-3xl sm:text-5xl lg:text-6xl font-extrabold text-brand-primaryNavy tracking-tight leading-[1.12]">
+              {/* Main Headline with Glowing Gradient */}
+              <h1 className="text-3xl sm:text-5xl lg:text-6xl font-extrabold text-white tracking-tight leading-[1.12]">
                 Build Your Digital Future with{' '}
-                <span className="bg-gradient-to-r from-brand-electricBlue via-brand-electricBlue to-brand-cyanAccent bg-clip-text text-transparent">
+                <span className="bg-gradient-to-r from-brand-cyanAccent via-brand-electricBlue to-white bg-clip-text text-transparent">
                   Teciaura Technologies.
                 </span>
               </h1>
 
               {/* Supporting Text */}
-              <p className="text-base sm:text-lg lg:text-xl text-brand-bodyText leading-relaxed max-w-2xl font-normal">
+              <p className="text-base sm:text-lg lg:text-xl text-slate-300 leading-relaxed max-w-2xl font-normal">
                 From cloud infrastructure and software development to digital marketing and IT support, we help businesses build, launch, and grow with confidence.
               </p>
 
               {/* CTAs with Elevated Hover Effects */}
-              <div className="pt-2 flex flex-col sm:flex-row items-stretch sm:items-center gap-3.5">
+              <div className="pt-2 flex flex-col sm:flex-row items-stretch sm:items-center gap-4">
                 <Button
                   to="/contact"
                   variant="primary"
                   size="lg"
                   icon={<ArrowRight className="w-4 h-4" />}
-                  className="shadow-md hover:shadow-card-hover hover:scale-[1.02] transition-transform"
                 >
                   Start a Project
                 </Button>
@@ -83,25 +82,24 @@ export const HomePage: React.FC = () => {
                   variant="secondary"
                   size="lg"
                   icon={<ChevronRight className="w-4 h-4" />}
-                  className="hover:border-brand-electricBlue/40 hover:bg-slate-50 transition-colors"
                 >
                   Explore Our Services
                 </Button>
               </div>
 
               {/* Bottom Quick Trust Highlights */}
-              <div className="pt-4 flex flex-wrap items-center gap-y-2 gap-x-6 text-xs text-brand-mutedText">
-                <div className="flex items-center gap-1.5">
+              <div className="pt-4 flex flex-wrap items-center gap-y-2.5 gap-x-6 text-xs text-slate-400">
+                <div className="flex items-center gap-2">
                   <CheckCircle className="w-4 h-4 text-brand-cyanAccent flex-shrink-0" />
-                  <span>Cloud & DevOps Architecture</span>
+                  <span className="text-slate-300">Cloud & DevOps Architecture</span>
                 </div>
-                <div className="flex items-center gap-1.5">
+                <div className="flex items-center gap-2">
                   <CheckCircle className="w-4 h-4 text-brand-electricBlue flex-shrink-0" />
-                  <span>Modern Web & App Engineering</span>
+                  <span className="text-slate-300">Modern Web & App Engineering</span>
                 </div>
-                <div className="flex items-center gap-1.5">
+                <div className="flex items-center gap-2">
                   <CheckCircle className="w-4 h-4 text-brand-cyanAccent flex-shrink-0" />
-                  <span>Measurable Growth Strategy</span>
+                  <span className="text-slate-300">Measurable Growth Strategy</span>
                 </div>
               </div>
             </div>
@@ -119,7 +117,7 @@ export const HomePage: React.FC = () => {
       <ValueStrip />
 
       {/* SECTION 3: SERVICES OVERVIEW */}
-      <section className="py-20 bg-white">
+      <section className="py-24 bg-[#050B17] relative">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <SectionHeading
             eyebrow="Core Competencies"
@@ -134,7 +132,7 @@ export const HomePage: React.FC = () => {
             ))}
           </div>
 
-          <div className="mt-12 text-center">
+          <div className="mt-14 text-center">
             <Button
               to="/services"
               variant="secondary"
@@ -148,7 +146,7 @@ export const HomePage: React.FC = () => {
       </section>
 
       {/* SECTION 4: WHY CHOOSE TECIAURA */}
-      <section className="py-20 bg-brand-lightBg border-y border-brand-border">
+      <section className="py-24 bg-[#070F1E] border-y border-slate-800/80 relative">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <SectionHeading
             eyebrow="The Teciaura Difference"
@@ -172,20 +170,20 @@ export const HomePage: React.FC = () => {
       </section>
 
       {/* SECTION 5: FEATURED WORK / PORTFOLIO */}
-      <section className="py-20 bg-white">
+      <section className="py-24 bg-[#050B17] relative">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-12">
+          <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-14">
             <div>
-              <div className="inline-flex items-center gap-2 mb-2">
-                <span className="w-2 h-2 rounded-full bg-brand-cyanAccent" />
-                <span className="text-xs uppercase tracking-widest font-bold text-brand-electricBlue">
+              <div className="inline-flex items-center gap-2 mb-3">
+                <span className="w-1.5 h-1.5 rounded-full bg-brand-cyanAccent" />
+                <span className="text-xs uppercase tracking-widest font-bold text-brand-cyanAccent font-mono">
                   Proven Architectures
                 </span>
               </div>
-              <h2 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-brand-primaryNavy tracking-tight">
+              <h2 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-white tracking-tight">
                 Selected Projects and Practical Solutions
               </h2>
-              <p className="mt-2 text-sm sm:text-base text-brand-bodyText max-w-xl">
+              <p className="mt-3 text-sm sm:text-base text-slate-400 max-w-xl font-normal">
                 Explore reference blueprints and demo implementations built to demonstrate how we structure modular, reliable systems.
               </p>
             </div>
@@ -213,7 +211,7 @@ export const HomePage: React.FC = () => {
       </section>
 
       {/* SECTION 6: OUR PROCESS */}
-      <section className="py-20 bg-brand-lightBg border-y border-brand-border">
+      <section className="py-24 bg-[#070F1E] border-y border-slate-800/80 relative">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <SectionHeading
             eyebrow="Predictable Delivery"
@@ -248,22 +246,22 @@ export const HomePage: React.FC = () => {
       />
 
       {/* SECTION 8: FAQ */}
-      <section className="py-20 bg-brand-lightBg border-t border-brand-border">
+      <section className="py-24 bg-[#050B17] border-t border-slate-800/80 relative">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <SectionHeading
             eyebrow="Got Questions?"
             title="Frequently Asked Questions"
             description="Find direct answers to common questions about our capabilities, engagement models, and support structure."
             align="center"
-            className="mb-12"
+            className="mb-14"
           />
 
           <FAQAccordion items={FAQS_DATA} />
 
-          <div className="mt-12 text-center">
-            <p className="text-sm text-brand-bodyText">
+          <div className="mt-14 text-center">
+            <p className="text-sm text-slate-400">
               Have a specific question not addressed above?{' '}
-              <a href="/contact" className="font-semibold text-brand-electricBlue hover:underline">
+              <a href="/contact" className="font-semibold text-brand-cyanAccent hover:underline">
                 Contact our engineering team
               </a>
             </p>
@@ -272,14 +270,17 @@ export const HomePage: React.FC = () => {
       </section>
 
       {/* SECTION 9: FINAL CONTACT CTA */}
-      <section className="py-16 sm:py-20 bg-white">
+      <section className="py-20 bg-[#070F1E] border-t border-slate-800/80 relative overflow-hidden">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="rounded-3xl bg-gradient-to-r from-brand-primaryNavy via-brand-secondaryNavy to-brand-primaryNavy p-8 sm:p-12 lg:p-16 text-center text-white relative overflow-hidden shadow-card border border-brand-electricBlue/20">
-            <div className="relative z-10 max-w-2xl mx-auto space-y-5">
+          <div className="rounded-3xl bg-gradient-to-b from-[#0B1528] to-[#050B17] p-8 sm:p-12 lg:p-16 text-center text-white relative overflow-hidden shadow-elevated border border-brand-electricBlue/30">
+            {/* Ambient inner glow */}
+            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-brand-cyanAccent/10 rounded-full blur-3xl pointer-events-none" />
+
+            <div className="relative z-10 max-w-2xl mx-auto space-y-6">
               <h2 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold tracking-tight">
                 Let’s Build Something That Moves Your Business Forward.
               </h2>
-              <p className="text-sm sm:text-base text-slate-300 leading-relaxed">
+              <p className="text-sm sm:text-base text-slate-300 leading-relaxed font-normal">
                 Whether you need a modern web presence, automated cloud deployments, or reliable ongoing IT support, we are here to partner with you.
               </p>
               <div className="pt-2 flex justify-center">
@@ -302,6 +303,6 @@ export const HomePage: React.FC = () => {
         project={selectedProject}
         onClose={() => setSelectedProject(null)}
       />
-    </>
+    </div>
   );
 };

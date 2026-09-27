@@ -1,8 +1,7 @@
 import React, { useState } from 'react';
-import { Search, BookOpen, Clock, Tag, Sparkles } from 'lucide-react';
+import { Search } from 'lucide-react';
 import { SEOHead } from '../components/common/SEOHead';
 import { Breadcrumb } from '../components/common/Breadcrumb';
-import { SectionHeading } from '../components/common/SectionHeading';
 import { CTASection } from '../components/common/CTASection';
 import { ArticleCard } from '../components/blog/ArticleCard';
 import { ArticleModal } from '../components/blog/ArticleModal';
@@ -28,28 +27,30 @@ export const InsightsPage: React.FC = () => {
   const gridArticles = filteredArticles.filter((p) => searchQuery || selectedCategory !== 'All' ? true : p.id !== featuredArticle.id);
 
   return (
-    <>
+    <div className="bg-[#050B17] text-slate-300">
       <SEOHead
         title="Insights & Engineering Blog"
         description="Practical guides, cloud optimization patterns, web engineering best practices, and digital growth perspectives from Teciaura Technologies."
       />
 
       {/* Hero Section */}
-      <section className="bg-brand-lightBg border-b border-brand-border pt-10 pb-16 lg:pt-14 lg:pb-20">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <section className="bg-[#070F1E] border-b border-slate-800/80 pt-12 pb-16 lg:pt-16 lg:pb-20 relative overflow-hidden">
+        <div className="absolute top-0 right-0 w-96 h-96 bg-brand-cyanAccent/10 rounded-full blur-3xl pointer-events-none" />
+
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <Breadcrumb items={[{ label: 'Insights & Blog' }]} />
 
           <div className="mt-8 max-w-3xl">
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white border border-brand-border text-xs font-semibold text-brand-electricBlue mb-4 shadow-subtle">
-              <span className="w-2 h-2 rounded-full bg-brand-cyanAccent" />
+            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#0B1528] border border-slate-800 text-xs font-semibold text-brand-cyanAccent mb-4 shadow-card font-mono">
+              <span className="w-2 h-2 rounded-full bg-brand-cyanAccent animate-pulse" />
               <span>Technology & Growth Perspectives</span>
             </div>
 
-            <h1 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-brand-primaryNavy tracking-tight leading-tight">
+            <h1 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-white tracking-tight leading-tight">
               Insights, Guides, and Practical Notes.
             </h1>
 
-            <p className="mt-4 text-base sm:text-lg text-brand-bodyText leading-relaxed">
+            <p className="mt-4 text-base sm:text-lg text-slate-300 leading-relaxed font-normal">
               Explore educational guides covering modern cloud infrastructure, website performance, CI/CD automation, and digital presence strategies.
             </p>
           </div>
@@ -57,11 +58,11 @@ export const InsightsPage: React.FC = () => {
       </section>
 
       {/* Main Blog Content Section */}
-      <section className="py-16 sm:py-20 bg-white">
+      <section className="py-20 sm:py-24 bg-[#050B17]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           
           {/* Search Bar & Category Filter Bar */}
-          <div className="flex flex-col md:flex-row items-stretch md:items-center justify-between gap-4 mb-12">
+          <div className="flex flex-col md:flex-row items-stretch md:items-center justify-between gap-5 mb-14">
             {/* Search Input */}
             <div className="relative max-w-md w-full">
               <Search className="w-4 h-4 text-slate-400 absolute left-4 top-1/2 -translate-y-1/2" />
@@ -70,7 +71,7 @@ export const InsightsPage: React.FC = () => {
                 placeholder="Search articles by topic or keyword..."
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
-                className="w-full pl-11 pr-4 py-2.5 rounded-xl border border-brand-border text-sm focus:outline-none focus:border-brand-electricBlue focus:ring-2 focus:ring-brand-electricBlue/20 bg-brand-lightBg/50 placeholder:text-slate-400"
+                className="w-full pl-11 pr-4 py-3 rounded-2xl border border-slate-700/80 text-sm focus:outline-none focus:border-brand-cyanAccent focus:ring-2 focus:ring-brand-cyanAccent/20 bg-slate-900/90 text-white placeholder:text-slate-500 shadow-card"
               />
             </div>
 
@@ -80,10 +81,10 @@ export const InsightsPage: React.FC = () => {
                 <button
                   key={cat}
                   onClick={() => setSelectedCategory(cat)}
-                  className={`px-3.5 py-1.5 rounded-lg text-xs font-semibold transition-colors flex-shrink-0 ${
+                  className={`px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold transition-all flex-shrink-0 ${
                     selectedCategory === cat
-                      ? 'bg-brand-primaryNavy text-white'
-                      : 'bg-brand-lightBg text-brand-bodyText hover:bg-slate-200 border border-brand-border'
+                      ? 'bg-brand-electricBlue text-white shadow-glow-blue border border-blue-400/30'
+                      : 'bg-slate-900/90 text-slate-300 hover:bg-slate-800 border border-slate-800 hover:border-slate-700'
                   }`}
                 >
                   {cat}
@@ -115,12 +116,12 @@ export const InsightsPage: React.FC = () => {
               ))}
             </div>
           ) : (
-            <div className="text-center py-16 p-8 rounded-2xl bg-brand-lightBg border border-brand-border">
-              <p className="text-base font-semibold text-brand-primaryNavy">No articles found matching "{searchQuery}"</p>
-              <p className="text-xs text-brand-mutedText mt-1">Try searching for "DevOps", "AWS", "CI/CD", or "SEO".</p>
+            <div className="text-center py-16 p-8 rounded-3xl bg-[#0B1528] border border-slate-800">
+              <p className="text-base font-semibold text-white">No articles found matching "{searchQuery}"</p>
+              <p className="text-xs text-slate-400 mt-1">Try searching for "DevOps", "AWS", "CI/CD", or "SEO".</p>
               <button
                 onClick={() => { setSearchQuery(''); setSelectedCategory('All'); }}
-                className="mt-4 px-4 py-2 bg-white border border-brand-border rounded-lg text-xs font-semibold text-brand-electricBlue hover:bg-slate-50"
+                className="mt-4 px-4 py-2 bg-slate-900 border border-slate-700 rounded-xl text-xs font-semibold text-brand-cyanAccent hover:bg-slate-800 transition-colors"
               >
                 Reset Search
               </button>
@@ -142,6 +143,6 @@ export const InsightsPage: React.FC = () => {
         article={activeArticle}
         onClose={() => setActiveArticle(null)}
       />
-    </>
+    </div>
   );
 };

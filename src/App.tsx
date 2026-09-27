@@ -27,11 +27,11 @@ export const App: React.FC = () => {
         <Route path="/demo" element={<Demo />} />
         <Route path="/saas-template" element={<Demo />} />
 
-        {/* Corporate Website Layout */}
+        {/* Corporate Website Layout (Dark Theme) */}
         <Route
           path="*"
           element={
-            <div className="flex flex-col min-h-screen bg-white text-brand-bodyText selection:bg-brand-electricBlue selection:text-white">
+            <div className="flex flex-col min-h-screen bg-[#050B17] text-slate-300 selection:bg-brand-electricBlue selection:text-white">
               <Navbar />
               <main className="flex-grow">
                 <Routes>
