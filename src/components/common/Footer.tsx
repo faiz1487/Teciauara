@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { Mail, Phone, MapPin, MessageCircle, ArrowUpRight } from 'lucide-react';
+import { Mail, Phone, MapPin, Clock, MessageCircle, ArrowUpRight } from 'lucide-react';
 import { Logo } from './Logo';
 import { COMPANY_INFO } from '../../data/companyInfo';
 
@@ -21,6 +21,7 @@ export const Footer: React.FC = () => {
     { label: 'About Us', path: '/about' },
     { label: 'Our Services', path: '/services' },
     { label: 'Portfolio & Work', path: '/portfolio' },
+    { label: 'Careers', path: '/careers' },
     { label: 'Insights & Blog', path: '/insights' },
     { label: 'Contact Us', path: '/contact' },
   ];
@@ -46,7 +47,7 @@ export const Footer: React.FC = () => {
               </div>
             </div>
 
-            {/* Social Links (Clean SVG icons & editable placeholders) */}
+            {/* Social Links */}
             <div className="pt-4 flex items-center gap-3">
               {/* LinkedIn */}
               <a 
@@ -54,7 +55,7 @@ export const Footer: React.FC = () => {
                 target="_blank" 
                 rel="noopener noreferrer"
                 className="w-9 h-9 rounded-lg bg-slate-800/80 hover:bg-brand-electricBlue text-slate-300 hover:text-white flex items-center justify-center transition-all duration-200 border border-slate-700/60"
-                aria-label="Teciaura on LinkedIn (Placeholder)"
+                aria-label="Teciaura on LinkedIn"
                 title="LinkedIn Profile"
               >
                 <svg className="w-4 h-4 fill-current" viewBox="0 0 24 24">
@@ -68,7 +69,7 @@ export const Footer: React.FC = () => {
                 target="_blank" 
                 rel="noopener noreferrer"
                 className="w-9 h-9 rounded-lg bg-slate-800/80 hover:bg-brand-electricBlue text-slate-300 hover:text-white flex items-center justify-center transition-all duration-200 border border-slate-700/60"
-                aria-label="Teciaura on X/Twitter (Placeholder)"
+                aria-label="Teciaura on X/Twitter"
                 title="Twitter / X Profile"
               >
                 <svg className="w-4 h-4 fill-current" viewBox="0 0 24 24">
@@ -82,7 +83,7 @@ export const Footer: React.FC = () => {
                 target="_blank" 
                 rel="noopener noreferrer"
                 className="w-9 h-9 rounded-lg bg-slate-800/80 hover:bg-brand-electricBlue text-slate-300 hover:text-white flex items-center justify-center transition-all duration-200 border border-slate-700/60"
-                aria-label="Teciaura on GitHub (Placeholder)"
+                aria-label="Teciaura on GitHub"
                 title="GitHub Profile"
               >
                 <svg className="w-4 h-4 fill-current" viewBox="0 0 24 24">
@@ -143,7 +144,7 @@ export const Footer: React.FC = () => {
             </ul>
           </div>
 
-          {/* Column 4: Contact Placeholders */}
+          {/* Column 4: Contact */}
           <div className="space-y-4">
             <h3 className="text-sm font-semibold text-white uppercase tracking-wider">
               Get in Touch
@@ -162,7 +163,9 @@ export const Footer: React.FC = () => {
                 <Phone className="w-4 h-4 text-brand-electricBlue flex-shrink-0 mt-0.5" />
                 <div>
                   <span className="block text-xs text-slate-500 font-medium">Direct Inquiries</span>
-                  <span className="text-slate-300 font-mono text-xs">{COMPANY_INFO.contact.phonePlaceholder}</span>
+                  <a href={COMPANY_INFO.contact.phoneCallLink} className="text-slate-300 hover:text-white font-mono text-xs transition-colors">
+                    {COMPANY_INFO.contact.phoneDisplay}
+                  </a>
                 </div>
               </li>
               <li className="flex items-start gap-2.5 text-slate-400">
@@ -172,13 +175,14 @@ export const Footer: React.FC = () => {
                   <span className="text-slate-300">{COMPANY_INFO.contact.location}</span>
                 </div>
               </li>
+              <li className="flex items-start gap-2.5 text-slate-400">
+                <Clock className="w-4 h-4 text-brand-cyanAccent flex-shrink-0 mt-0.5" />
+                <div>
+                  <span className="block text-xs text-slate-500 font-medium">Working Hours</span>
+                  <span className="text-slate-300 font-mono text-xs">{COMPANY_INFO.contact.businessHours}</span>
+                </div>
+              </li>
             </ul>
-
-            <div className="pt-1">
-              <p className="text-[11px] text-slate-500 italic">
-                * Contact info shown above are editable placeholders for client deployment.
-              </p>
-            </div>
           </div>
         </div>
       </div>

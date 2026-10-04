@@ -1,5 +1,6 @@
-import React, { useState } from 'react';
-import { Send, CheckCircle2, AlertCircle, Info, Mail } from 'lucide-react';
+import React, { useState, useEffect } from 'react';
+import { useSearchParams } from 'react-router-dom';
+import { Send, CheckCircle2, AlertCircle, Info, Mail, Sparkles } from 'lucide-react';
 import { ContactFormData } from '../../types';
 import { COMPANY_INFO } from '../../data/companyInfo';
 import { Button } from '../common/Button';
@@ -19,6 +20,17 @@ export const ContactForm: React.FC = () => {
   const [errors, setErrors] = useState<Partial<Record<keyof ContactFormData, string>>>({});
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submittedData, setSubmittedData] = useState<ContactFormData | null>(null);
+  const [searchParams] = useSearchParams();
+
+  useEffect(() => {
+    if (searchParams.get('audit') === 'true' || searchParams.get('inquiry') === 'audit') {
+      setFormData((prev) => ({
+        ...prev,
+        serviceRequired: 'Free Business Audit & Strategy',
+        projectDetails: prev.projectDetails || 'Interested in claiming the 2026 Special Free Business Audit & Strategy Session at 0% cost for our business.',
+      }));
+    }
+  }, [searchParams]);
 
   const validate = (): boolean => {
     const newErrors: Partial<Record<keyof ContactFormData, string>> = {};
@@ -282,6 +294,9 @@ export const ContactForm: React.FC = () => {
                 onChange={handleChange}
                 className="w-full px-4 py-3 rounded-2xl border border-slate-700/80 text-sm focus:outline-none focus:border-brand-cyanAccent focus:ring-2 focus:ring-brand-cyanAccent/20 bg-slate-900/90 text-white font-medium"
               >
+                <option value="Free Business Audit & Strategy" className="bg-[#0B1528] text-brand-cyanAccent font-semibold">
+                  🚀 Free Business Audit & Strategy (2026 Special @ 0% Cost)
+                </option>
                 <option value="Cloud & DevOps" className="bg-[#0B1528] text-white">Cloud & DevOps</option>
                 <option value="Website Development" className="bg-[#0B1528] text-white">Website Development</option>
                 <option value="Software & App Development" className="bg-[#0B1528] text-white">Software & App Development</option>

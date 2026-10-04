@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import { X, CheckCircle2, ShieldAlert, Sparkles, ArrowRight } from 'lucide-react';
+import { X, CheckCircle2, ShieldAlert, Sparkles, ArrowRight, ExternalLink } from 'lucide-react';
 import { ProjectItem } from '../../types';
 import { Button } from '../common/Button';
 
@@ -64,6 +64,39 @@ export const ProjectModal: React.FC<ProjectModalProps> = ({ project, onClose }) 
 
         {/* Modal Body */}
         <div className="p-6 sm:p-8 overflow-y-auto space-y-6">
+          {/* Intervixa Demo Video */}
+          {project.id === 'intervixa-ai-platform' && (
+            <div className="space-y-3">
+              <div className="relative aspect-video w-full rounded-2xl overflow-hidden border border-slate-700/80 bg-black shadow-2xl">
+                <video
+                  className="w-full h-full object-cover"
+                  autoPlay
+                  loop
+                  muted
+                  playsInline
+                  controls
+                  preload="auto"
+                  poster="/intervixa-demo-poster.jpg"
+                >
+                  <source src="/intervixa-project-demo.mp4" type="video/mp4" />
+                  Your browser does not support HTML5 video.
+                </video>
+              </div>
+              <div className="flex flex-wrap items-center justify-between gap-2 px-1">
+                <span className="text-xs text-slate-400 font-mono">Platform Walkthrough Preview</span>
+                <a
+                  href="https://intervixa.online"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-1.5 text-xs font-mono font-semibold text-brand-cyanAccent hover:text-white transition-colors"
+                >
+                  <span>Launch Live Platform (intervixa.online)</span>
+                  <ExternalLink className="w-3.5 h-3.5" />
+                </a>
+              </div>
+            </div>
+          )}
+
           {/* Note Banner */}
           <div className="p-4 rounded-xl bg-brand-electricBlue/10 border border-brand-electricBlue/30 text-xs sm:text-sm text-slate-300 flex items-start gap-3">
             <Sparkles className="w-4 h-4 text-brand-cyanAccent flex-shrink-0 mt-0.5" />

@@ -23,6 +23,6 @@ export const FAQS_DATA: FAQItem[] = [
   },
   {
     question: 'How can I request a project quote?',
-    answer: 'You can request a quote by completing the form on our Contact page or emailing us directly at hello@teciaura.com. Sharing details about your project scope, target timeline, and goals helps us provide a clear, structured proposal.',
+    answer: 'You can request a quote by completing the form on our Contact page or emailing us directly at info@teciaura.com. Sharing details about your project scope, target timeline, and goals helps us provide a clear, structured proposal.',
   },
 ];

@@ -1,17 +1,34 @@
 import React from 'react';
-import { Cpu, Target, Layers, Headphones } from 'lucide-react';
+import { 
+  PremiumIconBadge, 
+  PremiumCpuIcon, 
+  PremiumTargetIcon, 
+  PremiumLayersIcon, 
+  PremiumSupportIcon 
+} from '../common/PremiumIcons';
 import { COMPANY_INFO } from '../../data/companyInfo';
+import { useInView } from '../../hooks/useInView';
 
 export const ValueStrip: React.FC = () => {
-  const icons = [
-    <Cpu className="w-5 h-5 text-brand-electricBlue" />,
-    <Target className="w-5 h-5 text-brand-cyanAccent" />,
-    <Layers className="w-5 h-5 text-brand-electricBlue" />,
-    <Headphones className="w-5 h-5 text-brand-cyanAccent" />,
+  const { ref, isInView } = useInView<HTMLElement>({ threshold: 0.15 });
+
+  const badgeIcons = [
+    <PremiumIconBadge key="cpu" variant="blue" size="md">
+      <PremiumCpuIcon className="w-5 h-5" />
+    </PremiumIconBadge>,
+    <PremiumIconBadge key="target" variant="cyan" size="md">
+      <PremiumTargetIcon className="w-5 h-5" />
+    </PremiumIconBadge>,
+    <PremiumIconBadge key="layers" variant="indigo" size="md">
+      <PremiumLayersIcon className="w-5 h-5" />
+    </PremiumIconBadge>,
+    <PremiumIconBadge key="support" variant="emerald" size="md">
+      <PremiumSupportIcon className="w-5 h-5" />
+    </PremiumIconBadge>,
   ];
 
   return (
-    <section className="bg-[#070F1E] border-y border-slate-800/80 py-10 sm:py-12 relative overflow-hidden">
+    <section ref={ref} className="bg-[#070F1E] border-y border-slate-800/80 py-10 sm:py-12 relative overflow-hidden">
       {/* Background subtle radial glow */}
       <div className="absolute inset-0 bg-[radial-gradient(rgba(22,119,255,0.06)_1px,transparent_1px)] [background-size:24px_24px] pointer-events-none" />
 
@@ -20,11 +37,14 @@ export const ValueStrip: React.FC = () => {
           {COMPANY_INFO.valueStrip.map((item, index) => (
             <div 
               key={item.title} 
-              className="flex items-start gap-4 p-5 rounded-2xl bg-[#0B1528]/85 border border-slate-800 hover:border-brand-electricBlue/50 shadow-card hover:shadow-glow-blue transition-all duration-300 group"
+              className={`flex items-start gap-4 p-5 rounded-2xl bg-[#0B1528]/85 border border-slate-800 hover:border-brand-electricBlue/50 shadow-card hover:shadow-glow-blue transition-all duration-300 group scroll-reveal ${
+                isInView ? 'is-visible' : ''
+              }`}
+              style={{
+                transitionDelay: `${index * 90}ms`,
+              }}
             >
-              <div className="w-11 h-11 rounded-xl bg-slate-900 border border-slate-700/80 flex items-center justify-center flex-shrink-0 group-hover:scale-105 group-hover:border-brand-electricBlue/50 transition-all">
-                {icons[index % icons.length]}
-              </div>
+              {badgeIcons[index % badgeIcons.length]}
               <div>
                 <h3 className="text-sm font-bold text-white tracking-tight group-hover:text-brand-cyanAccent transition-colors">
                   {item.title}

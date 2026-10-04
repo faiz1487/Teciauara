@@ -47,8 +47,10 @@ const Navigation = React.memo(() => {
     <header className="fixed top-0 w-full z-50 border-b border-gray-800/50 bg-black/80 backdrop-blur-md">
       <nav className="max-w-7xl mx-auto px-6 py-4">
         <div className="flex items-center justify-between">
-          <div className="text-xl font-semibold text-white tracking-tight">Teciaura SaaS</div>
-          
+          <div className="flex items-center gap-2">
+            <img src="/teciaura-logo-white.png" alt="Teciaura Technologies" className="h-7 w-auto object-contain" />
+            <span className="text-xs px-2 py-0.5 rounded-full bg-brand-electricBlue/20 text-brand-cyanAccent font-mono font-medium border border-brand-electricBlue/30">SaaS</span>
+          </div>
           <div className="hidden md:flex items-center justify-center gap-8 absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2">
             <a href="#getting-started" className="text-sm text-white/60 hover:text-white transition-colors">
               Getting started

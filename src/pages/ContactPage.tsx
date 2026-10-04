@@ -90,10 +90,6 @@ export const ContactPage: React.FC = () => {
                 >
                   Message on WhatsApp
                 </Button>
-
-                <p className="text-[10px] text-emerald-400/70 italic text-center mt-2.5 font-mono">
-                  * Configurable placeholder: {COMPANY_INFO.contact.phonePlaceholder}
-                </p>
               </div>
 
               {/* Direct Channels Cards */}
@@ -118,16 +114,19 @@ export const ContactPage: React.FC = () => {
                   </div>
                 </div>
 
-                {/* Phone Placeholder */}
+                {/* Direct Phone */}
                 <div className="flex items-start gap-3.5">
                   <div className="w-9 h-9 rounded-xl bg-slate-900 border border-slate-700/80 flex items-center justify-center text-brand-electricBlue flex-shrink-0">
                     <Phone className="w-4 h-4" />
                   </div>
                   <div>
-                    <span className="block text-xs font-semibold text-slate-400">Telephone (Placeholder)</span>
-                    <span className="text-sm font-mono font-medium text-white">
-                      {COMPANY_INFO.contact.phonePlaceholder}
-                    </span>
+                    <span className="block text-xs font-semibold text-slate-400">Direct Telephone</span>
+                    <a
+                      href={COMPANY_INFO.contact.phoneCallLink}
+                      className="text-sm font-mono font-medium text-white hover:text-brand-cyanAccent transition-colors"
+                    >
+                      {COMPANY_INFO.contact.phoneDisplay}
+                    </a>
                   </div>
                 </div>
 
@@ -143,6 +142,19 @@ export const ContactPage: React.FC = () => {
                     </span>
                     <span className="block text-xs text-slate-400">
                       Serving clients across India & globally
+                    </span>
+                  </div>
+                </div>
+
+                {/* Working Hours */}
+                <div className="flex items-start gap-3.5">
+                  <div className="w-9 h-9 rounded-xl bg-slate-900 border border-slate-700/80 flex items-center justify-center text-brand-cyanAccent flex-shrink-0">
+                    <Clock className="w-4 h-4 text-brand-cyanAccent" />
+                  </div>
+                  <div>
+                    <span className="block text-xs font-semibold text-slate-400">Working Hours</span>
+                    <span className="text-sm font-medium font-mono text-white">
+                      {COMPANY_INFO.contact.businessHours}
                     </span>
                   </div>
                 </div>

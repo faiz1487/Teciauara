@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-d
 import { Navbar } from './components/common/Navbar';
 import { Footer } from './components/common/Footer';
 import { ScrollToTop } from './components/common/ScrollToTop';
+import { FloatingContactWidget } from './components/common/FloatingContactWidget';
 
 // Pages
 import { HomePage } from './pages/HomePage';
@@ -11,6 +12,7 @@ import { AboutPage } from './pages/AboutPage';
 import { PortfolioPage } from './pages/PortfolioPage';
 import { InsightsPage } from './pages/InsightsPage';
 import { ContactPage } from './pages/ContactPage';
+import { CareersPage } from './pages/CareersPage';
 import { PrivacyPolicyPage } from './pages/PrivacyPolicyPage';
 import { TermsPage } from './pages/TermsPage';
 import { NotFoundPage } from './pages/NotFoundPage';
@@ -42,6 +44,7 @@ export const App: React.FC = () => {
                   <Route path="/insights" element={<InsightsPage />} />
                   {/* Alias /blog to /insights */}
                   <Route path="/blog" element={<Navigate to="/insights" replace />} />
+                  <Route path="/careers" element={<CareersPage />} />
                   <Route path="/contact" element={<ContactPage />} />
                   <Route path="/privacy" element={<PrivacyPolicyPage />} />
                   <Route path="/terms" element={<TermsPage />} />
@@ -50,6 +53,7 @@ export const App: React.FC = () => {
                 </Routes>
               </main>
               <Footer />
+              <FloatingContactWidget />
             </div>
           }
         />
@@ -59,3 +63,4 @@ export const App: React.FC = () => {
 };
 
 export default App;
+

@@ -1,5 +1,6 @@
 import React from 'react';
-import { Eye, Lightbulb, CheckCircle2, RefreshCw, Users, Shield, Compass } from 'lucide-react';
+import { Link } from 'react-router-dom';
+import { Eye, Lightbulb, CheckCircle2, RefreshCw, Users, Shield, Compass, ArrowRight } from 'lucide-react';
 import { SEOHead } from '../components/common/SEOHead';
 import { Breadcrumb } from '../components/common/Breadcrumb';
 import { SectionHeading } from '../components/common/SectionHeading';
@@ -192,14 +193,30 @@ export const AboutPage: React.FC = () => {
               </div>
             ))}
 
-            {/* Note on Information Placeholders */}
-            <div className="p-6 sm:p-7 rounded-3xl bg-slate-900/60 border border-dashed border-slate-800 flex flex-col justify-center">
-              <h4 className="text-xs font-bold uppercase tracking-wider text-slate-500 mb-1 font-mono">
-                Company Details Placeholder
-              </h4>
-              <p className="text-xs text-slate-500 leading-relaxed">
-                Founder profiles, office registrations, and corporate disclosures can be updated here as official corporate filings are formalized.
-              </p>
+            {/* Join Our Team Card */}
+            <div className="p-6 sm:p-7 rounded-3xl bg-gradient-to-br from-[#0B1528] to-[#0E1E38] border border-brand-electricBlue/40 flex flex-col justify-between shadow-card hover:shadow-glow-blue transition-all group">
+              <div>
+                <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-brand-cyanAccent/15 border border-brand-cyanAccent/30 text-xs font-semibold text-brand-cyanAccent font-mono mb-3">
+                  <span className="w-1.5 h-1.5 rounded-full bg-brand-cyanAccent animate-pulse" />
+                  <span>Careers</span>
+                </div>
+                <h3 className="text-lg font-bold text-white mb-2 group-hover:text-brand-cyanAccent transition-colors">
+                  Join The Teciaura Team
+                </h3>
+                <p className="text-sm text-slate-300 leading-relaxed font-normal">
+                  We are hiring engineers, cloud architects, and designers who thrive on high autonomy and shipping great products.
+                </p>
+              </div>
+
+              <div className="pt-4 mt-2">
+                <Link
+                  to="/careers"
+                  className="inline-flex items-center gap-2 text-xs font-semibold text-brand-cyanAccent group-hover:text-white transition-colors"
+                >
+                  <span>Explore Open Positions</span>
+                  <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform" />
+                </Link>
+              </div>
             </div>
           </div>
         </div>

@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { 
-  Cloud, Server, GitBranch, CheckCircle2, Cpu, ShieldCheck, 
-  Play, RefreshCw, Activity, Terminal, Zap, ArrowRight, Check
+  Cloud, Server, GitBranch, Cpu, ShieldCheck, 
+  Play, RefreshCw, Check
 } from 'lucide-react';
 
 export const HeroVisual: React.FC = () => {
@@ -48,13 +48,16 @@ export const HeroVisual: React.FC = () => {
   };
 
   return (
-    <div className="relative w-full max-w-lg mx-auto lg:max-w-none select-none">
+    <div className="relative w-full max-w-lg mx-auto lg:max-w-none select-none animate-dashboard-float">
       {/* Dynamic Animated Ambient Glow */}
-      <div className="absolute -inset-4 bg-gradient-to-tr from-brand-electricBlue/25 via-brand-cyanAccent/20 to-brand-primaryNavy/10 rounded-3xl blur-2xl -z-10 animate-pulse-slow" />
+      <div className="absolute -inset-4 bg-gradient-to-tr from-brand-electricBlue/25 via-brand-cyanAccent/20 to-brand-primaryNavy/10 rounded-3xl blur-2xl -z-10 animate-ambient-halo" />
 
       {/* Main Glassmorphic Console Container */}
       <div className="relative rounded-3xl bg-brand-primaryNavy/95 border border-brand-electricBlue/35 shadow-elevated p-5 sm:p-6 backdrop-blur-xl text-white overflow-hidden transition-all duration-300 hover:border-brand-electricBlue/60">
         
+        {/* Slow Animated Scanning Radar Line */}
+        <div className="absolute inset-x-0 h-16 -top-16 bg-gradient-to-b from-transparent via-brand-cyanAccent/10 to-transparent pointer-events-none animate-radar-scan z-10" />
+
         {/* Tech Grid Pattern */}
         <div className="absolute inset-0 bg-[radial-gradient(#1677FF_1.2px,transparent_1.2px)] [background-size:18px_18px] opacity-20 pointer-events-none" />
 
@@ -64,7 +67,8 @@ export const HeroVisual: React.FC = () => {
             <span className="w-3 h-3 rounded-full bg-rose-500/90 inline-block shadow-sm" />
             <span className="w-3 h-3 rounded-full bg-amber-500/90 inline-block shadow-sm" />
             <span className="w-3 h-3 rounded-full bg-emerald-500/90 inline-block shadow-sm" />
-            <span className="text-xs font-mono text-slate-300 ml-1.5 font-semibold tracking-wide">
+            <img src="/teciaura-icon.png" alt="TA" className="w-4 h-4 object-contain inline-block ml-1 opacity-90" />
+            <span className="text-xs font-mono text-slate-300 font-semibold tracking-wide">
               teciaura-sys // v2.6
             </span>
           </div>
@@ -73,7 +77,7 @@ export const HeroVisual: React.FC = () => {
           <div className="flex items-center bg-slate-900/90 rounded-xl p-1 border border-slate-700/80 text-[11px] font-medium">
             <button
               onClick={() => setActiveTab('architecture')}
-              className={`px-2.5 py-1 rounded-lg transition-all ${
+              className={`px-2.5 py-1 rounded-lg transition-all duration-200 ${
                 activeTab === 'architecture'
                   ? 'bg-brand-electricBlue text-white font-semibold shadow-sm'
                   : 'text-slate-400 hover:text-white'
@@ -83,7 +87,7 @@ export const HeroVisual: React.FC = () => {
             </button>
             <button
               onClick={() => setActiveTab('pipeline')}
-              className={`px-2.5 py-1 rounded-lg transition-all ${
+              className={`px-2.5 py-1 rounded-lg transition-all duration-200 ${
                 activeTab === 'pipeline'
                   ? 'bg-brand-electricBlue text-white font-semibold shadow-sm'
                   : 'text-slate-400 hover:text-white'
@@ -93,7 +97,7 @@ export const HeroVisual: React.FC = () => {
             </button>
             <button
               onClick={() => setActiveTab('telemetry')}
-              className={`px-2.5 py-1 rounded-lg transition-all ${
+              className={`px-2.5 py-1 rounded-lg transition-all duration-200 ${
                 activeTab === 'telemetry'
                   ? 'bg-brand-electricBlue text-white font-semibold shadow-sm'
                   : 'text-slate-400 hover:text-white'
@@ -109,10 +113,10 @@ export const HeroVisual: React.FC = () => {
           <div className="space-y-3.5 relative z-10 animate-in fade-in duration-200">
             
             {/* Node 1: Cloud & DevOps Cluster */}
-            <div className="group/node p-3.5 rounded-xl bg-slate-900/85 border border-slate-700/90 hover:border-brand-electricBlue transition-all duration-200 shadow-subtle">
+            <div className="group/node p-3.5 rounded-xl bg-slate-900/85 border border-slate-700/90 hover:border-brand-electricBlue/80 hover:bg-slate-900/95 transition-all duration-300 ease-out hover:-translate-y-1 hover:shadow-[0_8px_25px_-5px_rgba(22,119,255,0.25)] shadow-subtle cursor-pointer">
               <div className="flex items-center justify-between">
                 <div className="flex items-center gap-3">
-                  <div className="w-10 h-10 rounded-xl bg-brand-electricBlue/20 border border-brand-electricBlue/40 flex items-center justify-center text-brand-cyanAccent group-hover/node:scale-105 transition-transform">
+                  <div className="w-10 h-10 rounded-xl bg-brand-electricBlue/20 border border-brand-electricBlue/40 flex items-center justify-center text-brand-cyanAccent group-hover/node:scale-105 group-hover/node:border-brand-electricBlue transition-all duration-300">
                     <Cloud className="w-5 h-5" />
                   </div>
                   <div>
@@ -128,24 +132,27 @@ export const HeroVisual: React.FC = () => {
                   </div>
                 </div>
                 <div className="flex items-center gap-1.5 text-[11px] text-emerald-400 font-mono">
-                  <span className="w-2 h-2 rounded-full bg-emerald-400 animate-ping inline-block" />
+                  <span className="relative flex h-2 w-2">
+                    <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75" />
+                    <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-500" />
+                  </span>
                   <span>Healthy</span>
                 </div>
               </div>
             </div>
 
-            {/* Connecting Flow Line with Animated Beam */}
+            {/* Connecting Flow Line with Animated Energy Beam */}
             <div className="flex justify-center -my-1 relative overflow-hidden h-4">
-              <div className="w-0.5 h-full bg-slate-700 relative">
-                <div className="absolute inset-0 bg-gradient-to-b from-brand-cyanAccent to-brand-electricBlue animate-beam" />
+              <div className="w-0.5 h-full bg-slate-700/80 relative">
+                <div className="absolute inset-0 bg-gradient-to-b from-brand-cyanAccent via-brand-electricBlue to-brand-cyanAccent animate-energy-flow" />
               </div>
             </div>
 
             {/* Node 2: Containerized Workload & Microservices */}
-            <div className="group/node p-3.5 rounded-xl bg-slate-900/85 border border-slate-700/90 hover:border-brand-cyanAccent transition-all duration-200 shadow-subtle">
+            <div className="group/node p-3.5 rounded-xl bg-slate-900/85 border border-slate-700/90 hover:border-brand-cyanAccent/80 hover:bg-slate-900/95 transition-all duration-300 ease-out hover:-translate-y-1 hover:shadow-[0_8px_25px_-5px_rgba(0,200,232,0.22)] shadow-subtle cursor-pointer">
               <div className="flex items-center justify-between">
                 <div className="flex items-center gap-3">
-                  <div className="w-10 h-10 rounded-xl bg-brand-cyanAccent/20 border border-brand-cyanAccent/40 flex items-center justify-center text-brand-cyanAccent group-hover/node:scale-105 transition-transform">
+                  <div className="w-10 h-10 rounded-xl bg-brand-cyanAccent/20 border border-brand-cyanAccent/40 flex items-center justify-center text-brand-cyanAccent group-hover/node:scale-105 group-hover/node:border-brand-cyanAccent transition-all duration-300">
                     <GitBranch className="w-5 h-5" />
                   </div>
                   <div>
@@ -160,24 +167,25 @@ export const HeroVisual: React.FC = () => {
                     </div>
                   </div>
                 </div>
-                <span className="text-[10px] font-mono text-brand-cyanAccent bg-brand-cyanAccent/10 px-2 py-0.5 rounded border border-brand-cyanAccent/20">
-                  4 Pods Active
+                <span className="text-[10px] font-mono text-brand-cyanAccent bg-brand-cyanAccent/10 px-2 py-0.5 rounded border border-brand-cyanAccent/20 flex items-center gap-1.5">
+                  <span className="w-1.5 h-1.5 rounded-full bg-brand-cyanAccent animate-pulse" />
+                  <span>4 Pods Active</span>
                 </span>
               </div>
             </div>
 
-            {/* Connecting Flow Line with Animated Beam */}
+            {/* Connecting Flow Line with Animated Energy Beam */}
             <div className="flex justify-center -my-1 relative overflow-hidden h-4">
-              <div className="w-0.5 h-full bg-slate-700 relative">
-                <div className="absolute inset-0 bg-gradient-to-b from-brand-electricBlue to-brand-cyanAccent animate-beam" />
+              <div className="w-0.5 h-full bg-slate-700/80 relative">
+                <div className="absolute inset-0 bg-gradient-to-b from-brand-electricBlue via-brand-cyanAccent to-brand-electricBlue animate-energy-flow" />
               </div>
             </div>
 
             {/* Node 3: Edge Web & App Layer */}
-            <div className="group/node p-3.5 rounded-xl bg-slate-900/85 border border-slate-700/90 hover:border-brand-electricBlue transition-all duration-200 shadow-subtle">
+            <div className="group/node p-3.5 rounded-xl bg-slate-900/85 border border-slate-700/90 hover:border-brand-electricBlue/80 hover:bg-slate-900/95 transition-all duration-300 ease-out hover:-translate-y-1 hover:shadow-[0_8px_25px_-5px_rgba(22,119,255,0.25)] shadow-subtle cursor-pointer">
               <div className="flex items-center justify-between">
                 <div className="flex items-center gap-3">
-                  <div className="w-10 h-10 rounded-xl bg-indigo-500/20 border border-indigo-400/40 flex items-center justify-center text-indigo-300 group-hover/node:scale-105 transition-transform">
+                  <div className="w-10 h-10 rounded-xl bg-indigo-500/20 border border-indigo-400/40 flex items-center justify-center text-indigo-300 group-hover/node:scale-105 group-hover/node:border-indigo-400 transition-all duration-300">
                     <Server className="w-5 h-5" />
                   </div>
                   <div>
@@ -192,8 +200,9 @@ export const HeroVisual: React.FC = () => {
                     </div>
                   </div>
                 </div>
-                <span className="text-[10px] font-mono text-emerald-400 bg-emerald-950/60 px-2 py-0.5 rounded border border-emerald-500/20">
-                  200 OK
+                <span className="text-[10px] font-mono text-emerald-400 bg-emerald-950/60 px-2 py-0.5 rounded border border-emerald-500/20 flex items-center gap-1.5">
+                  <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" />
+                  <span>200 OK</span>
                 </span>
               </div>
             </div>
@@ -278,7 +287,7 @@ export const HeroVisual: React.FC = () => {
         {activeTab === 'telemetry' && (
           <div className="space-y-3 relative z-10 animate-in fade-in duration-200">
             <div className="grid grid-cols-2 gap-2.5">
-              <div className="p-3 rounded-xl bg-slate-900/80 border border-slate-700/80">
+              <div className="p-3 rounded-xl bg-slate-900/80 border border-slate-700/80 hover:border-brand-cyanAccent/50 transition-all duration-300 ease-out hover:-translate-y-0.5 shadow-subtle">
                 <span className="text-[10px] font-medium text-slate-400 uppercase tracking-wider block">
                   Edge Response Latency
                 </span>
@@ -291,7 +300,7 @@ export const HeroVisual: React.FC = () => {
                 </div>
               </div>
 
-              <div className="p-3 rounded-xl bg-slate-900/80 border border-slate-700/80">
+              <div className="p-3 rounded-xl bg-slate-900/80 border border-slate-700/80 hover:border-emerald-400/50 transition-all duration-300 ease-out hover:-translate-y-0.5 shadow-subtle">
                 <span className="text-[10px] font-medium text-slate-400 uppercase tracking-wider block">
                   Uptime Availability
                 </span>
@@ -305,7 +314,7 @@ export const HeroVisual: React.FC = () => {
             </div>
 
             {/* Live Infrastructure Indicators */}
-            <div className="p-3.5 rounded-xl bg-slate-900/80 border border-slate-700/80 space-y-2">
+            <div className="p-3.5 rounded-xl bg-slate-900/80 border border-slate-700/80 space-y-2 hover:border-slate-600 transition-colors duration-300">
               <div className="flex items-center justify-between text-xs">
                 <span className="text-slate-400">Load Balancer Routing</span>
                 <span className="text-emerald-400 font-mono">Weighted Round-Robin</span>
@@ -324,15 +333,15 @@ export const HeroVisual: React.FC = () => {
 
         {/* Bottom Interactive Ticker & Live Metrics Bar */}
         <div className="mt-4 pt-3.5 border-t border-slate-700/70 grid grid-cols-3 gap-2 text-center relative z-10">
-          <div className="p-2 rounded-xl bg-slate-900/70 border border-slate-800/80">
+          <div className="p-2 rounded-xl bg-slate-900/70 border border-slate-800/80 hover:border-slate-700 transition-all duration-300 ease-out hover:-translate-y-0.5">
             <div className="text-[10px] text-slate-400 font-medium">Delivery Model</div>
             <div className="text-xs font-bold text-white mt-0.5">Milestone-Based</div>
           </div>
-          <div className="p-2 rounded-xl bg-slate-900/70 border border-slate-800/80">
+          <div className="p-2 rounded-xl bg-slate-900/70 border border-slate-800/80 hover:border-slate-700 transition-all duration-300 ease-out hover:-translate-y-0.5">
             <div className="text-[10px] text-slate-400 font-medium">Architecture</div>
             <div className="text-xs font-bold text-brand-cyanAccent mt-0.5">Cloud-Native</div>
           </div>
-          <div className="p-2 rounded-xl bg-slate-900/70 border border-slate-800/80">
+          <div className="p-2 rounded-xl bg-slate-900/70 border border-slate-800/80 hover:border-slate-700 transition-all duration-300 ease-out hover:-translate-y-0.5">
             <div className="text-[10px] text-slate-400 font-medium">Production Care</div>
             <div className="text-xs font-bold text-emerald-400 mt-0.5">Zero-Downtime</div>
           </div>

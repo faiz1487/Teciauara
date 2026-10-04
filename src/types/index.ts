@@ -12,8 +12,9 @@ export interface ServiceItem {
 export interface ProjectItem {
   id: string;
   title: string;
-  category: 'Cloud & DevOps' | 'Web Development' | 'Software' | 'Automation';
-  type: 'Demo' | 'Concept' | 'Client Project';
+  subtitle?: string;
+  category: string;
+  type: string;
   shortDescription: string;
   fullOverview: string;
   challenge: string;

@@ -12,7 +12,7 @@ export const PortfolioPage: React.FC = () => {
   const [selectedCategory, setSelectedCategory] = useState<string>('All');
   const [activeModalProject, setActiveModalProject] = useState<ProjectItem | null>(null);
 
-  const categories = ['All', 'Cloud & DevOps', 'Web Development', 'Software', 'Automation'];
+  const categories = ['All', 'AI & Web Platform', 'Cloud & DevOps', 'Backend & Cloud', 'DevOps & Automation'];
 
   const filteredProjects = selectedCategory === 'All'
     ? PROJECTS_DATA

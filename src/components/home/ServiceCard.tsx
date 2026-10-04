@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { Cloud, Layout, Code2, TrendingUp, Share2, Wrench, ArrowRight } from 'lucide-react';
+import { Cloud, Layout, Code2, TrendingUp, Share2, Wrench, ArrowRight, Cpu } from 'lucide-react';
 import { ServiceItem } from '../../types';
 
 interface ServiceCardProps {
@@ -16,6 +16,8 @@ export const ServiceCard: React.FC<ServiceCardProps> = ({ service }) => {
         return <Layout className="w-6 h-6 text-brand-electricBlue" />;
       case 'Code2':
         return <Code2 className="w-6 h-6 text-brand-cyanAccent" />;
+      case 'Cpu':
+        return <Cpu className="w-6 h-6 text-brand-cyanAccent" />;
       case 'TrendingUp':
         return <TrendingUp className="w-6 h-6 text-brand-electricBlue" />;
       case 'Share2':
