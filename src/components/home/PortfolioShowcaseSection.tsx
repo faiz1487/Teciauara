@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useRef, useEffect } from 'react';
 import { 
   Cloud, Cpu, Database, ShieldCheck, CheckCircle2, ArrowRight, 
   Terminal, Layers, Globe, Activity, Zap, Check, Lock, 
@@ -29,6 +29,40 @@ interface PortfolioShowcaseSectionProps {
 }
 
 export const PortfolioShowcaseSection: React.FC<PortfolioShowcaseSectionProps> = ({ onSelectProject }) => {
+  const intervixaVideoRef = useRef<HTMLVideoElement>(null);
+
+  useEffect(() => {
+    const video = intervixaVideoRef.current;
+    if (!video) return;
+
+    video.defaultMuted = true;
+    video.muted = true;
+
+    // Viewport-aware playback: stream and play only when in view
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            video.muted = true;
+            const playPromise = video.play();
+            if (playPromise !== undefined) {
+              playPromise.catch(() => {});
+            }
+          } else {
+            video.pause();
+          }
+        });
+      },
+      { threshold: 0.1, rootMargin: '150px' }
+    );
+
+    observer.observe(video);
+
+    return () => {
+      observer.disconnect();
+    };
+  }, []);
+
   return (
     <section id="work" className="py-24 sm:py-32 bg-[#050B17] relative overflow-hidden">
       {/* Background ambient lighting and subtle grid */}
@@ -80,16 +114,25 @@ export const PortfolioShowcaseSection: React.FC<PortfolioShowcaseSectionProps> =
           {/* ========================================================================= */}
           <div 
             onClick={() => onSelectProject(PROJECTS_DATA[0])}
-            className="group cursor-pointer rounded-[28px] bg-[#071328] border border-brand-cyanAccent/35 hover:border-brand-cyanAccent/80 shadow-[0_12px_45px_rgba(0,0,0,0.6)] hover:shadow-[0_0_50px_rgba(0,200,232,0.22)] transition-all duration-500 overflow-hidden relative min-h-[460px] lg:h-[480px] xl:h-[500px] flex flex-col justify-between"
+            className="group cursor-pointer rounded-[28px] bg-[#071328] border border-brand-cyanAccent/35 border-t-cyan-300/60 shadow-[0_16px_50px_rgba(0,0,0,0.7),inset_0_1px_0_0_rgba(255,255,255,0.18)] hover:border-brand-cyanAccent/80 hover:shadow-[0_0_50px_rgba(0,200,232,0.25)] transition-all duration-500 overflow-hidden relative min-h-[460px] lg:h-[480px] xl:h-[500px] flex flex-col justify-between"
           >
             {/* 1. Full-Bleed Video Background Layer */}
             <div className="absolute inset-0 w-full h-full overflow-hidden pointer-events-none z-0">
+              {/* Fallback Base Poster Plate: Instant visual, prevents blank card on slow networks */}
+              <img
+                src="/intervixa-demo-poster.jpg"
+                alt="Intervixa AI Demo Preview"
+                loading="lazy"
+                decoding="async"
+                className="absolute inset-0 w-full h-full object-cover object-center lg:object-right"
+              />
+
               <video
-                autoPlay
+                ref={intervixaVideoRef}
                 loop
                 muted
                 playsInline
-                preload="auto"
+                preload="metadata"
                 poster="/intervixa-demo-poster.jpg"
                 className="absolute inset-0 w-full h-full object-cover object-center lg:object-right transition-transform duration-700 ease-out group-hover:scale-105"
                 style={{
@@ -176,7 +219,7 @@ export const PortfolioShowcaseSection: React.FC<PortfolioShowcaseSectionProps> =
           {/* ========================================================================= */}
           <div 
             onClick={() => onSelectProject(PROJECTS_DATA[1])}
-            className="group cursor-pointer rounded-[28px] bg-[#071328]/95 backdrop-blur-xl border border-slate-800/90 hover:border-brand-electricBlue/60 shadow-[0_12px_45px_rgba(0,0,0,0.55)] hover:shadow-[0_0_40px_rgba(0,122,255,0.18)] transition-all duration-500 overflow-hidden relative min-h-[440px] lg:h-[460px] xl:h-[480px] flex flex-col lg:flex-row"
+            className="group cursor-pointer rounded-[28px] bg-[#071328]/95 backdrop-blur-xl border border-white/[0.08] border-t-white/[0.24] hover:border-brand-electricBlue/60 hover:border-t-brand-cyanAccent/80 shadow-[0_16px_50px_rgba(0,0,0,0.7),inset_0_1px_0_0_rgba(255,255,255,0.12)] hover:shadow-[0_0_40px_rgba(0,122,255,0.22)] transition-all duration-500 overflow-hidden relative min-h-[440px] lg:h-[460px] xl:h-[480px] flex flex-col lg:flex-row"
           >
             {/* Specular top highlight */}
             <div className="absolute top-0 inset-x-0 h-[2px] bg-gradient-to-r from-transparent via-brand-electricBlue to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-30" />
@@ -323,7 +366,7 @@ export const PortfolioShowcaseSection: React.FC<PortfolioShowcaseSectionProps> =
           {/* ========================================================================= */}
           <div 
             onClick={() => onSelectProject(PROJECTS_DATA[2])}
-            className="group cursor-pointer rounded-[28px] bg-[#071328]/95 backdrop-blur-xl border border-slate-800/90 hover:border-indigo-500/60 shadow-[0_12px_45px_rgba(0,0,0,0.55)] hover:shadow-[0_0_40px_rgba(99,102,241,0.18)] transition-all duration-500 overflow-hidden relative min-h-[440px] lg:h-[460px] xl:h-[480px] flex flex-col lg:flex-row"
+            className="group cursor-pointer rounded-[28px] bg-[#071328]/95 backdrop-blur-xl border border-white/[0.08] border-t-white/[0.24] hover:border-indigo-500/60 hover:border-t-indigo-400/80 shadow-[0_16px_50px_rgba(0,0,0,0.7),inset_0_1px_0_0_rgba(255,255,255,0.12)] hover:shadow-[0_0_40px_rgba(99,102,241,0.22)] transition-all duration-500 overflow-hidden relative min-h-[440px] lg:h-[460px] xl:h-[480px] flex flex-col lg:flex-row"
           >
             {/* Specular top highlight */}
             <div className="absolute top-0 inset-x-0 h-[2px] bg-gradient-to-r from-transparent via-indigo-500 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-30" />
@@ -470,7 +513,7 @@ export const PortfolioShowcaseSection: React.FC<PortfolioShowcaseSectionProps> =
           {/* ========================================================================= */}
           <div 
             onClick={() => onSelectProject(PROJECTS_DATA[3])}
-            className="group cursor-pointer rounded-[28px] bg-[#071328]/95 backdrop-blur-xl border border-slate-800/90 hover:border-emerald-500/60 shadow-[0_12px_45px_rgba(0,0,0,0.55)] hover:shadow-[0_0_40px_rgba(16,185,129,0.18)] transition-all duration-500 overflow-hidden relative min-h-[440px] lg:h-[460px] xl:h-[480px] flex flex-col lg:flex-row"
+            className="group cursor-pointer rounded-[28px] bg-[#071328]/95 backdrop-blur-xl border border-white/[0.08] border-t-white/[0.24] hover:border-emerald-500/60 hover:border-t-emerald-400/80 shadow-[0_16px_50px_rgba(0,0,0,0.7),inset_0_1px_0_0_rgba(255,255,255,0.12)] hover:shadow-[0_0_40px_rgba(16,185,129,0.22)] transition-all duration-500 overflow-hidden relative min-h-[440px] lg:h-[460px] xl:h-[480px] flex flex-col lg:flex-row"
           >
             {/* Specular top highlight */}
             <div className="absolute top-0 inset-x-0 h-[2px] bg-gradient-to-r from-transparent via-emerald-500 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-30" />

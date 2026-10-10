@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { X, CheckCircle2, Globe, Mail, Phone, User, Sparkles, ArrowRight, ShieldCheck, Zap } from 'lucide-react';
+import { X, CheckCircle2, Globe, Mail, Phone, User, ArrowRight, ShieldCheck, Cpu, Terminal } from 'lucide-react';
 
 interface FreeAuditModalProps {
   isOpen: boolean;
@@ -12,7 +12,7 @@ export const FreeAuditModal: React.FC<FreeAuditModalProps> = ({ isOpen, onClose 
     name: '',
     email: '',
     phone: '',
-    primaryConcern: 'Overall Performance & Speed',
+    primaryConcern: 'Cloud Migration & Cost Optimization',
   });
 
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -31,7 +31,7 @@ export const FreeAuditModal: React.FC<FreeAuditModalProps> = ({ isOpen, onClose 
     setTimeout(() => {
       setIsSubmitting(false);
       setIsSubmitted(true);
-    }, 1000);
+    }, 800);
   };
 
   const handleResetAndClose = () => {
@@ -41,7 +41,7 @@ export const FreeAuditModal: React.FC<FreeAuditModalProps> = ({ isOpen, onClose 
       name: '',
       email: '',
       phone: '',
-      primaryConcern: 'Overall Performance & Speed',
+      primaryConcern: 'Cloud Migration & Cost Optimization',
     });
     onClose();
   };
@@ -58,7 +58,7 @@ export const FreeAuditModal: React.FC<FreeAuditModalProps> = ({ isOpen, onClose 
       <div className="relative w-full max-w-lg bg-[#070F1E] border border-brand-electricBlue/40 rounded-3xl shadow-2xl overflow-hidden z-10 my-8">
         
         {/* Top Glow Accent Bar */}
-        <div className="h-1.5 w-full bg-gradient-to-r from-brand-electricBlue via-brand-cyanAccent to-emerald-400" />
+        <div className="h-1.5 w-full bg-gradient-to-r from-brand-electricBlue via-brand-cyanAccent to-sky-400" />
 
         {/* Close Button */}
         <button
@@ -71,29 +71,33 @@ export const FreeAuditModal: React.FC<FreeAuditModalProps> = ({ isOpen, onClose 
 
         {isSubmitted ? (
           <div className="p-8 sm:p-10 text-center space-y-5">
-            <div className="w-16 h-16 rounded-2xl bg-emerald-500/10 border border-emerald-500/30 text-emerald-400 flex items-center justify-center mx-auto shadow-glow-cyan animate-in zoom-in-50 duration-200">
+            <div className="w-16 h-16 rounded-2xl bg-brand-cyanAccent/15 border border-brand-cyanAccent/30 text-brand-cyanAccent flex items-center justify-center mx-auto shadow-glow-cyan animate-in zoom-in-50 duration-200">
               <CheckCircle2 className="w-9 h-9" />
             </div>
 
             <div className="space-y-2">
-              <h3 className="text-2xl font-bold text-white tracking-tight">Audit Request Confirmed!</h3>
+              <h3 className="text-2xl font-bold text-white tracking-tight">Assessment Request Received</h3>
               <p className="text-slate-300 text-sm max-w-sm mx-auto leading-relaxed">
-                We're analyzing <span className="text-brand-cyanAccent font-semibold font-mono">{formData.websiteUrl}</span>. Your comprehensive PDF report will be delivered within 24 hours.
+                Our senior cloud & DevOps engineering team has logged your technical parameters for <span className="text-brand-cyanAccent font-semibold font-mono">{formData.websiteUrl}</span>.
               </p>
             </div>
 
             <div className="p-4 rounded-2xl bg-[#0B1528] border border-slate-800 text-xs text-slate-400 text-left space-y-1.5 font-mono">
               <div className="flex justify-between">
-                <span className="text-slate-500">Website:</span>
+                <span className="text-slate-500">System Domain:</span>
                 <span className="text-white font-medium">{formData.websiteUrl}</span>
               </div>
               <div className="flex justify-between">
-                <span className="text-slate-500">Recipient:</span>
+                <span className="text-slate-500">Focus Area:</span>
+                <span className="text-brand-cyanAccent font-medium">{formData.primaryConcern}</span>
+              </div>
+              <div className="flex justify-between">
+                <span className="text-slate-500">Work Email:</span>
                 <span className="text-white font-medium">{formData.email}</span>
               </div>
               <div className="flex justify-between">
-                <span className="text-slate-500">Price:</span>
-                <span className="text-emerald-400 font-bold">₹0 (100% FREE)</span>
+                <span className="text-slate-500">Status:</span>
+                <span className="text-emerald-400 font-bold">Queued for Architect Review</span>
               </div>
             </div>
 
@@ -109,22 +113,22 @@ export const FreeAuditModal: React.FC<FreeAuditModalProps> = ({ isOpen, onClose 
             {/* Header info */}
             <div className="mb-6">
               <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-brand-electricBlue/20 border border-brand-electricBlue/30 text-xs font-semibold text-brand-cyanAccent font-mono mb-2">
-                <Sparkles className="w-3.5 h-3.5 text-brand-cyanAccent" />
-                <span>LIMITED TIME OFFER • 100% FREE</span>
+                <Terminal className="w-3.5 h-3.5 text-brand-cyanAccent" />
+                <span>CONFIDENTIAL TECHNICAL DIAGNOSTIC</span>
               </div>
               <h2 className="text-2xl font-bold text-white tracking-tight">
-                Claim Your Free Website Audit
+                Request Architecture Assessment
               </h2>
               <p className="text-xs sm:text-sm text-slate-400 mt-1">
-                Worth <span className="line-through text-rose-400 font-medium">₹4,999</span> — completely complimentary. Discover speed, SEO, and UX roadblocks.
+                Collaborate with senior cloud & systems engineers. We analyze scalability roadblocks, deployment latency, and cloud cost efficiency.
               </p>
             </div>
 
             <form onSubmit={handleSubmit} className="space-y-4">
-              {/* Website URL */}
+              {/* System URL */}
               <div>
                 <label className="block text-xs font-semibold text-slate-300 uppercase tracking-wider mb-1.5">
-                  Website URL <span className="text-rose-400">*</span>
+                  System Domain / Website URL <span className="text-rose-400">*</span>
                 </label>
                 <div className="relative">
                   <Globe className="w-4 h-4 text-slate-500 absolute left-3.5 top-1/2 -translate-y-1/2" />
@@ -144,7 +148,7 @@ export const FreeAuditModal: React.FC<FreeAuditModalProps> = ({ isOpen, onClose 
                 {/* Full Name */}
                 <div>
                   <label className="block text-xs font-semibold text-slate-300 uppercase tracking-wider mb-1.5">
-                    Your Name <span className="text-rose-400">*</span>
+                    Engineering Contact / Name <span className="text-rose-400">*</span>
                   </label>
                   <div className="relative">
                     <User className="w-4 h-4 text-slate-500 absolute left-3.5 top-1/2 -translate-y-1/2" />
@@ -163,7 +167,7 @@ export const FreeAuditModal: React.FC<FreeAuditModalProps> = ({ isOpen, onClose 
                 {/* Email Address */}
                 <div>
                   <label className="block text-xs font-semibold text-slate-300 uppercase tracking-wider mb-1.5">
-                    Report Delivery Email <span className="text-rose-400">*</span>
+                    Work Email Address <span className="text-rose-400">*</span>
                   </label>
                   <div className="relative">
                     <Mail className="w-4 h-4 text-slate-500 absolute left-3.5 top-1/2 -translate-y-1/2" />
@@ -183,7 +187,7 @@ export const FreeAuditModal: React.FC<FreeAuditModalProps> = ({ isOpen, onClose 
               {/* Phone / WhatsApp */}
               <div>
                 <label className="block text-xs font-semibold text-slate-300 uppercase tracking-wider mb-1.5">
-                  Phone / WhatsApp <span className="text-slate-500 text-[11px] font-normal">(For instant PDF copy)</span>
+                  Phone / WhatsApp <span className="text-slate-500 text-[11px] font-normal">(Optional, for direct technical discussion)</span>
                 </label>
                 <div className="relative">
                   <Phone className="w-4 h-4 text-slate-500 absolute left-3.5 top-1/2 -translate-y-1/2" />
@@ -201,7 +205,7 @@ export const FreeAuditModal: React.FC<FreeAuditModalProps> = ({ isOpen, onClose 
               {/* Primary Focus Area */}
               <div>
                 <label className="block text-xs font-semibold text-slate-300 uppercase tracking-wider mb-1.5">
-                  Primary Focus / Concern
+                  Primary Architecture Focus
                 </label>
                 <select
                   name="primaryConcern"
@@ -209,11 +213,12 @@ export const FreeAuditModal: React.FC<FreeAuditModalProps> = ({ isOpen, onClose 
                   onChange={handleChange}
                   className="w-full px-4 py-2.5 rounded-xl bg-[#0B1528] border border-slate-700/80 text-white text-sm focus:outline-none focus:border-brand-cyanAccent transition-colors"
                 >
-                  <option value="Overall Performance & Speed">Overall Performance & Speed</option>
-                  <option value="Google Rankings & SEO">Google Rankings & SEO</option>
-                  <option value="Mobile Responsiveness & UI/UX">Mobile Responsiveness & UI/UX</option>
-                  <option value="Low Conversions & Inquiries">Low Conversions & Inquiries</option>
-                  <option value="Technical Security & Errors">Technical Security & Errors</option>
+                  <option value="Cloud Migration & Cost Optimization">Cloud Migration & Cost Optimization (AWS/GCP)</option>
+                  <option value="DevOps Automation & CI/CD Pipelines">DevOps Automation & CI/CD Pipelines</option>
+                  <option value="Zero-Trust Security & Access Governance">Zero-Trust Security & Access Governance</option>
+                  <option value="High Availability & Scaling Architecture">High Availability & Scaling Architecture</option>
+                  <option value="Database & Query Latency Optimization">Database & Query Latency Optimization</option>
+                  <option value="AI & Data Infrastructure Deployment">AI & Data Infrastructure Deployment</option>
                 </select>
               </div>
 
@@ -226,11 +231,11 @@ export const FreeAuditModal: React.FC<FreeAuditModalProps> = ({ isOpen, onClose 
                   {isSubmitting ? (
                     <>
                       <div className="w-4 h-4 border-2 border-white/30 border-t-white rounded-full animate-spin" />
-                      <span>Generating Audit Request...</span>
+                      <span>Submitting Assessment Request...</span>
                     </>
                   ) : (
                     <>
-                      <span>Get My Free Audit Report</span>
+                      <span>Submit Technical Review Request</span>
                       <ArrowRight className="w-4 h-4" />
                     </>
                   )}
@@ -239,12 +244,12 @@ export const FreeAuditModal: React.FC<FreeAuditModalProps> = ({ isOpen, onClose 
                 <div className="mt-3 flex items-center justify-center gap-4 text-[11px] text-slate-400">
                   <span className="flex items-center gap-1">
                     <ShieldCheck className="w-3.5 h-3.5 text-emerald-400" />
-                    No spam ever
+                    NDA Protected & Confidential
                   </span>
                   <span>•</span>
                   <span className="flex items-center gap-1">
-                    <Zap className="w-3.5 h-3.5 text-brand-cyanAccent" />
-                    Delivered in 24h
+                    <Cpu className="w-3.5 h-3.5 text-brand-cyanAccent" />
+                    Reviewed by Senior Engineers
                   </span>
                 </div>
               </div>

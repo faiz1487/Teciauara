@@ -25,12 +25,12 @@ export const WhyChooseCard: React.FC<WhyChooseCardProps> = ({ title, description
   };
 
   return (
-    <div className="relative p-6 sm:p-7 rounded-3xl bg-[#0B1528]/80 border border-slate-800 shadow-card hover:shadow-glow-blue hover:border-brand-electricBlue/50 transition-all duration-300 group">
+    <div className="relative p-6 sm:p-7 rounded-3xl bg-[#0B1528]/80 border border-white/[0.08] border-t-white/[0.22] shadow-[0_12px_35px_-8px_rgba(0,0,0,0.75),inset_0_1px_0_0_rgba(255,255,255,0.12)] hover:shadow-glow-blue hover:border-brand-electricBlue/50 hover:border-t-brand-cyanAccent/80 hover:-translate-y-1 transition-all duration-300 group">
       <div className="flex items-center justify-between mb-5">
-        <div className="w-12 h-12 rounded-2xl bg-slate-900 border border-slate-700/80 flex items-center justify-center group-hover:scale-105 group-hover:border-brand-cyanAccent/50 transition-all">
+        <div className="w-12 h-12 rounded-2xl bg-slate-900/90 border border-white/10 flex items-center justify-center group-hover:scale-105 group-hover:border-brand-cyanAccent/50 transition-all">
           {getIcon()}
         </div>
-        <span className="text-xs font-mono font-bold text-slate-500 bg-slate-900/80 px-2.5 py-1 rounded-lg border border-slate-800">
+        <span className="text-xs font-mono font-bold text-slate-400 bg-slate-900/80 px-2.5 py-1 rounded-lg border border-white/10">
           0{index + 1}
         </span>
       </div>
@@ -39,7 +39,7 @@ export const WhyChooseCard: React.FC<WhyChooseCardProps> = ({ title, description
         {title}
       </h3>
 
-      <p className="mt-2.5 text-sm text-slate-400 leading-relaxed font-normal">
+      <p className="mt-2.5 text-sm text-slate-300 leading-relaxed font-normal">
         {description}
       </p>
     </div>

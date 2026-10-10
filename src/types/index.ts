@@ -53,5 +53,6 @@ export interface ContactFormData {
   companyName?: string;
   serviceRequired: string;
   estimatedBudget?: string;
+  targetTimeline?: string;
   projectDetails: string;
 }

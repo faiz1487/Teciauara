@@ -30,14 +30,14 @@ export const ServiceCard: React.FC<ServiceCardProps> = ({ service }) => {
   };
 
   return (
-    <div className="group relative flex flex-col justify-between h-full p-6 sm:p-7 rounded-3xl bg-[#0B1528]/80 border border-slate-800 shadow-card hover:shadow-card-hover hover:border-brand-electricBlue/60 hover:-translate-y-1 transition-all duration-300 backdrop-blur-sm overflow-hidden">
+    <div className="group relative flex flex-col justify-between h-full p-6 sm:p-7 rounded-3xl bg-[#0B1528]/80 border border-white/[0.08] border-t-white/[0.22] shadow-[0_12px_35px_-8px_rgba(0,0,0,0.75),inset_0_1px_0_0_rgba(255,255,255,0.12)] hover:shadow-card-hover hover:border-brand-electricBlue/60 hover:border-t-brand-cyanAccent/80 hover:-translate-y-1 transition-all duration-300 backdrop-blur-sm overflow-hidden">
       
       {/* Top subtle hover glow line */}
       <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-transparent via-brand-cyanAccent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
 
       <div>
         {/* Top: Icon container */}
-        <div className="w-13 h-13 rounded-2xl bg-slate-900 border border-slate-700/80 flex items-center justify-center mb-5 group-hover:border-brand-electricBlue/50 group-hover:shadow-glow-cyan transition-all duration-300">
+        <div className="w-13 h-13 rounded-2xl bg-slate-900/90 border border-white/10 flex items-center justify-center mb-5 group-hover:border-brand-electricBlue/50 group-hover:shadow-glow-cyan transition-all duration-300">
           {getIcon(service.iconName)}
         </div>
 
@@ -47,7 +47,7 @@ export const ServiceCard: React.FC<ServiceCardProps> = ({ service }) => {
         </h3>
 
         {/* Description */}
-        <p className="mt-3 text-sm text-slate-400 leading-relaxed font-normal">
+        <p className="mt-3 text-sm text-slate-300 leading-relaxed font-normal">
           {service.shortDescription}
         </p>
 

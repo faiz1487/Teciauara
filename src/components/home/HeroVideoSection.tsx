@@ -138,6 +138,7 @@ export const HeroVideoSection: React.FC<HeroVideoSectionProps> = ({ onScrollClic
           alt="Teciaura Technologies Cybernetic Infrastructure Environment"
           className="absolute inset-0 w-full h-full object-cover object-[70%_center] lg:object-center"
           loading="eager"
+          fetchPriority="high"
         />
 
         {/* Cinematic Video Layer */}

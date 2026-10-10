@@ -41,7 +41,7 @@ export const ServicesEditorialGrid: React.FC = () => {
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-6">
             
             {/* Card 1: Cloud & DevOps (7 cols) - Flagship Spotlight */}
-            <div className="lg:col-span-7 group relative rounded-3xl bg-gradient-to-br from-[#0B172E] via-[#091428] to-[#060E1D] border border-slate-800 p-8 sm:p-10 hover:border-brand-cyanAccent/60 shadow-card hover:shadow-card-hover transition-all duration-300 flex flex-col justify-between overflow-hidden">
+            <div className="lg:col-span-7 group relative rounded-3xl bg-gradient-to-br from-[#0B172E] via-[#091428] to-[#060E1D] border border-white/[0.08] border-t-white/[0.24] p-8 sm:p-10 hover:border-brand-cyanAccent/60 hover:border-t-brand-cyanAccent/80 shadow-[0_16px_40px_-10px_rgba(0,0,0,0.8),inset_0_1px_0_0_rgba(255,255,255,0.14)] hover:shadow-card-hover transition-all duration-300 flex flex-col justify-between overflow-hidden">
               {/* Subtle top glow line */}
               <div className="absolute top-0 inset-x-0 h-1 bg-gradient-to-r from-transparent via-brand-cyanAccent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
               
@@ -102,7 +102,7 @@ export const ServicesEditorialGrid: React.FC = () => {
             </div>
 
             {/* Card 2: Web Design & Dev (5 cols) - Visual Frontend Showcase */}
-            <div className="lg:col-span-5 group relative rounded-3xl bg-gradient-to-br from-[#0B172E] via-[#091428] to-[#060E1D] border border-slate-800 p-8 sm:p-10 hover:border-brand-electricBlue/60 shadow-card hover:shadow-card-hover transition-all duration-300 flex flex-col justify-between overflow-hidden">
+            <div className="lg:col-span-5 group relative rounded-3xl bg-gradient-to-br from-[#0B172E] via-[#091428] to-[#060E1D] border border-white/[0.08] border-t-white/[0.24] p-8 sm:p-10 hover:border-brand-electricBlue/60 hover:border-t-brand-electricBlue/80 shadow-[0_16px_40px_-10px_rgba(0,0,0,0.8),inset_0_1px_0_0_rgba(255,255,255,0.14)] hover:shadow-card-hover transition-all duration-300 flex flex-col justify-between overflow-hidden">
               <div className="absolute top-0 inset-x-0 h-1 bg-gradient-to-r from-transparent via-brand-electricBlue to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
 
               <div>
@@ -175,7 +175,7 @@ export const ServicesEditorialGrid: React.FC = () => {
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
             
             {/* Card 3: Custom Software & Apps */}
-            <div className="group relative rounded-3xl bg-[#09152C]/80 border border-slate-800 p-6 sm:p-7 hover:border-brand-electricBlue/60 hover:-translate-y-1 transition-all duration-300 flex flex-col justify-between">
+            <div className="group relative rounded-3xl bg-[#09152C]/80 border border-white/[0.08] border-t-white/[0.22] shadow-[0_12px_35px_-8px_rgba(0,0,0,0.75),inset_0_1px_0_0_rgba(255,255,255,0.12)] p-6 sm:p-7 hover:border-brand-electricBlue/60 hover:border-t-brand-cyanAccent/80 hover:-translate-y-1 transition-all duration-300 flex flex-col justify-between">
               <div>
                 <PremiumIconBadge variant="indigo" size="md" className="mb-5">
                   <PremiumCodeIcon className="w-6 h-6" />
@@ -183,7 +183,7 @@ export const ServicesEditorialGrid: React.FC = () => {
                 <h4 className="text-lg font-bold text-white group-hover:text-brand-cyanAccent transition-colors">
                   Custom Software & Apps
                 </h4>
-                <p className="mt-2 text-xs sm:text-sm text-slate-400 leading-relaxed">
+                <p className="mt-2 text-xs sm:text-sm text-slate-300 leading-relaxed">
                   Tailored web applications, internal tools, customer portals, and API integrations engineered for daily commercial scale.
                 </p>
                 <div className="mt-4 pt-3 border-t border-slate-800 text-xs space-y-1.5 text-slate-300">
@@ -211,7 +211,7 @@ export const ServicesEditorialGrid: React.FC = () => {
             </div>
 
             {/* Card 4: AI & Intelligent Automation */}
-            <div className="group relative rounded-3xl bg-[#09152C]/80 border border-slate-800 p-6 sm:p-7 hover:border-brand-cyanAccent/60 hover:-translate-y-1 transition-all duration-300 flex flex-col justify-between">
+            <div className="group relative rounded-3xl bg-[#09152C]/80 border border-white/[0.08] border-t-white/[0.22] shadow-[0_12px_35px_-8px_rgba(0,0,0,0.75),inset_0_1px_0_0_rgba(255,255,255,0.12)] p-6 sm:p-7 hover:border-brand-cyanAccent/60 hover:border-t-brand-cyanAccent/80 hover:-translate-y-1 transition-all duration-300 flex flex-col justify-between">
               <div>
                 <PremiumIconBadge variant="purple" size="md" className="mb-5">
                   <PremiumAiBrainIcon className="w-6 h-6" />
@@ -219,7 +219,7 @@ export const ServicesEditorialGrid: React.FC = () => {
                 <h4 className="text-lg font-bold text-white group-hover:text-brand-cyanAccent transition-colors">
                   AI & Intelligent Automation
                 </h4>
-                <p className="mt-2 text-xs sm:text-sm text-slate-400 leading-relaxed">
+                <p className="mt-2 text-xs sm:text-sm text-slate-300 leading-relaxed">
                   Custom LLM agent workflows, intelligent document pipelines, and autonomous integrations that eliminate operational drag.
                 </p>
                 <div className="mt-4 pt-3 border-t border-slate-800 text-xs space-y-1.5 text-slate-300">
@@ -247,7 +247,7 @@ export const ServicesEditorialGrid: React.FC = () => {
             </div>
 
             {/* Card 5: Digital Marketing & SEO */}
-            <div className="group relative rounded-3xl bg-[#09152C]/80 border border-slate-800 p-6 sm:p-7 hover:border-brand-electricBlue/60 hover:-translate-y-1 transition-all duration-300 flex flex-col justify-between">
+            <div className="group relative rounded-3xl bg-[#09152C]/80 border border-white/[0.08] border-t-white/[0.22] shadow-[0_12px_35px_-8px_rgba(0,0,0,0.75),inset_0_1px_0_0_rgba(255,255,255,0.12)] p-6 sm:p-7 hover:border-brand-electricBlue/60 hover:border-t-brand-cyanAccent/80 hover:-translate-y-1 transition-all duration-300 flex flex-col justify-between">
               <div>
                 <PremiumIconBadge variant="cyan" size="md" className="mb-5">
                   <PremiumTrendingIcon className="w-6 h-6" />
@@ -255,7 +255,7 @@ export const ServicesEditorialGrid: React.FC = () => {
                 <h4 className="text-lg font-bold text-white group-hover:text-brand-cyanAccent transition-colors">
                   Digital Marketing & SEO
                 </h4>
-                <p className="mt-2 text-xs sm:text-sm text-slate-400 leading-relaxed">
+                <p className="mt-2 text-xs sm:text-sm text-slate-300 leading-relaxed">
                   Audit technical search health, capture commercial buyer intent queries, and drive high-intent organic traffic growth.
                 </p>
                 <div className="mt-4 pt-3 border-t border-slate-800 text-xs space-y-1.5 text-slate-300">
@@ -283,7 +283,7 @@ export const ServicesEditorialGrid: React.FC = () => {
             </div>
 
             {/* Card 6: IT Infrastructure & Support */}
-            <div className="group relative rounded-3xl bg-[#09152C]/80 border border-slate-800 p-6 sm:p-7 hover:border-emerald-500/60 hover:-translate-y-1 transition-all duration-300 flex flex-col justify-between">
+            <div className="group relative rounded-3xl bg-[#09152C]/80 border border-white/[0.08] border-t-white/[0.22] shadow-[0_12px_35px_-8px_rgba(0,0,0,0.75),inset_0_1px_0_0_rgba(255,255,255,0.12)] p-6 sm:p-7 hover:border-emerald-500/60 hover:border-t-emerald-400/80 hover:-translate-y-1 transition-all duration-300 flex flex-col justify-between">
               <div>
                 <PremiumIconBadge variant="emerald" size="md" className="mb-5">
                   <PremiumWrenchIcon className="w-6 h-6" />
@@ -291,7 +291,7 @@ export const ServicesEditorialGrid: React.FC = () => {
                 <h4 className="text-lg font-bold text-white group-hover:text-brand-cyanAccent transition-colors">
                   IT Infrastructure & Support
                 </h4>
-                <p className="mt-2 text-xs sm:text-sm text-slate-400 leading-relaxed">
+                <p className="mt-2 text-xs sm:text-sm text-slate-300 leading-relaxed">
                   Preventive system maintenance, security patching, backup verification, and rapid-response SLA support for total peace of mind.
                 </p>
                 <div className="mt-4 pt-3 border-t border-slate-800 text-xs space-y-1.5 text-slate-300">

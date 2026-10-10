@@ -28,6 +28,134 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Plus+Jakarta+Sans:wght@500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+
+    <!-- JSON-LD Structured Data Schema (Google Search & Rich Snippets) -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "Organization",
+          "@id": "https://teciaura.com/#organization",
+          "name": "Teciaura Technologies",
+          "alternateName": "TECIAURA",
+          "url": "https://teciaura.com/",
+          "logo": {
+            "@type": "ImageObject",
+            "url": "https://teciaura.com/teciaura-logo-white.png",
+            "caption": "Teciaura Technologies Logo"
+          },
+          "description": "Teciaura Technologies engineers production-ready cloud infrastructure, DevOps automation, bespoke software, and intelligent AI workflows for ambitious businesses.",
+          "telephone": "+91-8540932264",
+          "email": "info@teciaura.com",
+          "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "Noida",
+            "addressRegion": "Uttar Pradesh",
+            "addressCountry": "IN"
+          },
+          "sameAs": [
+            "https://linkedin.com/company/teciaura",
+            "https://twitter.com/teciaura",
+            "https://github.com/teciaura"
+          ],
+          "contactPoint": {
+            "@type": "ContactPoint",
+            "telephone": "+91-8540932264",
+            "contactType": "customer support & sales",
+            "email": "info@teciaura.com",
+            "availableLanguage": ["English", "Hindi"]
+          },
+          "knowsAbout": [
+            "Cloud Infrastructure",
+            "Amazon Web Services (AWS)",
+            "Google Cloud Platform (GCP)",
+            "DevOps Automation",
+            "Terraform Infrastructure as Code",
+            "Docker & Kubernetes",
+            "Continuous Integration and Continuous Delivery (CI/CD)",
+            "Web Architecture",
+            "Artificial Intelligence & LLM Workflows",
+            "Software Engineering"
+          ]
+        },
+        {
+          "@type": "ProfessionalService",
+          "@id": "https://teciaura.com/#service",
+          "name": "Teciaura Technologies",
+          "url": "https://teciaura.com/",
+          "telephone": "+91-8540932264",
+          "priceRange": "$$",
+          "parentOrganization": {
+            "@id": "https://teciaura.com/#organization"
+          },
+          "hasOfferCatalog": {
+            "@type": "OfferCatalog",
+            "name": "Technology Engineering Capabilities",
+            "itemListElement": [
+              {
+                "@type": "Offer",
+                "itemOffered": {
+                  "@type": "Service",
+                  "name": "Cloud & DevOps Infrastructure",
+                  "description": "Scalable cloud architecture, Terraform IaC, containerization, and zero-downtime CI/CD automation."
+                }
+              },
+              {
+                "@type": "Offer",
+                "itemOffered": {
+                  "@type": "Service",
+                  "name": "High-Performance Web Design & Development",
+                  "description": "Sub-second responsive frontend applications, design systems, and headless web platforms."
+                }
+              },
+              {
+                "@type": "Offer",
+                "itemOffered": {
+                  "@type": "Service",
+                  "name": "Custom Software & SaaS Development",
+                  "description": "Bespoke full-stack applications, decoupled microservices, and secure API architectures."
+                }
+              },
+              {
+                "@type": "Offer",
+                "itemOffered": {
+                  "@type": "Service",
+                  "name": "AI & Intelligent Automation",
+                  "description": "Autonomous agent pipelines, custom LLM integrations, document intelligence, and RAG architectures."
+                }
+              },
+              {
+                "@type": "Offer",
+                "itemOffered": {
+                  "@type": "Service",
+                  "name": "Technical SEO & Digital Architecture",
+                  "description": "Crawlability audits, Core Web Vitals optimization, and commercial intent search indexation."
+                }
+              },
+              {
+                "@type": "Offer",
+                "itemOffered": {
+                  "@type": "Service",
+                  "name": "IT Infrastructure Support & Maintenance",
+                  "description": "SLA-backed system health monitoring, security vulnerability patching, and disaster recovery."
+                }
+              }
+            ]
+          }
+        },
+        {
+          "@type": "WebSite",
+          "@id": "https://teciaura.com/#website",
+          "url": "https://teciaura.com/",
+          "name": "Teciaura Technologies",
+          "publisher": {
+            "@id": "https://teciaura.com/#organization"
+          }
+        }
+      ]
+    }
+    </script>
   </head>
   <body class="bg-[#050B17] text-slate-300 antialiased font-sans selection:bg-brand-electricBlue selection:text-white overflow-x-hidden min-h-screen">
     <div id="root"></div>

@@ -37,7 +37,7 @@ export const ValueStrip: React.FC = () => {
           {COMPANY_INFO.valueStrip.map((item, index) => (
             <div 
               key={item.title} 
-              className={`flex items-start gap-4 p-5 rounded-2xl bg-[#0B1528]/85 border border-slate-800 hover:border-brand-electricBlue/50 shadow-card hover:shadow-glow-blue transition-all duration-300 group scroll-reveal ${
+              className={`flex items-start gap-4 p-5 rounded-2xl bg-[#0B1528]/85 border border-white/[0.08] border-t-white/[0.24] shadow-[0_8px_30px_rgba(0,0,0,0.6),inset_0_1px_0_0_rgba(255,255,255,0.12)] hover:border-brand-electricBlue/50 hover:border-t-brand-cyanAccent/80 hover:shadow-glow-blue transition-all duration-300 group scroll-reveal ${
                 isInView ? 'is-visible' : ''
               }`}
               style={{
@@ -49,7 +49,7 @@ export const ValueStrip: React.FC = () => {
                 <h3 className="text-sm font-bold text-white tracking-tight group-hover:text-brand-cyanAccent transition-colors">
                   {item.title}
                 </h3>
-                <p className="text-xs text-slate-400 mt-1.5 leading-relaxed">
+                <p className="text-xs text-slate-300 mt-1.5 leading-relaxed">
                   {item.description}
                 </p>
               </div>

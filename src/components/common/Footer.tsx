@@ -27,7 +27,7 @@ export const Footer: React.FC = () => {
   ];
 
   return (
-    <footer className="bg-brand-footerBg text-slate-300 border-t border-slate-800">
+    <footer className="bg-brand-footerBg text-slate-300 border-t border-white/[0.10] shadow-[inset_0_1px_0_0_rgba(255,255,255,0.08)]">
       {/* Upper Footer: Brand Info, Links, and Contact */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-16 pb-12">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-10 lg:gap-8">

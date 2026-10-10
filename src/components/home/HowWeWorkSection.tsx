@@ -96,8 +96,8 @@ export const HowWeWorkSection: React.FC = () => {
                   onMouseEnter={() => setActiveStep(index)}
                   className={`group rounded-3xl p-6 sm:p-7 transition-all duration-300 flex flex-col justify-between cursor-pointer border ${
                     isSelected
-                      ? 'bg-gradient-to-b from-[#0E1E3C] to-[#071328] border-brand-cyanAccent/80 shadow-glow-cyan -translate-y-2'
-                      : 'bg-[#09152C]/80 border-slate-800 hover:border-slate-700 hover:bg-[#09152C]'
+                      ? 'bg-gradient-to-b from-[#0E1E3C] to-[#071328] border-brand-cyanAccent/80 border-t-cyan-300 shadow-glow-cyan -translate-y-2'
+                      : 'bg-[#09152C]/80 border-white/[0.08] border-t-white/[0.22] shadow-[0_8px_30px_rgba(0,0,0,0.6),inset_0_1px_0_0_rgba(255,255,255,0.12)] hover:border-brand-cyanAccent/50 hover:bg-[#09152C]'
                   }`}
                 >
                   <div>

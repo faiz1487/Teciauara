@@ -42,7 +42,7 @@ export const CareersSection: React.FC = () => {
             <Link
               key={job.id}
               to="/careers"
-              className="p-6 rounded-3xl bg-[#0B1528] border border-slate-800 shadow-card hover:border-brand-electricBlue/50 hover:shadow-glow-blue transition-all duration-200 flex flex-col justify-between group"
+              className="p-6 rounded-3xl bg-[#0B1528] border border-white/[0.08] border-t-white/[0.22] shadow-[0_10px_30px_-8px_rgba(0,0,0,0.7),inset_0_1px_0_0_rgba(255,255,255,0.12)] hover:border-brand-electricBlue/50 hover:border-t-brand-cyanAccent/80 hover:shadow-glow-blue hover:-translate-y-1 transition-all duration-300 flex flex-col justify-between group"
             >
               <div>
                 <div className="flex items-center justify-between gap-2 mb-4">

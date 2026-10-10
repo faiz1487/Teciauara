@@ -61,7 +61,7 @@ export const ContactPage: React.FC = () => {
             <div className="lg:col-span-5 space-y-6">
               
               {/* Channel 1: WhatsApp Instant Inquiry */}
-              <div className="p-6 sm:p-7 rounded-3xl bg-emerald-950/30 border border-emerald-800/60 shadow-card">
+              <div className="p-6 sm:p-7 rounded-3xl bg-emerald-950/30 border border-emerald-500/30 border-t-emerald-400/50 shadow-[0_12px_35px_-8px_rgba(0,0,0,0.7),inset_0_1px_0_0_rgba(16,185,129,0.15)]">
                 <div className="flex items-center gap-3 mb-3">
                   <div className="w-10 h-10 rounded-xl bg-emerald-600/30 border border-emerald-500/40 text-emerald-400 flex items-center justify-center shadow-sm">
                     <MessageCircle className="w-5 h-5" />
@@ -93,7 +93,7 @@ export const ContactPage: React.FC = () => {
               </div>
 
               {/* Direct Channels Cards */}
-              <div className="p-6 sm:p-7 rounded-3xl bg-[#0B1528] border border-slate-800 shadow-card space-y-5">
+              <div className="p-6 sm:p-7 rounded-3xl bg-[#0B1528] border border-white/[0.08] border-t-white/[0.22] shadow-[0_12px_35px_-8px_rgba(0,0,0,0.7),inset_0_1px_0_0_rgba(255,255,255,0.12)] space-y-5">
                 <h3 className="text-xs font-bold uppercase tracking-wider text-brand-cyanAccent pb-2 border-b border-slate-800 font-mono">
                   Direct Communication Channels
                 </h3>

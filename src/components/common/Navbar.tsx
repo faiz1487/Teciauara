@@ -1,14 +1,17 @@
 import React, { useState, useEffect, useRef } from 'react';
-import { NavLink, useLocation, useNavigate } from 'react-router-dom';
-import { Menu, X, ArrowRight, Sparkles, Home } from 'lucide-react';
+import { NavLink, Link, useLocation } from 'react-router-dom';
+import { 
+  Menu, X, ArrowRight, Sparkles, Home, 
+  MessageCircle, Activity, ExternalLink 
+} from 'lucide-react';
 import { Logo } from './Logo';
 import { Button } from './Button';
+import { COMPANY_INFO } from '../../data/companyInfo';
 
 export const Navbar: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const location = useLocation();
-  const navigate = useNavigate();
   const navRef = useRef<HTMLDivElement>(null);
 
   // Track scroll position for dynamic glass darkening & glow
@@ -49,11 +52,24 @@ export const Navbar: React.FC = () => {
     return () => window.removeEventListener('keydown', handleKeyDown);
   }, []);
 
+  // Prevent background scrolling when mobile menu is open
+  useEffect(() => {
+    if (isOpen) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = '';
+    }
+    return () => {
+      document.body.style.overflow = '';
+    };
+  }, [isOpen]);
+
   const navLinks = [
     { label: 'Home', path: '/', icon: Home },
     { label: 'Services', path: '/services' },
     { label: 'Portfolio', path: '/portfolio' },
     { label: 'About', path: '/about' },
+    { label: 'Insights', path: '/insights' },
     { label: 'Careers', path: '/careers' },
     { label: 'Contact', path: '/contact' },
   ];
@@ -62,7 +78,7 @@ export const Navbar: React.FC = () => {
   const glassStyle: React.CSSProperties = scrolled
     ? {
         background:
-          'linear-gradient(135deg, rgba(255, 255, 255, 0.16) 0%, rgba(255, 255, 255, 0.04) 35%, rgba(5, 11, 23, 0.85) 100%), rgba(7, 18, 41, 0.88)',
+          'linear-gradient(135deg, rgba(255, 255, 255, 0.16) 0%, rgba(255, 255, 255, 0.04) 35%, rgba(5, 11, 23, 0.88) 100%), rgba(7, 18, 41, 0.90)',
         boxShadow:
           'inset 0 1px 1px 0 rgba(255, 255, 255, 0.40), inset 0 0 20px 0 rgba(22, 119, 255, 0.12), 0 12px 35px 0 rgba(0, 0, 0, 0.6), 0 0 25px 0 rgba(22, 119, 255, 0.20)',
         WebkitBackdropFilter: 'blur(24px) saturate(190%) contrast(105%)',
@@ -70,7 +86,7 @@ export const Navbar: React.FC = () => {
       }
     : {
         background:
-          'linear-gradient(135deg, rgba(255, 255, 255, 0.14) 0%, rgba(255, 255, 255, 0.03) 35%, rgba(5, 11, 23, 0.65) 100%), rgba(7, 18, 41, 0.70)',
+          'linear-gradient(135deg, rgba(255, 255, 255, 0.14) 0%, rgba(255, 255, 255, 0.03) 35%, rgba(5, 11, 23, 0.70) 100%), rgba(7, 18, 41, 0.75)',
         boxShadow:
           'inset 0 1px 1px 0 rgba(255, 255, 255, 0.35), inset 0 0 18px 0 rgba(22, 119, 255, 0.08), 0 8px 30px 0 rgba(0, 0, 0, 0.4), 0 0 20px 0 rgba(22, 119, 255, 0.14)',
         WebkitBackdropFilter: 'blur(20px) saturate(180%) contrast(105%)',
@@ -79,16 +95,63 @@ export const Navbar: React.FC = () => {
 
   const mobileGlassStyle: React.CSSProperties = {
     background:
-      'linear-gradient(135deg, rgba(255, 255, 255, 0.12) 0%, rgba(255, 255, 255, 0.03) 30%, rgba(5, 11, 23, 0.94) 100%), rgba(7, 18, 41, 0.96)',
+      'linear-gradient(135deg, rgba(255, 255, 255, 0.12) 0%, rgba(255, 255, 255, 0.03) 30%, rgba(5, 11, 23, 0.96) 100%), rgba(7, 18, 41, 0.98)',
     boxShadow:
       'inset 0 1px 1px 0 rgba(255, 255, 255, 0.30), 0 16px 45px 0 rgba(0, 0, 0, 0.8), 0 0 25px 0 rgba(22, 119, 255, 0.18)',
     WebkitBackdropFilter: 'blur(24px) saturate(190%)',
     backdropFilter: 'blur(24px) saturate(190%)',
   };
 
+  const cleanWhatsappNumber = COMPANY_INFO.contact.whatsappNumber.replace(/[^0-9]/g, '');
+
   return (
-    <header ref={navRef} className="sticky top-0 z-50 w-full">
-      {/* 1. Full-Width Edge-to-Edge Glassmorphism Navbar (Right & Left 100% Full) */}
+    <header ref={navRef} className="sticky top-0 z-50 w-full select-none">
+      
+      {/* 1. TOP TELEMETRY & SYSTEM OPERATIONAL STRIP (Desktop & Tablet) */}
+      <div className="bg-[#030814]/95 border-b border-slate-800/80 text-[11px] font-mono py-1.5 px-4 text-slate-400 hidden md:block backdrop-blur-md">
+        <div className="max-w-7xl mx-auto flex items-center justify-between">
+          
+          {/* Left: Live Cluster Health & SLA Indicator */}
+          <div className="flex items-center gap-3">
+            <div className="flex items-center gap-1.5 text-emerald-400">
+              <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" />
+              <span className="font-bold tracking-wider">ALL SYSTEMS OPERATIONAL</span>
+            </div>
+            <span className="text-slate-700">•</span>
+            <span className="text-slate-400 flex items-center gap-1">
+              <Activity className="w-3 h-3 text-brand-cyanAccent" />
+              <span>99.99% MULTI-AZ SLA COMMITMENT</span>
+            </span>
+          </div>
+
+          {/* Right: 2026 Special Audit & Direct Contact */}
+          <div className="flex items-center gap-4">
+            <Link 
+              to="/contact?inquiry=audit" 
+              className="flex items-center gap-1.5 text-amber-300 hover:text-white transition-colors group"
+            >
+              <Sparkles className="w-3 h-3 text-amber-400 group-hover:scale-110 transition-transform" />
+              <span className="font-semibold underline decoration-amber-400/40">2026 Special: Claim Free 0% Cost Audit</span>
+            </Link>
+            
+            <span className="text-slate-700">|</span>
+
+            <a 
+              href={`https://wa.me/${cleanWhatsappNumber}?text=${encodeURIComponent('Hello Teciaura Team, I would like to schedule an engineering consultation.')}`}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center gap-1 text-slate-300 hover:text-brand-cyanAccent transition-colors"
+              title="Direct WhatsApp Hotline"
+            >
+              <MessageCircle className="w-3 h-3 text-emerald-400" />
+              <span>{COMPANY_INFO.contact.phoneDisplay}</span>
+            </a>
+          </div>
+
+        </div>
+      </div>
+
+      {/* 2. MAIN FULL-WIDTH GLASSMORPHISM NAVBAR */}
       <div
         className={`w-full transition-all duration-300 border-b ${
           scrolled ? 'border-cyan-400/30 py-2.5 sm:py-3' : 'border-white/[0.12] py-3 sm:py-3.5'
@@ -97,13 +160,14 @@ export const Navbar: React.FC = () => {
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between">
+            
             {/* Teciaura Logo */}
             <div className="flex-shrink-0 flex items-center">
               <Logo size="md" variant="light" />
             </div>
 
-            {/* Desktop Navigation Links */}
-            <nav className="hidden lg:flex items-center space-x-1 xl:space-x-2" aria-label="Main Navigation">
+            {/* Desktop Navigation Links (with Active Indicators & Glow) */}
+            <nav className="hidden lg:flex items-center space-x-1 xl:space-x-1.5" aria-label="Main Navigation">
               {navLinks.map((link) => {
                 const Icon = link.icon;
                 return (
@@ -112,28 +176,43 @@ export const Navbar: React.FC = () => {
                     to={link.path}
                     end={link.path === '/'}
                     className={({ isActive }) =>
-                      `px-3.5 py-1.5 text-sm font-medium rounded-xl transition-all duration-200 relative inline-flex items-center gap-1.5 ${
+                      `px-3 py-1.5 text-xs xl:text-sm font-medium rounded-xl transition-all duration-200 relative inline-flex items-center gap-1.5 ${
                         isActive
-                          ? 'text-brand-cyanAccent font-semibold bg-brand-cyanAccent/10 border border-brand-cyanAccent/30 shadow-[0_0_15px_rgba(0,240,255,0.15)]'
+                          ? 'text-brand-cyanAccent font-bold bg-brand-cyanAccent/10 border border-brand-cyanAccent/40 shadow-[0_0_15px_rgba(0,200,232,0.20)]'
                           : 'text-slate-200 hover:text-white hover:bg-white/[0.08]'
                       }`
                     }
                   >
-                    {Icon && <Icon className="w-4 h-4 text-brand-cyanAccent" />}
-                    <span>{link.label}</span>
+                    {({ isActive }) => (
+                      <>
+                        {isActive && <span className="w-1.5 h-1.5 rounded-full bg-brand-cyanAccent animate-pulse" />}
+                        {Icon && !isActive && <Icon className="w-3.5 h-3.5 text-slate-400" />}
+                        <span>{link.label}</span>
+                      </>
+                    )}
                   </NavLink>
                 );
               })}
             </nav>
 
-            {/* Desktop CTA Button */}
-            <div className="hidden lg:flex items-center gap-3">
+            {/* Desktop Quick Actions */}
+            <div className="hidden lg:flex items-center gap-2.5">
+              <a
+                href={`https://wa.me/${cleanWhatsappNumber}?text=${encodeURIComponent('Hello Teciaura Team, I have a project inquiry.')}`}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="p-2.5 rounded-xl bg-slate-900/80 hover:bg-emerald-950/60 border border-slate-700/80 hover:border-emerald-500/50 text-slate-300 hover:text-emerald-300 transition-all shadow-sm"
+                title="Direct WhatsApp Chat"
+              >
+                <MessageCircle className="w-4 h-4 text-emerald-400" />
+              </a>
+
               <Button
                 to="/contact"
                 variant="primary"
                 size="md"
                 icon={<ArrowRight className="w-4 h-4" />}
-                className="shadow-glow-blue hover:shadow-[0_0_28px_rgba(22,119,255,0.65)] font-semibold rounded-xl text-sm"
+                className="shadow-glow-blue hover:shadow-[0_0_28px_rgba(22,119,255,0.65)] font-bold rounded-xl text-xs xl:text-sm font-mono"
               >
                 Start a Project
               </Button>
@@ -145,31 +224,51 @@ export const Navbar: React.FC = () => {
                 to="/contact"
                 variant="primary"
                 size="sm"
-                className="hidden sm:inline-flex text-xs py-1.5 px-3.5 rounded-lg shadow-glow-blue font-semibold"
+                className="hidden sm:inline-flex text-xs py-1.5 px-3.5 rounded-lg shadow-glow-blue font-bold font-mono"
               >
                 Start a Project
               </Button>
               <button
                 onClick={() => setIsOpen(!isOpen)}
                 className="p-2 rounded-xl text-slate-200 hover:text-white hover:bg-white/[0.12] transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-cyanAccent"
-                aria-label={isOpen ? 'Close menu' : 'Open menu'}
+                aria-label={isOpen ? 'Close navigation menu' : 'Open navigation menu'}
                 aria-expanded={isOpen}
+                aria-controls="mobile-navigation"
               >
                 {isOpen ? <X className="w-5 h-5 text-brand-cyanAccent" /> : <Menu className="w-5 h-5" />}
               </button>
             </div>
+
           </div>
         </div>
       </div>
 
-      {/* Mobile Dropdown Glass Menu */}
+      {/* 3. MOBILE DROPDOWN GLASS MENU */}
       {isOpen && (
         <div
+          id="mobile-navigation"
+          role="region"
+          aria-label="Mobile Navigation Drawer"
           className="w-full border-b border-white/20 p-5 overflow-hidden animate-in fade-in slide-in-from-top-2 duration-200"
           style={mobileGlassStyle}
         >
+          {/* Telemetry pill for mobile */}
+          <div className="max-w-7xl mx-auto mb-3 p-2.5 rounded-xl bg-[#030814] border border-emerald-500/30 flex items-center justify-between text-[11px] font-mono">
+            <div className="flex items-center gap-1.5 text-emerald-400">
+              <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" />
+              <span className="font-bold">SYSTEM STATUS: 99.99% OK</span>
+            </div>
+            <Link 
+              to="/contact?inquiry=audit"
+              onClick={() => setIsOpen(false)}
+              className="text-amber-300 font-semibold"
+            >
+              Claim 0% Audit →
+            </Link>
+          </div>
+
           <div className="max-w-7xl mx-auto space-y-1.5 py-1">
-            <div className="text-[11px] font-semibold uppercase tracking-wider text-slate-400 px-3 mb-2 flex items-center gap-2">
+            <div className="text-[11px] font-semibold uppercase tracking-wider text-slate-400 px-3 mb-2 flex items-center gap-2 font-mono">
               <Sparkles className="w-3.5 h-3.5 text-brand-cyanAccent" />
               <span>Menu Navigation</span>
             </div>
@@ -184,16 +283,24 @@ export const Navbar: React.FC = () => {
                   className={({ isActive }) =>
                     `flex items-center justify-between px-3.5 py-2.5 rounded-xl text-sm font-medium transition-all ${
                       isActive
-                        ? 'bg-brand-cyanAccent/10 text-brand-cyanAccent font-semibold border border-brand-cyanAccent/25 shadow-sm'
+                        ? 'bg-brand-cyanAccent/10 text-brand-cyanAccent font-bold border border-brand-cyanAccent/30 shadow-sm'
                         : 'text-slate-200 hover:text-white hover:bg-white/[0.08]'
                     }`
                   }
                 >
-                  <span className="flex items-center gap-2.5">
-                    {Icon && <Icon className="w-4 h-4 text-brand-cyanAccent" />}
-                    <span>{link.label}</span>
-                  </span>
-                  <ArrowRight className="w-4 h-4 text-slate-500" />
+                  {({ isActive }) => (
+                    <>
+                      <span className="flex items-center gap-2.5">
+                        {isActive ? (
+                          <span className="w-1.5 h-1.5 rounded-full bg-brand-cyanAccent animate-pulse" />
+                        ) : Icon ? (
+                          <Icon className="w-4 h-4 text-slate-400" />
+                        ) : null}
+                        <span>{link.label}</span>
+                      </span>
+                      <ArrowRight className="w-4 h-4 text-slate-500" />
+                    </>
+                  )}
                 </NavLink>
               );
             })}
@@ -201,14 +308,19 @@ export const Navbar: React.FC = () => {
 
           <div className="max-w-7xl mx-auto pt-4 mt-3 border-t border-white/10 space-y-3">
             <div className="bg-[#0B1528]/80 p-3 rounded-xl border border-white/10 flex items-center justify-between">
-              <span className="text-xs text-slate-400 font-medium">Direct Inquiries</span>
-              <span className="text-xs font-mono text-brand-cyanAccent font-semibold">info@teciaura.com</span>
+              <span className="text-xs text-slate-400 font-medium">Official Hotline</span>
+              <a 
+                href={COMPANY_INFO.contact.phoneCallLink} 
+                className="text-xs font-mono text-brand-cyanAccent font-semibold"
+              >
+                {COMPANY_INFO.contact.phoneDisplay}
+              </a>
             </div>
             <Button
               to="/contact"
               variant="primary"
               size="md"
-              className="w-full justify-center shadow-glow-blue font-semibold rounded-xl text-sm"
+              className="w-full justify-center shadow-glow-blue font-bold rounded-xl text-sm font-mono"
               icon={<ArrowRight className="w-4 h-4" />}
               onClick={() => setIsOpen(false)}
             >
