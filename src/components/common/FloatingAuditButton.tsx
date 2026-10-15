@@ -11,17 +11,12 @@ export const FloatingAuditButton: React.FC = () => {
       <div className="fixed bottom-6 left-6 z-40 group select-none">
         <button
           onClick={() => setIsModalOpen(true)}
-          className="relative inline-flex items-center gap-2 px-4 py-2.5 rounded-full bg-[#0B1528]/95 backdrop-blur-xl border border-brand-electricBlue/50 text-white font-semibold text-xs sm:text-sm shadow-elevated hover:border-brand-cyanAccent hover:shadow-glow-cyan hover:scale-105 active:scale-95 transition-all duration-200"
-          aria-label="Claim Free Website Audit"
+          className="relative inline-flex items-center gap-2 px-4 py-2.5 rounded-full bg-[#0B1220]/95 backdrop-blur-xl border border-white/[0.12] text-white font-medium text-xs sm:text-sm shadow-xl hover:border-white/[0.24] hover:bg-[#0f172a] active:scale-95 transition-all duration-200"
+          aria-label="Claim Free Architecture Audit"
         >
-          {/* Subtle Pulse Glow */}
-          <span className="absolute -top-1 -right-1 flex h-3 w-3">
-            <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-brand-cyanAccent opacity-75" />
-            <span className="relative inline-flex rounded-full h-3 w-3 bg-brand-cyanAccent" />
-          </span>
-
-          <Search className="w-4 h-4 text-brand-cyanAccent stroke-[2.5]" />
-          <span className="tracking-wide text-white font-semibold">Free Audit</span>
+          <span className="w-2 h-2 rounded-full bg-emerald-400" />
+          <Search className="w-3.5 h-3.5 text-slate-300" />
+          <span className="tracking-normal text-slate-200 font-medium">Free Audit</span>
         </button>
       </div>
 

@@ -21,30 +21,30 @@ export const FAQAccordion: React.FC<FAQAccordionProps> = ({ items }) => {
         return (
           <div
             key={index}
-            className={`rounded-2xl transition-all duration-300 border backdrop-blur-sm overflow-hidden ${
+            className={`rounded-2xl transition-all duration-200 border overflow-hidden ${
               isOpen
-                ? 'bg-[#0E1A32] border-brand-electricBlue/50 border-t-cyan-300 shadow-glow-blue'
-                : 'bg-[#0B1528]/85 border-white/[0.08] border-t-white/[0.22] hover:border-white/20 shadow-[0_6px_20px_rgba(0,0,0,0.5),inset_0_1px_0_0_rgba(255,255,255,0.10)]'
+                ? 'bg-white/[0.04] border-white/[0.14]'
+                : 'bg-white/[0.02] border-white/[0.06] hover:border-white/[0.10]'
             }`}
           >
             <button
               onClick={() => toggleItem(index)}
-              className="w-full text-left px-5 sm:px-6 py-4 sm:py-5 flex items-center justify-between gap-4 focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-cyanAccent rounded-2xl"
+              className="w-full text-left px-5 sm:px-6 py-4 sm:py-5 flex items-center justify-between gap-4 focus:outline-none focus-visible:ring-1 focus-visible:ring-white/20 rounded-2xl"
               aria-expanded={isOpen}
               aria-controls={`faq-answer-${index}`}
               id={`faq-question-${index}`}
             >
-              <span className={`text-base sm:text-lg font-bold tracking-tight transition-colors ${
-                isOpen ? 'text-brand-cyanAccent' : 'text-white'
+              <span className={`text-base sm:text-lg font-semibold tracking-tight transition-colors ${
+                isOpen ? 'text-white' : 'text-slate-200'
               }`}>
                 {item.question}
               </span>
-              <div className={`w-8 h-8 rounded-full flex items-center justify-center flex-shrink-0 transition-transform duration-300 ${
+              <div className={`w-7 h-7 rounded-full flex items-center justify-center flex-shrink-0 transition-transform duration-200 ${
                 isOpen 
-                  ? 'bg-brand-electricBlue text-white rotate-180 shadow-glow-blue' 
-                  : 'bg-slate-900 text-slate-400 border border-slate-800'
+                  ? 'bg-white text-slate-950 rotate-180' 
+                  : 'bg-white/[0.05] text-slate-400 border border-white/[0.08]'
               }`}>
-                <ChevronDown className="w-4 h-4" />
+                <ChevronDown className="w-3.5 h-3.5" />
               </div>
             </button>
 
@@ -53,7 +53,7 @@ export const FAQAccordion: React.FC<FAQAccordionProps> = ({ items }) => {
                 id={`faq-answer-${index}`}
                 role="region"
                 aria-labelledby={`faq-question-${index}`}
-                className="px-5 sm:px-6 pb-5 pt-1 text-sm sm:text-base text-slate-300 leading-relaxed border-t border-slate-800/80 animate-in fade-in duration-200"
+                className="px-5 sm:px-6 pb-5 pt-1 text-sm sm:text-base text-slate-300 leading-relaxed border-t border-white/[0.06] animate-in fade-in duration-200"
               >
                 {item.answer}
               </div>

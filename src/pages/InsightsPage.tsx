@@ -41,13 +41,13 @@ export const InsightsPage: React.FC = () => {
           <Breadcrumb items={[{ label: 'Insights & Blog' }]} />
 
           <div className="mt-8 max-w-3xl">
-            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#0B1528] border border-slate-800 text-xs font-semibold text-brand-cyanAccent mb-4 shadow-card font-mono">
-              <span className="w-2 h-2 rounded-full bg-brand-cyanAccent animate-pulse" />
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/[0.04] border border-white/[0.08] text-xs font-medium text-slate-300 mb-4">
+              <span className="w-1.5 h-1.5 rounded-full bg-emerald-400" />
               <span>Technology & Growth Perspectives</span>
             </div>
 
-            <h1 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-white tracking-tight leading-tight">
-              Insights, Guides, and Practical Notes.
+            <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white tracking-tight leading-tight">
+              Insights, guides, and practical engineering notes.
             </h1>
 
             <p className="mt-4 text-base sm:text-lg text-slate-300 leading-relaxed font-normal">
@@ -58,7 +58,7 @@ export const InsightsPage: React.FC = () => {
       </section>
 
       {/* Main Blog Content Section */}
-      <section className="py-20 sm:py-24 bg-[#050B17]">
+      <section className="py-20 sm:py-24 bg-[#060B15]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           
           {/* Search Bar & Category Filter Bar */}
@@ -71,7 +71,7 @@ export const InsightsPage: React.FC = () => {
                 placeholder="Search articles by topic or keyword..."
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
-                className="w-full pl-11 pr-4 py-3 rounded-2xl border border-slate-700/80 text-sm focus:outline-none focus:border-brand-cyanAccent focus:ring-2 focus:ring-brand-cyanAccent/20 bg-slate-900/90 text-white placeholder:text-slate-500 shadow-card"
+                className="w-full pl-11 pr-4 py-3 rounded-2xl border border-white/[0.08] text-sm focus:outline-none focus:border-white/20 bg-white/[0.02] text-white placeholder:text-slate-500"
               />
             </div>
 
@@ -81,10 +81,10 @@ export const InsightsPage: React.FC = () => {
                 <button
                   key={cat}
                   onClick={() => setSelectedCategory(cat)}
-                  className={`px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold transition-all flex-shrink-0 ${
+                  className={`px-4 py-2 rounded-xl text-xs sm:text-sm font-medium transition-all flex-shrink-0 ${
                     selectedCategory === cat
-                      ? 'bg-brand-electricBlue text-white shadow-glow-blue border border-blue-400/30'
-                      : 'bg-slate-900/90 text-slate-300 hover:bg-slate-800 border border-slate-800 hover:border-slate-700'
+                      ? 'bg-white text-slate-950 font-semibold shadow-sm'
+                      : 'bg-white/[0.03] text-slate-400 hover:text-white border border-white/[0.08]'
                   }`}
                 >
                   {cat}
@@ -121,7 +121,7 @@ export const InsightsPage: React.FC = () => {
               <p className="text-xs text-slate-400 mt-1">Try searching for "DevOps", "AWS", "CI/CD", or "SEO".</p>
               <button
                 onClick={() => { setSearchQuery(''); setSelectedCategory('All'); }}
-                className="mt-4 px-4 py-2 bg-slate-900 border border-slate-700 rounded-xl text-xs font-semibold text-brand-cyanAccent hover:bg-slate-800 transition-colors"
+                className="mt-4 px-4 py-2 bg-white/[0.04] border border-white/[0.08] rounded-xl text-xs font-medium text-slate-300 hover:text-white transition-colors"
               >
                 Reset Search
               </button>

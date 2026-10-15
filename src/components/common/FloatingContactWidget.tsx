@@ -36,10 +36,9 @@ export const FloatingContactWidget: React.FC = () => {
           className="w-12 h-12 sm:w-13 sm:h-13 rounded-full bg-[#25D366] hover:bg-[#20ba59] text-white flex items-center justify-center shadow-lg hover:shadow-[#25D366]/40 transition-all duration-200 hover:scale-110 active:scale-95"
           aria-label="Chat on WhatsApp"
         >
-          {/* Subtle Ping Pulse Effect */}
-          <span className="absolute -top-1 -right-1 flex h-3 w-3">
-            <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-60" />
-            <span className="relative inline-flex rounded-full h-3 w-3 bg-emerald-500" />
+          {/* Online indicator */}
+          <span className="absolute -top-0.5 -right-0.5 flex h-3 w-3">
+            <span className="relative inline-flex rounded-full h-3 w-3 bg-emerald-400 border-2 border-[#060B15]" />
           </span>
 
           {/* Official WhatsApp SVG Icon */}

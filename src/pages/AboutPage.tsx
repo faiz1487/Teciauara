@@ -8,6 +8,8 @@ import { CTASection } from '../components/common/CTASection';
 import { COMPANY_INFO } from '../data/companyInfo';
 import { EngineeringMetricsStrip } from '../components/about/EngineeringMetricsStrip';
 import { EngineeringStackMatrix } from '../components/about/EngineeringStackMatrix';
+import { MeetTheTeamSection } from '../components/home/MeetTheTeamSection';
+import { FloatingWhatsAppButton } from '../components/common/FloatingWhatsAppButton';
 
 export const AboutPage: React.FC = () => {
   const getValueIcon = (title: string) => {
@@ -250,13 +252,18 @@ export const AboutPage: React.FC = () => {
         </div>
       </section>
 
+      {/* The Humans Behind Your Code */}
+      <MeetTheTeamSection />
+
       {/* CTA */}
       <CTASection
-        headline="Partner with a Dedicated Technology Team"
+        headline="Partner with a Dedicated, Real Human Team"
         text="Whether launching your first platform or automating your cloud workflows, we are ready to discuss your goals."
         buttonText="Get in Touch"
         buttonTo="/contact"
       />
+
+      <FloatingWhatsAppButton />
     </div>
   );
 };

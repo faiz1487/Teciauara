@@ -119,27 +119,24 @@ export const ProjectModal: React.FC<ProjectModalProps> = ({ project, onClose }) 
       />
 
       {/* Modal Dialog Card */}
-      <div className="relative w-full max-w-3xl rounded-3xl bg-[#070F1E] shadow-2xl border border-brand-electricBlue/40 overflow-hidden z-10 max-h-[90vh] flex flex-col text-white my-auto">
-        
-        {/* Top Glow Accent Laser Bar */}
-        <div className="h-1.5 w-full bg-gradient-to-r from-brand-electricBlue via-brand-cyanAccent to-sky-400" />
+      <div className="relative w-full max-w-3xl rounded-3xl bg-[#070C18] shadow-2xl border border-white/[0.12] overflow-hidden z-10 max-h-[90vh] flex flex-col text-white my-auto">
 
         {/* Modal Header */}
-        <div className="px-6 py-5 sm:px-8 sm:py-6 border-b border-slate-800 bg-[#060D1A] flex items-start justify-between gap-4">
+        <div className="px-6 py-5 sm:px-8 sm:py-6 border-b border-white/[0.08] bg-[#060B15] flex items-start justify-between gap-4">
           <div className="flex items-start gap-3.5">
             <PremiumIconBadge size="md" variant={visuals.variant} className="mt-1">
               {visuals.icon}
             </PremiumIconBadge>
             <div>
               <div className="flex items-center gap-2 mb-1.5">
-                <span className="text-[11px] font-mono font-bold uppercase tracking-wider px-2.5 py-0.5 rounded-full bg-brand-cyanAccent/10 text-brand-cyanAccent border border-brand-cyanAccent/30">
+                <span className="text-[11px] font-medium px-2.5 py-0.5 rounded-full bg-white/[0.04] text-slate-300 border border-white/[0.08]">
                   {project.category}
                 </span>
-                <span className="text-[10px] font-mono font-semibold px-2.5 py-0.5 rounded-full bg-[#0B1528] text-slate-300 border border-slate-700">
+                <span className="text-[10px] font-medium px-2.5 py-0.5 rounded-full bg-white/[0.02] text-slate-400 border border-white/[0.06]">
                   {visuals.categoryBadge}
                 </span>
               </div>
-              <h2 id="modal-project-title" className="text-xl sm:text-2xl font-extrabold text-white tracking-tight">
+              <h2 id="modal-project-title" className="text-xl sm:text-2xl font-bold text-white tracking-tight">
                 {project.title}
               </h2>
             </div>
@@ -148,7 +145,7 @@ export const ProjectModal: React.FC<ProjectModalProps> = ({ project, onClose }) 
           <button
             ref={closeButtonRef}
             onClick={onClose}
-            className="w-9 h-9 rounded-full bg-slate-900 hover:bg-slate-800 border border-slate-700 flex items-center justify-center text-slate-400 hover:text-white transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-cyanAccent flex-shrink-0"
+            className="w-9 h-9 rounded-full bg-white/[0.04] hover:bg-white/[0.08] border border-white/[0.08] flex items-center justify-center text-slate-400 hover:text-white transition-colors focus:outline-none flex-shrink-0"
             aria-label="Close project modal"
           >
             <X className="w-5 h-5" />
@@ -198,7 +195,7 @@ export const ProjectModal: React.FC<ProjectModalProps> = ({ project, onClose }) 
           {project.id !== 'intervixa-ai-platform' && visuals.asciiTopology && (
             <div className="p-4 rounded-2xl bg-[#040A14] border border-slate-800/90 font-mono text-xs">
               <div className="flex items-center justify-between pb-2 mb-3 border-b border-slate-800 text-slate-400">
-                <span className="flex items-center gap-1.5 text-brand-cyanAccent font-bold">
+                <span className="flex items-center gap-1.5 text-slate-300 font-semibold">
                   <Terminal className="w-3.5 h-3.5" />
                   ARCHITECTURE TOPOLOGY
                 </span>
@@ -214,8 +211,8 @@ export const ProjectModal: React.FC<ProjectModalProps> = ({ project, onClose }) 
 
           {/* Architecture Overview */}
           <div>
-            <h3 className="text-xs font-bold uppercase tracking-wider text-brand-cyanAccent mb-2 font-mono flex items-center gap-1.5">
-              <Layers className="w-3.5 h-3.5 text-brand-cyanAccent" />
+            <h3 className="text-xs font-semibold uppercase tracking-wider text-slate-400 mb-2 flex items-center gap-1.5">
+              <Layers className="w-3.5 h-3.5 text-slate-400" />
               Architecture Overview
             </h3>
             <p className="text-sm sm:text-base text-slate-300 leading-relaxed font-normal">
@@ -248,14 +245,14 @@ export const ProjectModal: React.FC<ProjectModalProps> = ({ project, onClose }) 
 
           {/* Key Deliverables */}
           <div>
-            <h3 className="text-xs font-bold uppercase tracking-wider text-brand-cyanAccent mb-3 font-mono">
+            <h3 className="text-xs font-semibold uppercase tracking-wider text-slate-400 mb-3">
               Included Deliverables & Artifacts
             </h3>
             <ul className="grid grid-cols-1 sm:grid-cols-2 gap-2.5">
               {project.keyDeliverables.map((item, idx) => (
-                <li key={idx} className="flex items-start gap-2.5 p-2 rounded-xl bg-slate-900/60 border border-slate-800/80 text-xs sm:text-sm text-slate-200">
+                <li key={idx} className="flex items-start gap-2.5 p-2 rounded-xl bg-white/[0.02] border border-white/[0.08] text-xs sm:text-sm text-slate-200">
                   <CheckCircle2 className="w-4 h-4 text-emerald-400 flex-shrink-0 mt-0.5" />
-                  <span className="font-mono text-xs">{item}</span>
+                  <span className="text-xs">{item}</span>
                 </li>
               ))}
             </ul>
@@ -264,13 +261,13 @@ export const ProjectModal: React.FC<ProjectModalProps> = ({ project, onClose }) 
           {/* Architecture Highlights */}
           {project.architecturePoints && (
             <div>
-              <h3 className="text-xs font-bold uppercase tracking-wider text-brand-cyanAccent mb-3 font-mono">
+              <h3 className="text-xs font-semibold uppercase tracking-wider text-slate-400 mb-3">
                 Key Technical Highlights & SLA Benchmarks
               </h3>
               <ul className="space-y-2">
                 {project.architecturePoints.map((point, idx) => (
                   <li key={idx} className="flex items-start gap-2.5 text-xs sm:text-sm text-slate-300">
-                    <span className="w-1.5 h-1.5 rounded-full bg-brand-cyanAccent mt-2 flex-shrink-0" />
+                    <span className="w-1.5 h-1.5 rounded-full bg-slate-400 mt-2 flex-shrink-0" />
                     <span>{point}</span>
                   </li>
                 ))}
@@ -280,14 +277,14 @@ export const ProjectModal: React.FC<ProjectModalProps> = ({ project, onClose }) 
 
           {/* Technologies Stack */}
           <div>
-            <h3 className="text-xs font-bold uppercase tracking-wider text-slate-400 mb-2.5 font-mono">
+            <h3 className="text-xs font-semibold uppercase tracking-wider text-slate-400 mb-2.5">
               Technology Stack Standard
             </h3>
             <div className="flex flex-wrap gap-2">
               {project.technologies.map((tech) => (
                 <span
                   key={tech}
-                  className="px-3 py-1 rounded-lg bg-[#050D1C] border border-slate-700/80 text-xs font-mono font-medium text-brand-cyanAccent"
+                  className="px-3 py-1 rounded-lg bg-white/[0.03] border border-white/[0.08] text-xs font-mono font-medium text-slate-300"
                 >
                   {tech}
                 </span>
@@ -297,8 +294,8 @@ export const ProjectModal: React.FC<ProjectModalProps> = ({ project, onClose }) 
         </div>
 
         {/* Modal Footer */}
-        <div className="px-6 py-4 sm:px-8 border-t border-slate-800 bg-[#060D1A] flex flex-col sm:flex-row items-center justify-between gap-3">
-          <p className="text-xs text-slate-400 text-center sm:text-left font-mono">
+        <div className="px-6 py-4 sm:px-8 border-t border-white/[0.08] bg-[#060B15] flex flex-col sm:flex-row items-center justify-between gap-3">
+          <p className="text-xs text-slate-400 text-center sm:text-left">
             Interested in deploying a similar architecture?
           </p>
           <div className="flex items-center gap-3 w-full sm:w-auto">
@@ -307,7 +304,7 @@ export const ProjectModal: React.FC<ProjectModalProps> = ({ project, onClose }) 
               variant="primary"
               size="md"
               icon={<ArrowRight className="w-4 h-4" />}
-              className="w-full sm:w-auto shadow-glow-blue font-bold text-xs font-mono"
+              className="w-full sm:w-auto font-semibold text-xs bg-white text-slate-950 hover:bg-slate-100"
               onClick={onClose}
             >
               Discuss Technical Scope

@@ -26,20 +26,18 @@ export const PortfolioPage: React.FC = () => {
       />
 
       {/* Hero Section */}
-      <section className="bg-[#070F1E] border-b border-slate-800/80 pt-12 pb-16 lg:pt-16 lg:pb-20 relative overflow-hidden">
-        <div className="absolute top-0 right-0 w-96 h-96 bg-brand-cyanAccent/10 rounded-full blur-3xl pointer-events-none" />
-
+      <section className="bg-[#070C18] border-b border-white/[0.08] pt-12 pb-16 lg:pt-16 lg:pb-20 relative overflow-hidden">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <Breadcrumb items={[{ label: 'Portfolio' }]} />
 
           <div className="mt-8 max-w-3xl">
-            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#0B1528] border border-slate-800 text-xs font-semibold text-brand-cyanAccent mb-4 shadow-card font-mono">
-              <span className="w-2 h-2 rounded-full bg-brand-cyanAccent animate-pulse" />
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/[0.04] border border-white/[0.08] text-xs font-medium text-slate-300 mb-4">
+              <span className="w-1.5 h-1.5 rounded-full bg-emerald-400" />
               <span>Architectures & Implementation Reference</span>
             </div>
 
-            <h1 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-white tracking-tight leading-tight">
-              Selected Projects and Practical Solutions.
+            <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white tracking-tight leading-tight">
+              Selected projects and practical solutions.
             </h1>
 
             <p className="mt-4 text-base sm:text-lg text-slate-300 leading-relaxed font-normal">
@@ -50,21 +48,21 @@ export const PortfolioPage: React.FC = () => {
       </section>
 
       {/* Portfolio Grid Section */}
-      <section className="py-20 sm:py-24 bg-[#050B17]">
+      <section className="py-20 sm:py-24 bg-[#060B15]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           
           {/* Transparent Notice Banner */}
-          <div className="mb-12 p-5 rounded-2xl bg-[#0B1528] border border-slate-800 flex items-start gap-4">
-            <Sparkles className="w-5 h-5 text-brand-cyanAccent flex-shrink-0 mt-0.5" />
+          <div className="mb-12 p-5 rounded-2xl bg-white/[0.02] border border-white/[0.08] flex items-start gap-4">
+            <Sparkles className="w-5 h-5 text-emerald-400 flex-shrink-0 mt-0.5" />
             <div className="text-xs sm:text-sm text-slate-300 leading-relaxed">
-              <span className="font-bold text-white">Reference Blueprints Notice: </span>
+              <span className="font-semibold text-white">Reference Blueprints Notice: </span>
               The projects featured below are verified concept and demo architectures engineered by Teciaura to demonstrate our stack standards, IaC patterns, and code design. We do not display fabricated client names or unsupported statistics.
             </div>
           </div>
 
           {/* Category Filter Pills */}
           <div className="flex items-center gap-2.5 overflow-x-auto pb-4 mb-12 scrollbar-none">
-            <div className="flex items-center gap-1.5 text-xs font-semibold uppercase tracking-wider text-slate-400 mr-2 flex-shrink-0 font-mono">
+            <div className="flex items-center gap-1.5 text-xs font-medium uppercase tracking-wider text-slate-400 mr-2 flex-shrink-0">
               <Filter className="w-3.5 h-3.5" />
               <span>Filter:</span>
             </div>
@@ -78,15 +76,15 @@ export const PortfolioPage: React.FC = () => {
                 <button
                   key={category}
                   onClick={() => setSelectedCategory(category)}
-                  className={`px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold transition-all duration-150 flex-shrink-0 flex items-center gap-2 ${
+                  className={`px-4 py-2 rounded-xl text-xs sm:text-sm font-medium transition-all duration-150 flex-shrink-0 flex items-center gap-2 ${
                     isSelected
-                      ? 'bg-brand-electricBlue text-white shadow-glow-blue border border-blue-400/40'
-                      : 'bg-slate-900/90 text-slate-300 hover:bg-slate-800 border border-slate-800 hover:border-slate-700'
+                      ? 'bg-white text-slate-950 font-semibold shadow-sm'
+                      : 'bg-white/[0.03] text-slate-400 hover:text-white border border-white/[0.08]'
                   }`}
                 >
                   <span>{category}</span>
                   <span className={`text-[10px] px-1.5 py-0.2 rounded-full font-mono ${
-                    isSelected ? 'bg-white/20 text-white' : 'bg-slate-800 text-slate-400 border border-slate-700'
+                    isSelected ? 'bg-slate-900 text-white' : 'bg-white/[0.06] text-slate-400'
                   }`}>
                     {count}
                   </span>

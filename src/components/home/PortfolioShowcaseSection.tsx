@@ -75,23 +75,20 @@ export const PortfolioShowcaseSection: React.FC<PortfolioShowcaseSectionProps> =
         {/* Portfolio Header */}
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-16 lg:mb-20">
           <div className="max-w-3xl">
-            {/* Small badge: OUR PORTFOLIO */}
-            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#0B1528] border border-brand-electricBlue/30 text-xs font-semibold text-brand-cyanAccent font-mono mb-4 shadow-[0_0_15px_rgba(0,200,232,0.15)]">
-              <span className="w-2 h-2 rounded-full bg-brand-cyanAccent animate-pulse" />
-              <span className="tracking-wider">OUR PORTFOLIO</span>
+            {/* Small badge */}
+            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/[0.04] border border-white/[0.08] text-xs font-medium text-slate-300 mb-4">
+              <span className="w-1.5 h-1.5 rounded-full bg-emerald-400" />
+              <span>Selected Client Work</span>
             </div>
 
-            {/* Heading: “Engineering That Delivers.” */}
-            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-white tracking-tight leading-[1.12]">
-              Engineering That{' '}
-              <span className="bg-gradient-to-r from-brand-cyanAccent via-brand-electricBlue to-white bg-clip-text text-transparent">
-                Delivers.
-              </span>
+            {/* Heading */}
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white tracking-tight leading-[1.12]">
+              Real Products. Measurable Results.
             </h2>
 
             {/* Supporting text */}
             <p className="mt-4 text-base sm:text-lg text-slate-300 font-normal leading-relaxed">
-              Explore real-world products, cloud infrastructure and DevOps solutions built by Teciaura Technologies.
+              Explore real-world software products, client portals, and cloud infrastructure engineered by Teciaura.
             </p>
           </div>
 
@@ -100,7 +97,7 @@ export const PortfolioShowcaseSection: React.FC<PortfolioShowcaseSectionProps> =
             variant="outline"
             size="md"
             icon={<ArrowRight className="w-4 h-4" />}
-            className="flex-shrink-0 self-start md:self-auto border-slate-700/80 hover:border-brand-cyanAccent/50"
+            className="flex-shrink-0 self-start md:self-auto border-white/[0.12] hover:border-white/[0.24] bg-white/[0.04] hover:bg-white/[0.08] text-white"
           >
             View All Projects
           </Button>
@@ -114,11 +111,11 @@ export const PortfolioShowcaseSection: React.FC<PortfolioShowcaseSectionProps> =
           {/* ========================================================================= */}
           <div 
             onClick={() => onSelectProject(PROJECTS_DATA[0])}
-            className="group cursor-pointer rounded-[28px] bg-[#071328] border border-brand-cyanAccent/35 border-t-cyan-300/60 shadow-[0_16px_50px_rgba(0,0,0,0.7),inset_0_1px_0_0_rgba(255,255,255,0.18)] hover:border-brand-cyanAccent/80 hover:shadow-[0_0_50px_rgba(0,200,232,0.25)] transition-all duration-500 overflow-hidden relative min-h-[460px] lg:h-[480px] xl:h-[500px] flex flex-col justify-between"
+            className="group cursor-pointer rounded-2xl bg-white/[0.02] border border-white/[0.08] hover:border-white/[0.18] shadow-2xl transition-all duration-500 overflow-hidden relative min-h-[460px] lg:h-[480px] xl:h-[500px] flex flex-col justify-between"
           >
             {/* 1. Full-Bleed Video Background Layer */}
             <div className="absolute inset-0 w-full h-full overflow-hidden pointer-events-none z-0">
-              {/* Fallback Base Poster Plate: Instant visual, prevents blank card on slow networks */}
+              {/* Fallback Base Poster Plate */}
               <img
                 src="/intervixa-demo-poster.jpg"
                 alt="Intervixa AI Demo Preview"
@@ -144,19 +141,16 @@ export const PortfolioShowcaseSection: React.FC<PortfolioShowcaseSectionProps> =
                 <source src="/intervixa-project-demo.mp4" type="video/mp4" />
               </video>
 
-              {/* Refined gradient scrim: subtle contrast on left/bottom for text legibility, clear and vibrant across the rest */}
+              {/* Refined gradient scrim */}
               <div className="absolute inset-0 bg-gradient-to-r from-[#050B17]/95 via-[#050B17]/55 via-35% md:via-[#050B17]/25 md:via-50% to-transparent z-10" />
               <div className="absolute inset-0 bg-gradient-to-t from-[#050B17]/95 via-[#050B17]/30 via-40% to-transparent z-10" />
             </div>
 
-            {/* Specular top highlight */}
-            <div className="absolute top-0 inset-x-0 h-[2px] bg-gradient-to-r from-transparent via-brand-cyanAccent to-transparent opacity-80 group-hover:opacity-100 transition-opacity duration-300 z-30" />
-
             {/* Top Bar: Clean badges on left & right */}
             <div className="relative z-20 p-6 sm:p-8 flex items-center justify-between">
-              <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-[#050B17]/80 backdrop-blur-md text-brand-cyanAccent text-xs font-mono font-bold border border-brand-cyanAccent/40 shadow-sm">
-                <Sparkles className="w-3 h-3 text-brand-cyanAccent animate-pulse" />
-                FEATURED PROJECT
+              <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-slate-900/80 backdrop-blur-md text-white text-xs font-medium border border-white/[0.1] shadow-sm">
+                <Sparkles className="w-3 h-3 text-amber-400" />
+                Featured Project
               </span>
 
               <a
@@ -164,24 +158,24 @@ export const PortfolioShowcaseSection: React.FC<PortfolioShowcaseSectionProps> =
                 target="_blank"
                 rel="noopener noreferrer"
                 onClick={(e) => e.stopPropagation()}
-                className="flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-black/75 hover:bg-[#071328] backdrop-blur-md border border-slate-700/80 hover:border-brand-cyanAccent/80 text-xs font-mono text-slate-200 hover:text-white transition-all duration-300 shadow-md hover:shadow-[0_0_20px_rgba(0,200,232,0.35)] group/demo cursor-pointer"
+                className="flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-black/80 hover:bg-black/95 backdrop-blur-md border border-white/[0.12] hover:border-white/[0.25] text-xs text-slate-200 hover:text-white transition-all duration-200 cursor-pointer"
                 title="Open intervixa.online in new tab"
               >
-                <span className="w-2 h-2 rounded-full bg-emerald-400 animate-ping" />
+                <span className="w-2 h-2 rounded-full bg-emerald-400" />
                 <span>Live Demo</span>
                 <span className="text-slate-500">•</span>
-                <span className="text-brand-cyanAccent group-hover/demo:text-white transition-colors font-medium">intervixa.online</span>
-                <ExternalLink className="w-3 h-3 text-brand-cyanAccent group-hover/demo:translate-x-0.5 group-hover/demo:-translate-y-0.5 transition-transform" />
+                <span className="text-slate-300 group-hover/demo:text-white transition-colors font-medium">intervixa.online</span>
+                <ExternalLink className="w-3 h-3 text-slate-400 group-hover/demo:translate-x-0.5 group-hover/demo:-translate-y-0.5 transition-transform" />
               </a>
             </div>
 
             {/* Bottom Content Area: Minimal & clean so video stays prominent */}
             <div className="relative z-20 p-6 sm:p-8 pt-0 max-w-xl">
               <div>
-                <h3 className="text-2xl sm:text-3xl font-extrabold text-white tracking-tight leading-tight group-hover:text-brand-cyanAccent transition-colors duration-300 drop-shadow-md">
+                <h3 className="text-2xl sm:text-3xl font-bold text-white tracking-tight leading-tight group-hover:text-slate-100 transition-colors duration-200 drop-shadow-md">
                   Intervixa AI
                 </h3>
-                <p className="text-xs sm:text-sm font-semibold text-brand-cyanAccent font-mono mt-1 drop-shadow">
+                <p className="text-xs sm:text-sm font-medium text-slate-400 mt-1">
                   AI-Powered Career Intelligence Platform
                 </p>
               </div>
@@ -191,7 +185,7 @@ export const PortfolioShowcaseSection: React.FC<PortfolioShowcaseSectionProps> =
                 {['Next.js', 'FastAPI', 'OpenAI API', 'PostgreSQL'].map((tech) => (
                   <span 
                     key={tech} 
-                    className="px-2.5 py-0.5 rounded-md bg-[#050B17]/80 backdrop-blur-md border border-slate-700/60 text-xs font-mono text-slate-300"
+                    className="px-2.5 py-0.5 rounded-md bg-[#050B17]/80 backdrop-blur-md border border-white/[0.08] text-xs font-mono text-slate-300"
                   >
                     {tech}
                   </span>
@@ -199,16 +193,16 @@ export const PortfolioShowcaseSection: React.FC<PortfolioShowcaseSectionProps> =
               </div>
 
               {/* Minimal CTA Link */}
-              <div className="mt-4 pt-3 border-t border-slate-800/60 flex items-center justify-between">
+              <div className="mt-4 pt-3 border-t border-white/[0.08] flex items-center justify-between">
                 <button
                   type="button"
-                  className="inline-flex items-center gap-2 text-sm font-bold text-brand-cyanAccent group-hover:text-white transition-colors"
+                  className="inline-flex items-center gap-2 text-sm font-semibold text-white/90 group-hover:text-white transition-colors"
                 >
                   <span>Explore Case Study</span>
-                  <ArrowRight className="w-4 h-4 group-hover:translate-x-1.5 transition-transform text-brand-cyanAccent" />
+                  <ArrowRight className="w-4 h-4 group-hover:translate-x-1.5 transition-transform text-white/70 group-hover:text-white" />
                 </button>
-                <span className="text-[11px] font-mono text-slate-500 uppercase tracking-wider">
-                  01 // PRODUCT
+                <span className="text-[11px] text-slate-500 font-medium">
+                  Featured Platform
                 </span>
               </div>
             </div>
@@ -219,26 +213,23 @@ export const PortfolioShowcaseSection: React.FC<PortfolioShowcaseSectionProps> =
           {/* ========================================================================= */}
           <div 
             onClick={() => onSelectProject(PROJECTS_DATA[1])}
-            className="group cursor-pointer rounded-[28px] bg-[#071328]/95 backdrop-blur-xl border border-white/[0.08] border-t-white/[0.24] hover:border-brand-electricBlue/60 hover:border-t-brand-cyanAccent/80 shadow-[0_16px_50px_rgba(0,0,0,0.7),inset_0_1px_0_0_rgba(255,255,255,0.12)] hover:shadow-[0_0_40px_rgba(0,122,255,0.22)] transition-all duration-500 overflow-hidden relative min-h-[440px] lg:h-[460px] xl:h-[480px] flex flex-col lg:flex-row"
+            className="group cursor-pointer rounded-3xl bg-white/[0.02] border border-white/[0.08] hover:border-white/[0.16] shadow-xl transition-all duration-300 overflow-hidden relative min-h-[440px] lg:h-[460px] xl:h-[480px] flex flex-col lg:flex-row"
           >
-            {/* Specular top highlight */}
-            <div className="absolute top-0 inset-x-0 h-[2px] bg-gradient-to-r from-transparent via-brand-electricBlue to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-30" />
-
             {/* Left Column: Premium Glass Information Panel */}
-            <div className="w-full lg:w-[46%] xl:w-[44%] p-7 sm:p-9 lg:p-11 flex flex-col justify-between z-20 relative bg-gradient-to-b lg:bg-gradient-to-r from-[#071328] via-[#08152E]/95 to-[#071328]/80">
+            <div className="w-full lg:w-[46%] xl:w-[44%] p-7 sm:p-9 lg:p-11 flex flex-col justify-between z-20 relative bg-[#070C18]/90">
               <div>
                 {/* Category Label */}
                 <div className="flex items-center gap-2 mb-4">
-                  <span className="px-3 py-1 rounded-full bg-brand-electricBlue/15 text-brand-cyanAccent text-xs font-mono font-bold border border-brand-electricBlue/30">
+                  <span className="px-3 py-1 rounded-full bg-white/[0.04] text-slate-300 text-xs font-medium border border-white/[0.08]">
                     Cloud & DevOps
                   </span>
-                  <span className="text-xs font-mono text-slate-400">
-                    CASE STUDY // 02
+                  <span className="text-xs text-slate-500">
+                    Production Architecture
                   </span>
                 </div>
 
                 {/* Title */}
-                <h3 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-white tracking-tight leading-tight group-hover:text-brand-cyanAccent transition-colors duration-300">
+                <h3 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-white tracking-tight leading-tight group-hover:text-slate-100 transition-colors duration-200">
                   AWS Infrastructure Automation
                 </h3>
 
@@ -264,22 +255,19 @@ export const PortfolioShowcaseSection: React.FC<PortfolioShowcaseSectionProps> =
               <div className="mt-8 pt-5 border-t border-slate-800/80 flex items-center justify-between">
                 <button
                   type="button"
-                  className="inline-flex items-center gap-2 text-sm sm:text-base font-bold text-brand-cyanAccent group-hover:text-white transition-colors"
+                  className="inline-flex items-center gap-2 text-sm sm:text-base font-semibold text-white/90 group-hover:text-white transition-colors"
                 >
                   <span>View Case Study</span>
-                  <ArrowRight className="w-4 h-4 group-hover:translate-x-1.5 transition-transform text-brand-cyanAccent" />
+                  <ArrowRight className="w-4 h-4 group-hover:translate-x-1.5 transition-transform text-white/70 group-hover:text-white" />
                 </button>
-                <span className="text-[11px] font-mono text-slate-500 uppercase tracking-wider">
-                  IaC BLUEPRINT
+                <span className="text-[11px] text-slate-500 font-medium">
+                  IaC Architecture
                 </span>
               </div>
             </div>
 
             {/* Right Column: AWS Architecture / Infrastructure Visual */}
             <div className="w-full lg:w-[54%] xl:w-[56%] bg-[#030814] border-t lg:border-t-0 lg:border-l border-slate-800/80 p-4 sm:p-6 lg:p-7 relative overflow-hidden flex flex-col justify-between group-hover:bg-[#030917] transition-colors duration-500">
-              {/* Background ambient glow */}
-              <div className="absolute -top-16 -right-16 w-56 h-56 bg-brand-cyanAccent/10 rounded-full blur-3xl pointer-events-none" />
-
               {/* Terminal Header */}
               <div className="relative z-10 flex items-center justify-between pb-3 border-b border-slate-800/80">
                 <div className="flex items-center gap-2">
@@ -287,13 +275,13 @@ export const PortfolioShowcaseSection: React.FC<PortfolioShowcaseSectionProps> =
                   <span className="w-2.5 h-2.5 rounded-full bg-amber-500/80" />
                   <span className="w-2.5 h-2.5 rounded-full bg-emerald-500/80" />
                   <span className="text-xs font-mono text-slate-300 font-semibold ml-1.5 flex items-center gap-1.5">
-                    <PremiumTerminalIcon className="w-4 h-4 text-brand-cyanAccent" />
+                    <PremiumTerminalIcon className="w-4 h-4 text-slate-400" />
                     aws-production-vpc.tf
                   </span>
                 </div>
                 <div className="flex items-center gap-2">
                   <span className="inline-flex items-center gap-1.5 text-[11px] font-mono font-bold text-emerald-400 bg-emerald-950/60 px-2.5 py-0.5 rounded-full border border-emerald-500/30">
-                    <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-ping" />
+                    <span className="w-1.5 h-1.5 rounded-full bg-emerald-400" />
                     Multi-AZ Mesh
                   </span>
                 </div>
@@ -302,7 +290,7 @@ export const PortfolioShowcaseSection: React.FC<PortfolioShowcaseSectionProps> =
               {/* AWS Multi-Tier Cloud Architecture Layout */}
               <div className="relative z-10 my-auto py-4 space-y-3 transform group-hover:scale-[1.01] transition-transform duration-500 ease-out">
                 {/* Tier 1: Ingress Layer */}
-                <div className="p-3.5 rounded-2xl bg-[#09152B]/95 border border-slate-800/90 group-hover:border-brand-cyanAccent/40 transition-colors flex items-center justify-between">
+                <div className="p-3.5 rounded-2xl bg-[#09152B]/95 border border-slate-800/90 group-hover:border-slate-700 transition-colors flex items-center justify-between">
                   <div className="flex items-center gap-3">
                     <PremiumIconBadge variant="cyan" size="sm">
                       <PremiumCloudIcon className="w-5 h-5" />
@@ -318,7 +306,7 @@ export const PortfolioShowcaseSection: React.FC<PortfolioShowcaseSectionProps> =
                 </div>
 
                 {/* Tier 2: Compute Layer */}
-                <div className="p-3.5 rounded-2xl bg-[#09152B]/95 border border-slate-800/90 group-hover:border-brand-electricBlue/40 transition-colors flex items-center justify-between">
+                <div className="p-3.5 rounded-2xl bg-[#09152B]/95 border border-slate-800/90 group-hover:border-slate-700 transition-colors flex items-center justify-between">
                   <div className="flex items-center gap-3">
                     <PremiumIconBadge variant="blue" size="sm">
                       <PremiumCpuIcon className="w-5 h-5" />
@@ -328,13 +316,13 @@ export const PortfolioShowcaseSection: React.FC<PortfolioShowcaseSectionProps> =
                       <div className="text-[11px] text-slate-400">Stateless Containers • Isolated Private Subnets</div>
                     </div>
                   </div>
-                  <span className="text-[10px] font-mono text-brand-cyanAccent bg-slate-900 px-2 py-0.5 rounded border border-slate-800">
+                  <span className="text-[10px] font-mono text-slate-300 bg-slate-900 px-2 py-0.5 rounded border border-slate-800">
                     Auto-Scaling
                   </span>
                 </div>
 
                 {/* Tier 3: Database Layer */}
-                <div className="p-3.5 rounded-2xl bg-[#09152B]/95 border border-slate-800/90 group-hover:border-indigo-500/40 transition-colors flex items-center justify-between">
+                <div className="p-3.5 rounded-2xl bg-[#09152B]/95 border border-slate-800/90 group-hover:border-slate-700 transition-colors flex items-center justify-between">
                   <div className="flex items-center gap-3">
                     <PremiumIconBadge variant="indigo" size="sm">
                       <PremiumDatabaseIcon className="w-5 h-5" />
@@ -353,7 +341,7 @@ export const PortfolioShowcaseSection: React.FC<PortfolioShowcaseSectionProps> =
               {/* Bottom Visual Strip */}
               <div className="relative z-10 pt-2.5 border-t border-slate-800/80 flex items-center justify-between text-[11px] font-mono text-slate-400">
                 <div className="flex items-center gap-2 text-slate-300">
-                  <PremiumShieldCheckIcon className="w-4 h-4 text-brand-cyanAccent" />
+                  <PremiumShieldCheckIcon className="w-4 h-4 text-emerald-400" />
                   <span>Terraform State Lock • Zero Configuration Drift</span>
                 </div>
                 <span className="text-emerald-400 font-semibold">AWS Architecture</span>
@@ -366,26 +354,23 @@ export const PortfolioShowcaseSection: React.FC<PortfolioShowcaseSectionProps> =
           {/* ========================================================================= */}
           <div 
             onClick={() => onSelectProject(PROJECTS_DATA[2])}
-            className="group cursor-pointer rounded-[28px] bg-[#071328]/95 backdrop-blur-xl border border-white/[0.08] border-t-white/[0.24] hover:border-indigo-500/60 hover:border-t-indigo-400/80 shadow-[0_16px_50px_rgba(0,0,0,0.7),inset_0_1px_0_0_rgba(255,255,255,0.12)] hover:shadow-[0_0_40px_rgba(99,102,241,0.22)] transition-all duration-500 overflow-hidden relative min-h-[440px] lg:h-[460px] xl:h-[480px] flex flex-col lg:flex-row"
+            className="group cursor-pointer rounded-3xl bg-white/[0.02] border border-white/[0.08] hover:border-white/[0.16] shadow-xl transition-all duration-300 overflow-hidden relative min-h-[440px] lg:h-[460px] xl:h-[480px] flex flex-col lg:flex-row"
           >
-            {/* Specular top highlight */}
-            <div className="absolute top-0 inset-x-0 h-[2px] bg-gradient-to-r from-transparent via-indigo-500 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-30" />
-
             {/* Left Column: Premium Glass Information Panel */}
-            <div className="w-full lg:w-[46%] xl:w-[44%] p-7 sm:p-9 lg:p-11 flex flex-col justify-between z-20 relative bg-gradient-to-b lg:bg-gradient-to-r from-[#071328] via-[#08152E]/95 to-[#071328]/80">
+            <div className="w-full lg:w-[46%] xl:w-[44%] p-7 sm:p-9 lg:p-11 flex flex-col justify-between z-20 relative bg-[#070C18]/90">
               <div>
                 {/* Category Label */}
                 <div className="flex items-center gap-2 mb-4">
-                  <span className="px-3 py-1 rounded-full bg-indigo-500/15 text-indigo-300 text-xs font-mono font-bold border border-indigo-500/30">
+                  <span className="px-3 py-1 rounded-full bg-white/[0.04] text-slate-300 text-xs font-medium border border-white/[0.08]">
                     Backend & Cloud
                   </span>
-                  <span className="text-xs font-mono text-slate-400">
-                    CASE STUDY // 03
+                  <span className="text-xs text-slate-500">
+                    Microservices Mesh
                   </span>
                 </div>
 
                 {/* Title */}
-                <h3 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-white tracking-tight leading-tight group-hover:text-brand-cyanAccent transition-colors duration-300">
+                <h3 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-white tracking-tight leading-tight group-hover:text-slate-100 transition-colors duration-200">
                   Document / Microservices Deployment
                 </h3>
 
@@ -411,10 +396,10 @@ export const PortfolioShowcaseSection: React.FC<PortfolioShowcaseSectionProps> =
               <div className="mt-8 pt-5 border-t border-slate-800/80 flex items-center justify-between">
                 <button
                   type="button"
-                  className="inline-flex items-center gap-2 text-sm sm:text-base font-bold text-brand-cyanAccent group-hover:text-white transition-colors"
+                  className="inline-flex items-center gap-2 text-sm sm:text-base font-semibold text-white/90 group-hover:text-white transition-colors"
                 >
                   <span>View Case Study</span>
-                  <ArrowRight className="w-4 h-4 group-hover:translate-x-1.5 transition-transform text-brand-cyanAccent" />
+                  <ArrowRight className="w-4 h-4 group-hover:translate-x-1.5 transition-transform text-white/70 group-hover:text-white" />
                 </button>
                 <span className="text-[11px] font-mono text-slate-500 uppercase tracking-wider">
                   MICROSERVICE MESH
@@ -440,7 +425,7 @@ export const PortfolioShowcaseSection: React.FC<PortfolioShowcaseSectionProps> =
                 </div>
                 <div className="flex items-center gap-2">
                   <span className="inline-flex items-center gap-1.5 text-[11px] font-mono font-bold text-emerald-400 bg-emerald-950/60 px-2.5 py-0.5 rounded-full border border-emerald-500/30">
-                    <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-ping" />
+                    <span className="w-1.5 h-1.5 rounded-full bg-emerald-400" />
                     Service Mesh
                   </span>
                 </div>
@@ -465,7 +450,7 @@ export const PortfolioShowcaseSection: React.FC<PortfolioShowcaseSectionProps> =
                 </div>
 
                 {/* Node 2: Asynchronous Queue Worker */}
-                <div className="p-3.5 rounded-2xl bg-[#09152B]/95 border border-slate-800/90 group-hover:border-brand-cyanAccent/40 transition-colors flex items-center justify-between">
+                <div className="p-3.5 rounded-2xl bg-[#09152B]/95 border border-slate-800/90 group-hover:border-slate-700 transition-colors flex items-center justify-between">
                   <div className="flex items-center gap-3">
                     <PremiumIconBadge variant="cyan" size="sm">
                       <PremiumZapIcon className="w-5 h-5" />
@@ -475,7 +460,7 @@ export const PortfolioShowcaseSection: React.FC<PortfolioShowcaseSectionProps> =
                       <div className="text-[11px] text-slate-400">Decoupled Asynchronous Processing • Node.js Workers</div>
                     </div>
                   </div>
-                  <span className="text-[10px] font-mono text-brand-cyanAccent bg-slate-900 px-2 py-0.5 rounded border border-slate-800">
+                  <span className="text-[10px] font-mono text-slate-300 bg-slate-900 px-2 py-0.5 rounded border border-slate-800">
                     Async
                   </span>
                 </div>
@@ -513,26 +498,23 @@ export const PortfolioShowcaseSection: React.FC<PortfolioShowcaseSectionProps> =
           {/* ========================================================================= */}
           <div 
             onClick={() => onSelectProject(PROJECTS_DATA[3])}
-            className="group cursor-pointer rounded-[28px] bg-[#071328]/95 backdrop-blur-xl border border-white/[0.08] border-t-white/[0.24] hover:border-emerald-500/60 hover:border-t-emerald-400/80 shadow-[0_16px_50px_rgba(0,0,0,0.7),inset_0_1px_0_0_rgba(255,255,255,0.12)] hover:shadow-[0_0_40px_rgba(16,185,129,0.22)] transition-all duration-500 overflow-hidden relative min-h-[440px] lg:h-[460px] xl:h-[480px] flex flex-col lg:flex-row"
+            className="group cursor-pointer rounded-3xl bg-white/[0.02] border border-white/[0.08] hover:border-white/[0.16] shadow-xl transition-all duration-300 overflow-hidden relative min-h-[440px] lg:h-[460px] xl:h-[480px] flex flex-col lg:flex-row"
           >
-            {/* Specular top highlight */}
-            <div className="absolute top-0 inset-x-0 h-[2px] bg-gradient-to-r from-transparent via-emerald-500 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-30" />
-
             {/* Left Column: Premium Glass Information Panel */}
-            <div className="w-full lg:w-[46%] xl:w-[44%] p-7 sm:p-9 lg:p-11 flex flex-col justify-between z-20 relative bg-gradient-to-b lg:bg-gradient-to-r from-[#071328] via-[#08152E]/95 to-[#071328]/80">
+            <div className="w-full lg:w-[46%] xl:w-[44%] p-7 sm:p-9 lg:p-11 flex flex-col justify-between z-20 relative bg-[#070C18]/90">
               <div>
                 {/* Category Label */}
                 <div className="flex items-center gap-2 mb-4">
-                  <span className="px-3 py-1 rounded-full bg-emerald-500/15 text-emerald-400 text-xs font-mono font-bold border border-emerald-500/30">
+                  <span className="px-3 py-1 rounded-full bg-white/[0.04] text-slate-300 text-xs font-medium border border-white/[0.08]">
                     DevOps & Automation
                   </span>
-                  <span className="text-xs font-mono text-slate-400">
-                    CASE STUDY // 04
+                  <span className="text-xs text-slate-500">
+                    GitOps Workflows
                   </span>
                 </div>
 
                 {/* Title */}
-                <h3 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-white tracking-tight leading-tight group-hover:text-brand-cyanAccent transition-colors duration-300">
+                <h3 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-white tracking-tight leading-tight group-hover:text-slate-100 transition-colors duration-200">
                   CI/CD Pipeline Automation
                 </h3>
 
@@ -558,10 +540,10 @@ export const PortfolioShowcaseSection: React.FC<PortfolioShowcaseSectionProps> =
               <div className="mt-8 pt-5 border-t border-slate-800/80 flex items-center justify-between">
                 <button
                   type="button"
-                  className="inline-flex items-center gap-2 text-sm sm:text-base font-bold text-brand-cyanAccent group-hover:text-white transition-colors"
+                  className="inline-flex items-center gap-2 text-sm sm:text-base font-semibold text-white/90 group-hover:text-white transition-colors"
                 >
                   <span>View Case Study</span>
-                  <ArrowRight className="w-4 h-4 group-hover:translate-x-1.5 transition-transform text-brand-cyanAccent" />
+                  <ArrowRight className="w-4 h-4 group-hover:translate-x-1.5 transition-transform text-white/70 group-hover:text-white" />
                 </button>
                 <span className="text-[11px] font-mono text-slate-500 uppercase tracking-wider">
                   GITOPS WORKFLOW
@@ -630,7 +612,7 @@ export const PortfolioShowcaseSection: React.FC<PortfolioShowcaseSectionProps> =
               {/* Bottom Visual Strip */}
               <div className="relative z-10 pt-2.5 border-t border-slate-800/80 flex items-center justify-between text-[11px] font-mono text-slate-400">
                 <div className="flex items-center gap-2 text-slate-300">
-                  <GitCommit className="w-3.5 h-3.5 text-brand-cyanAccent" />
+                  <GitCommit className="w-3.5 h-3.5 text-slate-400" />
                   <span>Version Control: <strong className="text-white">Git-Managed</strong> (Main Branch)</span>
                 </div>
                 <span className="text-emerald-400 font-semibold">Zero-Downtime Rollout</span>

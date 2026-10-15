@@ -28,28 +28,25 @@ export const ValueStrip: React.FC = () => {
   ];
 
   return (
-    <section ref={ref} className="bg-[#070F1E] border-y border-slate-800/80 py-10 sm:py-12 relative overflow-hidden">
-      {/* Background subtle radial glow */}
-      <div className="absolute inset-0 bg-[radial-gradient(rgba(22,119,255,0.06)_1px,transparent_1px)] [background-size:24px_24px] pointer-events-none" />
-
+    <section ref={ref} className="bg-[#070D1A] border-y border-white/[0.06] py-10 sm:py-12 relative overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 lg:gap-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 lg:gap-5">
           {COMPANY_INFO.valueStrip.map((item, index) => (
             <div 
               key={item.title} 
-              className={`flex items-start gap-4 p-5 rounded-2xl bg-[#0B1528]/85 border border-white/[0.08] border-t-white/[0.24] shadow-[0_8px_30px_rgba(0,0,0,0.6),inset_0_1px_0_0_rgba(255,255,255,0.12)] hover:border-brand-electricBlue/50 hover:border-t-brand-cyanAccent/80 hover:shadow-glow-blue transition-all duration-300 group scroll-reveal ${
+              className={`flex items-start gap-4 p-5 rounded-2xl bg-white/[0.02] border border-white/[0.06] hover:border-white/[0.14] hover:bg-white/[0.04] transition-all duration-300 group scroll-reveal ${
                 isInView ? 'is-visible' : ''
               }`}
               style={{
-                transitionDelay: `${index * 90}ms`,
+                transitionDelay: `${index * 80}ms`,
               }}
             >
               {badgeIcons[index % badgeIcons.length]}
               <div>
-                <h3 className="text-sm font-bold text-white tracking-tight group-hover:text-brand-cyanAccent transition-colors">
+                <h3 className="text-sm font-semibold text-white tracking-tight transition-colors">
                   {item.title}
                 </h3>
-                <p className="text-xs text-slate-300 mt-1.5 leading-relaxed">
+                <p className="text-xs text-slate-400 mt-1 leading-relaxed">
                   {item.description}
                 </p>
               </div>

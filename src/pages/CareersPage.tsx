@@ -406,13 +406,13 @@ export const CareersPage: React.FC = () => {
             <div className="flex flex-col sm:flex-row items-center gap-3 w-full md:w-auto">
               <button
                 onClick={() => handleOpenApplyModal(null)}
-                className="w-full sm:w-auto px-6 py-3.5 rounded-xl bg-brand-electricBlue hover:bg-brand-electricBlue/90 text-white font-semibold text-sm transition-all shadow-glow-blue whitespace-nowrap"
+                className="w-full sm:w-auto px-6 py-3.5 rounded-xl bg-white hover:bg-slate-100 text-slate-950 font-semibold text-sm transition-all shadow-sm whitespace-nowrap"
               >
                 Submit General Profile
               </button>
               <a
                 href="mailto:careers@teciaura.com"
-                className="w-full sm:w-auto text-center px-5 py-3.5 rounded-xl bg-slate-900/80 hover:bg-slate-800 border border-slate-700/80 text-slate-300 hover:text-white text-sm font-semibold transition-all whitespace-nowrap"
+                className="w-full sm:w-auto text-center px-5 py-3.5 rounded-xl bg-white/[0.04] hover:bg-white/[0.08] border border-white/[0.1] text-white text-sm font-semibold transition-all whitespace-nowrap"
               >
                 careers@teciaura.com
               </a>
@@ -422,7 +422,7 @@ export const CareersPage: React.FC = () => {
       </section>
 
       {/* Perks and Benefits Grid */}
-      <section className="py-24 bg-[#050B17] border-b border-slate-800/80">
+      <section className="py-24 bg-[#060B15] border-b border-white/[0.08]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <SectionHeading
             eyebrow="Perks & Benefits"
@@ -435,7 +435,7 @@ export const CareersPage: React.FC = () => {
             {PERKS_AND_BENEFITS.map((perk, i) => (
               <div
                 key={i}
-                className="p-7 rounded-3xl bg-[#0B1528] border border-slate-800 shadow-card hover:border-brand-cyanAccent/40 transition-all"
+                className="p-7 rounded-3xl bg-white/[0.02] border border-white/[0.08] hover:border-white/[0.14] transition-all"
               >
                 <div className="w-12 h-12 rounded-2xl bg-slate-900 border border-slate-700/80 flex items-center justify-center mb-5">
                   {getPerkIcon(perk.icon)}

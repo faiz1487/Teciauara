@@ -25,15 +25,15 @@ export const SectionHeading: React.FC<SectionHeadingProps> = ({
   return (
     <div className={`max-w-3xl flex flex-col ${alignmentClasses[align]} ${className}`}>
       {eyebrow && (
-        <div className="inline-flex items-center gap-2 mb-3.5 px-3 py-1 rounded-full bg-brand-electricBlue/10 border border-brand-electricBlue/20 shadow-subtle">
-          <span className="w-1.5 h-1.5 rounded-full bg-brand-cyanAccent animate-pulse" />
-          <span className="text-[11px] uppercase tracking-widest font-bold text-brand-cyanAccent font-mono">
+        <div className="inline-flex items-center gap-2 mb-3 px-3 py-1 rounded-full bg-white/[0.04] border border-white/[0.08]">
+          <span className="w-1.5 h-1.5 rounded-full bg-emerald-400" />
+          <span className="text-[11px] uppercase tracking-wider font-medium text-slate-300">
             {eyebrow}
           </span>
         </div>
       )}
       
-      <h2 className="text-display-section font-extrabold tracking-tight bg-gradient-to-b from-white via-slate-100 to-slate-400/90 bg-clip-text text-transparent">
+      <h2 className="text-display-section font-bold tracking-tight text-white">
         {title}
       </h2>
 

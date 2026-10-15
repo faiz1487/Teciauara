@@ -16,84 +16,82 @@ export const TeciauraDifference: React.FC = () => {
   const pillars = [
     {
       number: '01',
-      title: 'Practical Engineering',
-      description: 'We focus on solutions that solve genuine business bottlenecks without pushing bloated frameworks or unnecessary cloud services.',
-      takeaways: ['Right-sized architectures', 'Zero gratuitous complexity', 'Measurable business ROI'],
+      title: 'Honest, Right-Sized Engineering',
+      description: 'We never push bloated frameworks or expensive cloud add-ons when a simpler, faster solution does the job better. We treat your budget like our own.',
+      takeaways: ['No unnecessary server costs', 'Clean, maintainable codebases', 'Focus on real business ROI'],
       icon: PremiumTargetIcon,
       variant: 'cyan' as const,
-      highlightColor: 'from-brand-cyanAccent to-brand-electricBlue'
+      highlightColor: 'from-amber-400 to-amber-200'
     },
     {
       number: '02',
-      title: 'Reliable, Transparent Delivery',
-      description: 'Clear sprint cadence, defined milestone roadmaps, and direct engineer communication so you always know exactly where your project stands.',
-      takeaways: ['Weekly staging demos', 'Fixed-scope predictability', 'Direct Slack/Teams channel access'],
+      title: 'Zero-Stress, Direct Communication',
+      description: 'You get a shared WhatsApp or Slack channel directly with your developer. Fast answers, weekly video staging walkthroughs, and clear sprint milestones.',
+      takeaways: ['Weekly live video demos', 'Direct developer access', 'No non-technical middlemen'],
       icon: PremiumShieldCheckIcon,
       variant: 'blue' as const,
-      highlightColor: 'from-brand-electricBlue to-indigo-500'
+      highlightColor: 'from-emerald-400 to-teal-300'
     },
     {
       number: '03',
-      title: 'Scalable Digital Foundations',
-      description: 'We architect systems designed to expand gracefully — from your first 1,000 users to high-concurrency production spikes without rewrite.',
-      takeaways: ['Multi-AZ auto-scaling', 'Stateless container services', 'Decoupled caching layers'],
+      title: 'Built for Real Commercial Growth',
+      description: 'We architect systems designed to expand gracefully — from your first 100 users to high-volume spikes without needing an expensive emergency rewrite.',
+      takeaways: ['High-speed performance', 'Automated daily backups', 'Seamless cloud scalability'],
       icon: PremiumTrendingIcon,
       variant: 'indigo' as const,
-      highlightColor: 'from-indigo-500 to-emerald-400'
+      highlightColor: 'from-blue-400 to-indigo-300'
     },
     {
       number: '04',
-      title: 'Unified Technology Partner',
-      description: 'Access cloud architecture, frontend design, custom software engineering, and technical SEO through one accountable, multidisciplinary team.',
-      takeaways: ['Single point of ownership', 'Continuous SLA maintenance', 'End-to-end lifecycle care'],
+      title: 'We Don\'t Disappear After Launch',
+      description: 'Launching is just Day 1. We stick around to help you monitor performance, patch security dependencies, and roll out new features as your company expands.',
+      takeaways: ['100% Code ownership from Day 1', 'Rapid SLA response times', 'Dedicated long-term care'],
       icon: PremiumLayersIcon,
       variant: 'emerald' as const,
-      highlightColor: 'from-emerald-400 to-brand-cyanAccent'
+      highlightColor: 'from-purple-400 to-pink-300'
     }
   ];
 
   return (
-    <section className="py-24 bg-[#070F1E] border-y border-slate-800/80 relative overflow-hidden">
-      {/* Background radial ambient lights */}
-      <div className="absolute top-1/3 -left-36 w-96 h-96 bg-brand-electricBlue/10 rounded-full blur-[130px] pointer-events-none -z-10" />
-
+    <section className="py-24 bg-[#060B15] border-y border-white/[0.06] relative overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-start">
           
           {/* Left Column: Sticky Editorial Statement (5 cols on lg) */}
           <div className="lg:col-span-5 lg:sticky lg:top-28 space-y-6">
-            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#0B1528] border border-brand-electricBlue/40 text-xs font-semibold text-brand-cyanAccent font-mono shadow-sm">
-              <Sparkles className="w-3.5 h-3.5 text-brand-cyanAccent" />
-              <span>THE TECIAURA DIFFERENCE</span>
+            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/[0.04] border border-white/[0.08] text-xs font-medium text-slate-300">
+              <Sparkles className="w-3.5 h-3.5 text-amber-400" />
+              <span>The Teciaura Difference</span>
             </div>
 
-            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-white tracking-tight leading-[1.12]">
-              Engineering Built for What Comes Next —{' '}
-              <span className="bg-gradient-to-r from-brand-cyanAccent via-brand-electricBlue to-white bg-clip-text text-transparent">
-                Without the Bloat.
-              </span>
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white tracking-tight leading-[1.12]">
+              How working with us feels refreshingly different.
             </h2>
 
             <p className="text-base sm:text-lg text-slate-300 leading-relaxed font-normal">
-              We bridge the gap between technical complexity and real commercial impact through disciplined engineering, clear milestones, and zero architectural debt.
+              Most clients come to us after being disappointed by slow agencies, confusing invoices, or disappearing contractors. We built Teciaura to be the transparent engineering partner we would want to hire ourselves.
             </p>
 
             {/* Core Commitments Box */}
-            <div className="p-5 rounded-2xl bg-[#0B1528]/90 border border-white/[0.08] border-t-white/[0.20] shadow-[0_8px_25px_-5px_rgba(0,0,0,0.6),inset_0_1px_0_0_rgba(255,255,255,0.10)] space-y-3 font-normal text-sm text-slate-300">
-              <div className="text-xs uppercase font-mono tracking-wider font-bold text-slate-400 pb-2 border-b border-slate-800">
-                Our Operating Commitments
+            <div className="p-5 rounded-2xl bg-white/[0.02] border border-white/[0.08] space-y-3 font-normal text-sm text-slate-300">
+              <div className="text-xs font-semibold text-white uppercase tracking-wider pb-2 border-b border-white/[0.06]">
+                Our Promises To Every Client
               </div>
               <div className="flex items-center gap-2.5">
                 <CheckCircle2 className="w-4 h-4 text-emerald-400 flex-shrink-0" />
-                <span>Direct engineer collaboration (no sales layers)</span>
+                <span>Direct engineer collaboration (no non-technical middlemen)</span>
               </div>
               <div className="flex items-center gap-2.5">
-                <CheckCircle2 className="w-4 h-4 text-brand-cyanAccent flex-shrink-0" />
-                <span>100% code ownership & open standard stacks</span>
+                <CheckCircle2 className="w-4 h-4 text-emerald-400 flex-shrink-0" />
+                <span>Weekly live video demos &amp; staging links</span>
               </div>
               <div className="flex items-center gap-2.5">
-                <CheckCircle2 className="w-4 h-4 text-brand-electricBlue flex-shrink-0" />
-                <span>Documented IaC blueprints & handover</span>
+                <CheckCircle2 className="w-4 h-4 text-emerald-400 flex-shrink-0" />
+                <span>100% code &amp; repository ownership from Day 1</span>
+              </div>
+              <div className="flex items-center gap-2.5">
+                <CheckCircle2 className="w-4 h-4 text-emerald-400 flex-shrink-0" />
+                <span>Honest advice on what NOT to waste budget on</span>
               </div>
             </div>
 
@@ -103,53 +101,50 @@ export const TeciauraDifference: React.FC = () => {
                 variant="primary"
                 size="md"
                 icon={<ArrowRight className="w-4 h-4" />}
-                className="shadow-glow-blue"
+                className="bg-white hover:bg-slate-100 text-slate-950 font-semibold border-white shadow-sm"
               >
-                Start an Architecture Consultation
+                Schedule a 20-Min Conversation
               </Button>
             </div>
           </div>
 
           {/* Right Column: Connected Value Pillars (7 cols on lg) */}
-          <div className="lg:col-span-7 space-y-6">
-            {pillars.map((pillar, idx) => {
+          <div className="lg:col-span-7 space-y-5">
+            {pillars.map((pillar) => {
               const Icon = pillar.icon;
               return (
                 <div
                   key={pillar.number}
-                  className="group relative rounded-3xl bg-[#09152C]/80 border border-white/[0.08] border-t-white/[0.22] shadow-[0_12px_35px_-8px_rgba(0,0,0,0.75),inset_0_1px_0_0_rgba(255,255,255,0.12)] p-6 sm:p-8 hover:border-brand-electricBlue/60 hover:border-t-brand-cyanAccent/80 hover:shadow-card-hover transition-all duration-300 overflow-hidden"
+                  className="group relative rounded-2xl bg-white/[0.02] border border-white/[0.08] hover:border-white/[0.16] hover:bg-white/[0.04] p-6 sm:p-7 transition-all duration-300 overflow-hidden"
                 >
-                  {/* Subtle hover gradient indicator */}
-                  <div className={`absolute top-0 left-0 right-0 h-1 bg-gradient-to-r ${pillar.highlightColor} opacity-0 group-hover:opacity-100 transition-opacity duration-300`} />
-
-                  <div className="flex flex-col sm:flex-row sm:items-start justify-between gap-4 mb-4">
+                  <div className="flex flex-col sm:flex-row sm:items-start justify-between gap-4 mb-3">
                     <div className="flex items-center gap-3.5">
                       <PremiumIconBadge variant={pillar.variant} size="md">
-                        <Icon className="w-6 h-6" />
+                        <Icon className="w-5 h-5" />
                       </PremiumIconBadge>
                       <div>
-                        <div className="text-xs font-mono font-bold text-slate-500 uppercase tracking-wider">
-                          Pillar {pillar.number}
+                        <div className="text-xs text-slate-500 font-medium uppercase tracking-wider">
+                          Principle {pillar.number}
                         </div>
-                        <h3 className="text-xl font-bold text-white group-hover:text-brand-cyanAccent transition-colors">
+                        <h3 className="text-lg font-bold text-white transition-colors">
                           {pillar.title}
                         </h3>
                       </div>
                     </div>
                   </div>
 
-                  <p className="text-sm sm:text-base text-slate-300 leading-relaxed font-normal">
+                  <p className="text-sm text-slate-300 leading-relaxed font-normal">
                     {pillar.description}
                   </p>
 
                   {/* Bullet Takeaways */}
-                  <div className="mt-5 pt-4 border-t border-slate-800/80 flex flex-wrap gap-2">
+                  <div className="mt-4 pt-3 border-t border-white/[0.06] flex flex-wrap gap-2">
                     {pillar.takeaways.map((item, tIdx) => (
                       <span 
                         key={tIdx}
-                        className="inline-flex items-center gap-1.5 px-3 py-1 rounded-xl bg-slate-900/90 border border-slate-800 text-xs text-slate-300 font-mono"
+                        className="inline-flex items-center gap-1.5 px-3 py-1 rounded-lg bg-white/[0.03] border border-white/[0.06] text-xs text-slate-300"
                       >
-                        <span className="w-1.5 h-1.5 rounded-full bg-brand-cyanAccent" />
+                        <span className="w-1.5 h-1.5 rounded-full bg-slate-400" />
                         <span>{item}</span>
                       </span>
                     ))}

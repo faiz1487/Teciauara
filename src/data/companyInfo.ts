@@ -29,20 +29,20 @@ export const COMPANY_INFO = {
 
   valueStrip: [
     {
-      title: 'Technology-Driven Solutions',
-      description: 'Engineered using modern, resilient stacks designed for real business workflows.',
+      title: 'Direct Engineer Access',
+      description: 'Talk directly with the senior developers writing your code — no salespeople or middlemen.',
     },
     {
-      title: 'Business-Focused Approach',
-      description: 'Prioritizing speed, clarity, and return on investment over unnecessary complexity.',
+      title: 'Weekly Live Staging Demos',
+      description: 'Test working features on your phone every week so you always see actual progress.',
     },
     {
-      title: 'Scalable Digital Foundations',
-      description: 'Architectures structured to grow gracefully alongside your customer volume.',
+      title: '100% Code & IP Ownership',
+      description: 'Every repository and credential belongs to you from Day 1 with clean documentation.',
     },
     {
-      title: 'Ongoing Technical Support',
-      description: 'Direct access to engineers for maintenance, troubleshooting, and continuous updates.',
+      title: 'Dedicated WhatsApp Support',
+      description: 'Fast answers and ongoing maintenance directly from your engineering team.',
     },
   ],
 

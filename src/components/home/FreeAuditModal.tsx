@@ -55,15 +55,12 @@ export const FreeAuditModal: React.FC<FreeAuditModalProps> = ({ isOpen, onClose 
       />
 
       {/* Modal Card */}
-      <div className="relative w-full max-w-lg bg-[#070F1E] border border-brand-electricBlue/40 rounded-3xl shadow-2xl overflow-hidden z-10 my-8">
+      <div className="relative w-full max-w-lg bg-[#070C18] border border-white/[0.12] rounded-3xl shadow-2xl overflow-hidden z-10 my-8">
         
-        {/* Top Glow Accent Bar */}
-        <div className="h-1.5 w-full bg-gradient-to-r from-brand-electricBlue via-brand-cyanAccent to-sky-400" />
-
         {/* Close Button */}
         <button
           onClick={handleResetAndClose}
-          className="absolute top-4 right-4 p-2 rounded-xl text-slate-400 hover:text-white hover:bg-slate-800/80 transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-cyanAccent"
+          className="absolute top-4 right-4 p-2 rounded-xl text-slate-400 hover:text-white hover:bg-white/[0.06] transition-colors focus:outline-none"
           aria-label="Close modal"
         >
           <X className="w-5 h-5" />
@@ -71,25 +68,25 @@ export const FreeAuditModal: React.FC<FreeAuditModalProps> = ({ isOpen, onClose 
 
         {isSubmitted ? (
           <div className="p-8 sm:p-10 text-center space-y-5">
-            <div className="w-16 h-16 rounded-2xl bg-brand-cyanAccent/15 border border-brand-cyanAccent/30 text-brand-cyanAccent flex items-center justify-center mx-auto shadow-glow-cyan animate-in zoom-in-50 duration-200">
-              <CheckCircle2 className="w-9 h-9" />
+            <div className="w-14 h-14 rounded-2xl bg-emerald-500/10 border border-emerald-500/20 text-emerald-400 flex items-center justify-center mx-auto">
+              <CheckCircle2 className="w-8 h-8" />
             </div>
 
             <div className="space-y-2">
               <h3 className="text-2xl font-bold text-white tracking-tight">Assessment Request Received</h3>
               <p className="text-slate-300 text-sm max-w-sm mx-auto leading-relaxed">
-                Our senior cloud & DevOps engineering team has logged your technical parameters for <span className="text-brand-cyanAccent font-semibold font-mono">{formData.websiteUrl}</span>.
+                Our senior engineering team has received your parameters for <span className="text-white font-medium">{formData.websiteUrl}</span>.
               </p>
             </div>
 
-            <div className="p-4 rounded-2xl bg-[#0B1528] border border-slate-800 text-xs text-slate-400 text-left space-y-1.5 font-mono">
+            <div className="p-4 rounded-2xl bg-white/[0.02] border border-white/[0.08] text-xs text-slate-400 text-left space-y-1.5 font-mono">
               <div className="flex justify-between">
                 <span className="text-slate-500">System Domain:</span>
                 <span className="text-white font-medium">{formData.websiteUrl}</span>
               </div>
               <div className="flex justify-between">
                 <span className="text-slate-500">Focus Area:</span>
-                <span className="text-brand-cyanAccent font-medium">{formData.primaryConcern}</span>
+                <span className="text-slate-200 font-medium">{formData.primaryConcern}</span>
               </div>
               <div className="flex justify-between">
                 <span className="text-slate-500">Work Email:</span>
@@ -97,13 +94,13 @@ export const FreeAuditModal: React.FC<FreeAuditModalProps> = ({ isOpen, onClose 
               </div>
               <div className="flex justify-between">
                 <span className="text-slate-500">Status:</span>
-                <span className="text-emerald-400 font-bold">Queued for Architect Review</span>
+                <span className="text-emerald-400 font-bold">Queued for Review</span>
               </div>
             </div>
 
             <button
               onClick={handleResetAndClose}
-              className="w-full py-3 rounded-xl bg-brand-electricBlue hover:bg-brand-electricBlue/90 text-white font-semibold text-sm transition-all shadow-glow-blue"
+              className="w-full py-3 rounded-xl bg-white hover:bg-slate-100 text-slate-950 font-semibold text-sm transition-all"
             >
               Done & Close
             </button>
@@ -112,15 +109,15 @@ export const FreeAuditModal: React.FC<FreeAuditModalProps> = ({ isOpen, onClose 
           <div className="p-6 sm:p-8">
             {/* Header info */}
             <div className="mb-6">
-              <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-brand-electricBlue/20 border border-brand-electricBlue/30 text-xs font-semibold text-brand-cyanAccent font-mono mb-2">
-                <Terminal className="w-3.5 h-3.5 text-brand-cyanAccent" />
-                <span>CONFIDENTIAL TECHNICAL DIAGNOSTIC</span>
+              <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-white/[0.04] border border-white/[0.08] text-xs font-medium text-slate-300 mb-2">
+                <span className="w-1.5 h-1.5 rounded-full bg-emerald-400" />
+                <span>CONFIDENTIAL ARCHITECTURE AUDIT</span>
               </div>
               <h2 className="text-2xl font-bold text-white tracking-tight">
                 Request Architecture Assessment
               </h2>
               <p className="text-xs sm:text-sm text-slate-400 mt-1">
-                Collaborate with senior cloud & systems engineers. We analyze scalability roadblocks, deployment latency, and cloud cost efficiency.
+                Collaborate directly with senior engineers. We analyze scalability bottlenecks, deployment reliability, and cloud costs.
               </p>
             </div>
 
@@ -226,12 +223,12 @@ export const FreeAuditModal: React.FC<FreeAuditModalProps> = ({ isOpen, onClose 
                 <button
                   type="submit"
                   disabled={isSubmitting}
-                  className="w-full flex items-center justify-center gap-2 py-3 rounded-xl bg-gradient-to-r from-brand-electricBlue to-brand-cyanAccent hover:brightness-110 text-white font-bold text-sm transition-all shadow-glow-blue active:scale-98"
+                  className="w-full flex items-center justify-center gap-2 py-3 rounded-xl bg-white hover:bg-slate-100 text-slate-950 font-semibold text-sm transition-all shadow-md active:scale-98"
                 >
                   {isSubmitting ? (
                     <>
-                      <div className="w-4 h-4 border-2 border-white/30 border-t-white rounded-full animate-spin" />
-                      <span>Submitting Assessment Request...</span>
+                      <div className="w-4 h-4 border-2 border-slate-400 border-t-slate-950 rounded-full animate-spin" />
+                      <span>Submitting Request...</span>
                     </>
                   ) : (
                     <>
@@ -248,7 +245,7 @@ export const FreeAuditModal: React.FC<FreeAuditModalProps> = ({ isOpen, onClose 
                   </span>
                   <span>•</span>
                   <span className="flex items-center gap-1">
-                    <Cpu className="w-3.5 h-3.5 text-brand-cyanAccent" />
+                    <Cpu className="w-3.5 h-3.5 text-slate-400" />
                     Reviewed by Senior Engineers
                   </span>
                 </div>

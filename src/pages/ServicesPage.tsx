@@ -88,16 +88,13 @@ export const ServicesPage: React.FC = () => {
           <Breadcrumb items={[{ label: 'Services' }]} />
 
           <div className="mt-8 max-w-3xl">
-            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#0B1528] border border-brand-cyanAccent/30 text-xs font-semibold text-brand-cyanAccent mb-4 shadow-[0_0_15px_rgba(0,200,232,0.15)] font-mono">
-              <span className="w-2 h-2 rounded-full bg-brand-cyanAccent animate-pulse" />
-              <span>FULL-CYCLE TECHNOLOGY ARCHITECTURE</span>
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/[0.04] border border-white/[0.08] text-xs font-medium text-slate-300 mb-4">
+              <span className="w-1.5 h-1.5 rounded-full bg-emerald-400" />
+              <span>Full-Cycle Engineering Capabilities</span>
             </div>
 
-            <h1 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-white tracking-tight leading-tight">
-              Engineering Capabilities Built for{' '}
-              <span className="bg-gradient-to-r from-brand-cyanAccent via-sky-300 to-brand-electricBlue bg-clip-text text-transparent">
-                Speed, Scale & Reliability.
-              </span>
+            <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white tracking-tight leading-tight">
+              Engineering capabilities built for speed, scale, and reliability.
             </h1>
 
             <p className="mt-4 text-base sm:text-lg text-slate-300 leading-relaxed font-normal">
@@ -110,7 +107,7 @@ export const ServicesPage: React.FC = () => {
                 variant="primary"
                 size="md"
                 icon={<ArrowRight className="w-4 h-4" />}
-                className="shadow-glow-blue hover:shadow-[0_0_25px_rgba(22,119,255,0.7)] font-bold"
+                className="bg-white text-slate-950 hover:bg-slate-100 font-semibold"
               >
                 Request a Service Proposal
               </Button>
@@ -118,7 +115,7 @@ export const ServicesPage: React.FC = () => {
                 href="#service-list"
                 variant="secondary"
                 size="md"
-                className="border-slate-700/80 hover:border-brand-cyanAccent/50"
+                className="border-white/[0.12] hover:bg-white/[0.06] text-white"
               >
                 Browse All 6 Capabilities
               </Button>
@@ -156,11 +153,8 @@ export const ServicesPage: React.FC = () => {
               <div
                 key={service.id}
                 id={service.id}
-                className="group relative scroll-mt-28 p-8 sm:p-10 lg:p-12 rounded-3xl bg-[#081326]/90 border border-white/[0.08] border-t-white/[0.24] shadow-[0_16px_50px_rgba(0,0,0,0.65),inset_0_1px_0_0_rgba(255,255,255,0.12)] hover:border-brand-cyanAccent/60 hover:border-t-brand-cyanAccent/80 hover:shadow-[0_0_45px_rgba(0,200,232,0.18)] transition-all duration-300 backdrop-blur-xl overflow-hidden"
+                className="group relative scroll-mt-28 p-8 sm:p-10 lg:p-12 rounded-3xl bg-white/[0.02] border border-white/[0.08] hover:border-white/[0.14] transition-all duration-300 overflow-hidden"
               >
-                {/* Specular top highlight */}
-                <div className="absolute top-0 inset-x-0 h-[2px] bg-gradient-to-r from-transparent via-brand-cyanAccent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-10" />
-
                 <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12 items-start relative z-10">
                   
                   {/* Service Overview (7 cols) */}
@@ -173,15 +167,15 @@ export const ServicesPage: React.FC = () => {
 
                       <div>
                         <div className="flex items-center gap-2 mb-1">
-                          <span className="text-[11px] font-mono font-bold uppercase tracking-wider text-brand-cyanAccent">
-                            SERVICE 0{index + 1}
+                          <span className="text-[11px] font-medium uppercase tracking-wider text-slate-400">
+                            Service 0{index + 1}
                           </span>
                           <span className="text-slate-600">•</span>
-                          <span className="text-[10px] font-mono uppercase tracking-wider text-slate-400">
+                          <span className="text-[10px] uppercase tracking-wider text-slate-400">
                             {visuals.categoryTag}
                           </span>
                         </div>
-                        <h2 className="text-2xl sm:text-3xl font-extrabold text-white tracking-tight group-hover:text-brand-cyanAccent transition-colors">
+                        <h2 className="text-2xl sm:text-3xl font-bold text-white tracking-tight group-hover:text-slate-100 transition-colors">
                           {service.title}
                         </h2>
                       </div>
@@ -193,7 +187,7 @@ export const ServicesPage: React.FC = () => {
 
                     {/* Operational Approach / Standards */}
                     <div className="space-y-3 pt-2">
-                      <h3 className="text-xs font-bold uppercase tracking-wider text-brand-cyanAccent font-mono flex items-center gap-1.5">
+                      <h3 className="text-xs font-semibold uppercase tracking-wider text-slate-400 flex items-center gap-1.5">
                         <Sparkles className="w-3.5 h-3.5" />
                         Operational Approach & Engineering Standards
                       </h3>
@@ -231,7 +225,7 @@ export const ServicesPage: React.FC = () => {
                         variant="primary"
                         size="md"
                         icon={<ArrowRight className="w-4 h-4" />}
-                        className="shadow-glow-blue font-bold text-sm"
+                        className="bg-white text-slate-950 hover:bg-slate-100 font-semibold text-sm"
                       >
                         Inquire About {service.title}
                       </Button>
@@ -239,38 +233,38 @@ export const ServicesPage: React.FC = () => {
                   </div>
 
                   {/* Technical Deliverables Blueprint Card (5 cols) */}
-                  <div className="lg:col-span-5 bg-[#050D1C] rounded-2xl p-6 sm:p-7 border border-white/[0.08] border-t-white/[0.22] shadow-[0_12px_35px_-8px_rgba(0,0,0,0.7),inset_0_1px_0_0_rgba(255,255,255,0.12)] flex flex-col justify-between space-y-5">
+                  <div className="lg:col-span-5 bg-white/[0.02] rounded-2xl p-6 sm:p-7 border border-white/[0.08] flex flex-col justify-between space-y-5">
                     <div>
                       {/* Deliverables Header */}
-                      <div className="flex items-center justify-between pb-3.5 border-b border-slate-800 text-xs font-mono">
-                        <span className="flex items-center gap-2 font-bold text-white tracking-wider uppercase">
-                          <ShieldCheck className="w-4 h-4 text-brand-cyanAccent" />
+                      <div className="flex items-center justify-between pb-3.5 border-b border-white/[0.08] text-xs">
+                        <span className="flex items-center gap-2 font-semibold text-white tracking-wider uppercase">
+                          <ShieldCheck className="w-4 h-4 text-slate-400" />
                           Technical Deliverables
                         </span>
-                        <span className="inline-flex items-center gap-1.5 text-[10px] font-bold text-emerald-400 bg-emerald-950/60 px-2.5 py-0.5 rounded-full border border-emerald-500/30">
-                          <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" />
-                          SPEC READY
+                        <span className="inline-flex items-center gap-1.5 text-[10px] font-medium text-emerald-400 bg-emerald-950/60 px-2.5 py-0.5 rounded-full border border-emerald-500/30">
+                          <span className="w-1.5 h-1.5 rounded-full bg-emerald-400" />
+                          Spec Ready
                         </span>
                       </div>
 
                       {/* Deliverables Items */}
                       <ul className="space-y-2.5 mt-4">
                         {service.deliverables.map((item, dIdx) => (
-                          <li key={dIdx} className="flex items-center gap-2.5 p-2 rounded-xl bg-slate-900/60 border border-slate-800/80 text-xs sm:text-sm text-slate-200">
-                            <span className="w-1.5 h-1.5 rounded-full bg-brand-cyanAccent flex-shrink-0" />
-                            <span className="font-mono text-xs font-medium">{item}</span>
+                          <li key={dIdx} className="flex items-center gap-2.5 p-2 rounded-xl bg-white/[0.02] border border-white/[0.06] text-xs sm:text-sm text-slate-200">
+                            <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 flex-shrink-0" />
+                            <span className="text-xs font-medium">{item}</span>
                           </li>
                         ))}
                       </ul>
                     </div>
 
                     {/* SLA / Quality Guarantee Note */}
-                    <div className="pt-4 border-t border-slate-800/80 bg-slate-900/40 p-3.5 rounded-xl border border-slate-800">
-                      <div className="text-[11px] font-mono text-brand-cyanAccent font-bold mb-1 flex items-center gap-1.5">
-                        <Shield className="w-3.5 h-3.5 text-brand-cyanAccent" />
+                    <div className="pt-4 border-t border-white/[0.08] bg-white/[0.02] p-3.5 rounded-xl border border-white/[0.06]">
+                      <div className="text-[11px] text-slate-300 font-semibold mb-1 flex items-center gap-1.5">
+                        <Shield className="w-3.5 h-3.5 text-slate-400" />
                         SLA & Architectural Standard
                       </div>
-                      <p className="text-[11px] text-slate-400 leading-relaxed font-mono">
+                      <p className="text-[11px] text-slate-400 leading-relaxed">
                         {visuals.sla}
                       </p>
                     </div>

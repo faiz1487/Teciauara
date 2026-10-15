@@ -111,40 +111,39 @@ export const Navbar: React.FC = () => {
       <div className="bg-[#030814]/95 border-b border-slate-800/80 text-[11px] font-mono py-1.5 px-4 text-slate-400 hidden md:block backdrop-blur-md">
         <div className="max-w-7xl mx-auto flex items-center justify-between">
           
-          {/* Left: Live Cluster Health & SLA Indicator */}
+          {/* Left: Live Engineering Team Status */}
           <div className="flex items-center gap-3">
             <div className="flex items-center gap-1.5 text-emerald-400">
               <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" />
-              <span className="font-bold tracking-wider">ALL SYSTEMS OPERATIONAL</span>
+              <span className="font-bold tracking-wider">ENGINEERING TEAM ONLINE</span>
             </div>
             <span className="text-slate-700">•</span>
             <span className="text-slate-400 flex items-center gap-1">
-              <Activity className="w-3 h-3 text-brand-cyanAccent" />
-              <span>99.99% MULTI-AZ SLA COMMITMENT</span>
+              <span>NOIDA &amp; DELHI NCR • DIRECT REPLIES IN &lt; 2 HOURS</span>
             </span>
           </div>
 
-          {/* Right: 2026 Special Audit & Direct Contact */}
+          {/* Right: 20-Min Call & Direct Contact */}
           <div className="flex items-center gap-4">
             <Link 
               to="/contact?inquiry=audit" 
               className="flex items-center gap-1.5 text-amber-300 hover:text-white transition-colors group"
             >
               <Sparkles className="w-3 h-3 text-amber-400 group-hover:scale-110 transition-transform" />
-              <span className="font-semibold underline decoration-amber-400/40">2026 Special: Claim Free 0% Cost Audit</span>
+              <span className="font-semibold underline decoration-amber-400/40">Free 20-Min Project Discussion</span>
             </Link>
             
             <span className="text-slate-700">|</span>
 
             <a 
-              href={`https://wa.me/${cleanWhatsappNumber}?text=${encodeURIComponent('Hello Teciaura Team, I would like to schedule an engineering consultation.')}`}
+              href={`https://wa.me/${cleanWhatsappNumber}?text=${encodeURIComponent('Hello Faiz and Teciaura team, I would like to discuss a project.')}`}
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center gap-1 text-slate-300 hover:text-brand-cyanAccent transition-colors"
-              title="Direct WhatsApp Hotline"
+              className="flex items-center gap-1 text-slate-300 hover:text-emerald-400 transition-colors"
+              title="Chat directly on WhatsApp"
             >
               <MessageCircle className="w-3 h-3 text-emerald-400" />
-              <span>{COMPANY_INFO.contact.phoneDisplay}</span>
+              <span>WhatsApp: {COMPANY_INFO.contact.phoneDisplay}</span>
             </a>
           </div>
 
@@ -154,7 +153,7 @@ export const Navbar: React.FC = () => {
       {/* 2. MAIN FULL-WIDTH GLASSMORPHISM NAVBAR */}
       <div
         className={`w-full transition-all duration-300 border-b ${
-          scrolled ? 'border-cyan-400/30 py-2.5 sm:py-3' : 'border-white/[0.12] py-3 sm:py-3.5'
+          scrolled ? 'border-white/[0.1] py-2.5 sm:py-3 bg-[#060B15]/95' : 'border-white/[0.08] py-3 sm:py-3.5 bg-[#060B15]/80'
         }`}
         style={glassStyle}
       >
@@ -166,7 +165,7 @@ export const Navbar: React.FC = () => {
               <Logo size="md" variant="light" />
             </div>
 
-            {/* Desktop Navigation Links (with Active Indicators & Glow) */}
+            {/* Desktop Navigation Links */}
             <nav className="hidden lg:flex items-center space-x-1 xl:space-x-1.5" aria-label="Main Navigation">
               {navLinks.map((link) => {
                 const Icon = link.icon;
@@ -178,14 +177,14 @@ export const Navbar: React.FC = () => {
                     className={({ isActive }) =>
                       `px-3 py-1.5 text-xs xl:text-sm font-medium rounded-xl transition-all duration-200 relative inline-flex items-center gap-1.5 ${
                         isActive
-                          ? 'text-brand-cyanAccent font-bold bg-brand-cyanAccent/10 border border-brand-cyanAccent/40 shadow-[0_0_15px_rgba(0,200,232,0.20)]'
-                          : 'text-slate-200 hover:text-white hover:bg-white/[0.08]'
+                          ? 'text-white font-medium bg-white/[0.08] border border-white/[0.12]'
+                          : 'text-slate-300 hover:text-white hover:bg-white/[0.05]'
                       }`
                     }
                   >
                     {({ isActive }) => (
                       <>
-                        {isActive && <span className="w-1.5 h-1.5 rounded-full bg-brand-cyanAccent animate-pulse" />}
+                        {isActive && <span className="w-1.5 h-1.5 rounded-full bg-white" />}
                         {Icon && !isActive && <Icon className="w-3.5 h-3.5 text-slate-400" />}
                         <span>{link.label}</span>
                       </>
@@ -201,7 +200,7 @@ export const Navbar: React.FC = () => {
                 href={`https://wa.me/${cleanWhatsappNumber}?text=${encodeURIComponent('Hello Teciaura Team, I have a project inquiry.')}`}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="p-2.5 rounded-xl bg-slate-900/80 hover:bg-emerald-950/60 border border-slate-700/80 hover:border-emerald-500/50 text-slate-300 hover:text-emerald-300 transition-all shadow-sm"
+                className="p-2.5 rounded-xl bg-white/[0.04] hover:bg-white/[0.08] border border-white/[0.08] text-slate-300 hover:text-white transition-all shadow-sm"
                 title="Direct WhatsApp Chat"
               >
                 <MessageCircle className="w-4 h-4 text-emerald-400" />
@@ -212,7 +211,7 @@ export const Navbar: React.FC = () => {
                 variant="primary"
                 size="md"
                 icon={<ArrowRight className="w-4 h-4" />}
-                className="shadow-glow-blue hover:shadow-[0_0_28px_rgba(22,119,255,0.65)] font-bold rounded-xl text-xs xl:text-sm font-mono"
+                className="bg-white hover:bg-slate-100 text-slate-950 font-semibold rounded-xl text-xs xl:text-sm border-white shadow-sm"
               >
                 Start a Project
               </Button>
@@ -224,7 +223,7 @@ export const Navbar: React.FC = () => {
                 to="/contact"
                 variant="primary"
                 size="sm"
-                className="hidden sm:inline-flex text-xs py-1.5 px-3.5 rounded-lg shadow-glow-blue font-bold font-mono"
+                className="hidden sm:inline-flex text-xs py-1.5 px-3.5 rounded-lg bg-white hover:bg-slate-100 text-slate-950 font-semibold"
               >
                 Start a Project
               </Button>

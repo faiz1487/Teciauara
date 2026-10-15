@@ -78,23 +78,17 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({ project, onSelect }) =
       aria-label={`View architecture details for ${project.title}`}
       onKeyDown={handleKeyDown}
       onClick={() => onSelect(project)}
-      className="group relative flex flex-col justify-between h-full rounded-3xl bg-[#081326]/90 border border-white/[0.08] border-t-white/[0.24] shadow-[0_16px_45px_rgba(0,0,0,0.6),inset_0_1px_0_0_rgba(255,255,255,0.12)] hover:shadow-[0_0_45px_rgba(0,200,232,0.22)] hover:border-brand-cyanAccent/60 hover:border-t-brand-cyanAccent/80 hover:-translate-y-1.5 transition-all duration-300 overflow-hidden backdrop-blur-xl cursor-pointer focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-cyanAccent"
+      className="group relative flex flex-col justify-between h-full rounded-3xl bg-white/[0.02] border border-white/[0.08] hover:border-white/[0.16] hover:bg-white/[0.03] transition-all duration-300 overflow-hidden cursor-pointer focus:outline-none"
     >
-      {/* Specular laser highlight line on hover */}
-      <div className="absolute top-0 inset-x-0 h-[2px] bg-gradient-to-r from-transparent via-brand-cyanAccent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-20" />
-      
       {/* Top Graphic Header */}
-      <div className="relative h-44 bg-gradient-to-br from-[#060F1F] via-[#091730] to-[#050D1C] p-5 flex flex-col justify-between overflow-hidden border-b border-slate-800/80">
-        {/* Subtle grid pattern */}
-        <div className="absolute inset-0 bg-[radial-gradient(rgba(0,200,232,0.12)_1px,transparent_1px)] [background-size:18px_18px] opacity-40 pointer-events-none" />
-        
+      <div className="relative h-44 bg-[#070C18] p-5 flex flex-col justify-between overflow-hidden border-b border-white/[0.08]">
         {/* Badges Row */}
         <div className="relative z-10 flex items-center justify-between">
-          <span className="text-[11px] font-mono font-bold uppercase tracking-wider px-2.5 py-0.5 rounded-full bg-brand-cyanAccent/10 text-brand-cyanAccent border border-brand-cyanAccent/30">
+          <span className="text-[11px] font-medium px-2.5 py-0.5 rounded-full bg-white/[0.04] text-slate-300 border border-white/[0.08]">
             {project.category}
           </span>
-          <span className={`text-[10px] font-mono font-semibold px-2 py-0.5 rounded-full border flex items-center gap-1.5 ${visuals.statusColor}`}>
-            <span className="w-1.5 h-1.5 rounded-full bg-current animate-pulse" />
+          <span className="text-[10px] font-medium px-2 py-0.5 rounded-full border border-white/[0.08] text-slate-400 bg-white/[0.02] flex items-center gap-1.5">
+            <span className="w-1.5 h-1.5 rounded-full bg-emerald-400" />
             {visuals.statusText}
           </span>
         </div>
@@ -106,8 +100,8 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({ project, onSelect }) =
               {visuals.icon}
             </PremiumIconBadge>
             <div>
-              <span className="text-[11px] font-mono text-slate-400 block truncate max-w-[170px]">
-                teciaura//{project.id}
+              <span className="text-[11px] text-slate-400 block truncate max-w-[170px]">
+                {project.category} Reference
               </span>
               <span className="text-[10px] font-mono text-slate-500 uppercase tracking-wider">
                 {project.type}
@@ -134,7 +128,7 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({ project, onSelect }) =
       {/* Card Content Body */}
       <div className="p-6 flex flex-col flex-grow justify-between">
         <div>
-          <h3 className="text-xl font-extrabold text-white group-hover:text-brand-cyanAccent transition-colors duration-200 tracking-tight">
+          <h3 className="text-xl font-bold text-white group-hover:text-slate-100 transition-colors duration-200 tracking-tight">
             {project.title}
           </h3>
 
@@ -143,21 +137,21 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({ project, onSelect }) =
           </p>
 
           {/* Tech Stack Tags */}
-          <div className="mt-4 pt-4 border-t border-slate-800/80">
-            <p className="text-[10px] uppercase tracking-wider font-bold text-slate-400 mb-2 font-mono">
+          <div className="mt-4 pt-4 border-t border-white/[0.08]">
+            <p className="text-[10px] uppercase tracking-wider font-semibold text-slate-400 mb-2">
               Verified Stack Standard
             </p>
             <div className="flex flex-wrap gap-1.5">
               {project.technologies.slice(0, 4).map((tech) => (
                 <span
                   key={tech}
-                  className="px-2.5 py-0.5 rounded-md bg-[#050D1C] border border-slate-700/80 text-[11px] font-mono text-brand-cyanAccent font-medium"
+                  className="px-2.5 py-0.5 rounded-md bg-white/[0.03] border border-white/[0.08] text-[11px] font-mono text-slate-300 font-medium"
                 >
                   {tech}
                 </span>
               ))}
               {project.technologies.length > 4 && (
-                <span className="px-2 py-0.5 rounded-md bg-[#050D1C] border border-slate-800 text-[10px] font-mono text-slate-400">
+                <span className="px-2 py-0.5 rounded-md bg-white/[0.02] border border-white/[0.06] text-[10px] font-mono text-slate-400">
                   +{project.technologies.length - 4} more
                 </span>
               )}
@@ -174,7 +168,7 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({ project, onSelect }) =
               e.stopPropagation();
               onSelect(project);
             }}
-            className="w-full justify-center group-hover:border-brand-cyanAccent/60 group-hover:bg-[#0B1A38] group-hover:text-white font-mono text-xs"
+            className="w-full justify-center border-white/[0.1] hover:bg-white/[0.06] text-white text-xs font-medium"
             icon={<ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform" />}
           >
             Explore Architecture

@@ -188,33 +188,52 @@ export const HeroVideoSection: React.FC<HeroVideoSectionProps> = ({ onScrollClic
         <div className="max-w-2xl lg:max-w-xl xl:max-w-[40rem] space-y-5 sm:space-y-6">
           
           {/* Eyebrow Pill */}
-          <div className="inline-flex items-center gap-2.5 px-3.5 py-1.5 rounded-full bg-[#071328]/85 border border-brand-cyanAccent/30 backdrop-blur-md text-xs font-semibold shadow-[0_0_20px_rgba(0,200,232,0.15)] hover:border-brand-cyanAccent/60 transition-all">
+          <div className="inline-flex items-center gap-2.5 px-3.5 py-1.5 rounded-full bg-[#0E172A]/90 border border-amber-500/30 backdrop-blur-md text-xs font-semibold shadow-[0_0_20px_rgba(245,158,11,0.15)] hover:border-amber-400/60 transition-all">
             <span className="flex h-2 w-2 relative">
-              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-brand-cyanAccent opacity-75" />
-              <span className="relative inline-flex rounded-full h-2 w-2 bg-brand-cyanAccent" />
+              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75" />
+              <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-400" />
             </span>
-            <span className="tracking-[0.16em] uppercase text-[11px] sm:text-xs font-bold text-brand-cyanAccent font-mono">
-              CLOUD • DEVOPS • AI • SOFTWARE ENGINEERING
+            <span className="tracking-[0.14em] uppercase text-[11px] sm:text-xs font-bold text-amber-300 font-mono">
+              👋 NOIDA-BASED SOFTWARE STUDIO • GLOBAL CLIENTS
             </span>
           </div>
 
-          {/* Main Headline: 5-10% more compact with tighter line-height */}
-          <h1 className="text-3xl sm:text-[2.15rem] md:text-[2.65rem] lg:text-[3.15rem] xl:text-[3.55rem] font-extrabold tracking-tight leading-[1.015] text-white">
+          {/* Main Headline: Warm, Human-Centered, Grounded */}
+          <h1 className="text-3xl sm:text-[2.2rem] md:text-[2.7rem] lg:text-[3.2rem] xl:text-[3.6rem] font-extrabold tracking-tight leading-[1.04] text-white">
             <span className="block text-white drop-shadow-[0_2px_12px_rgba(0,0,0,0.95)]">
-              WE ENGINEER THE CLOUD
+              WE BUILD FAST WEBSITES,
             </span>
             <span className="block text-white drop-shadow-[0_2px_12px_rgba(0,0,0,0.95)]">
-              BEHIND AMBITIOUS
+              APPS & CLOUD SYSTEMS —
             </span>
-            <span className="block bg-gradient-to-r from-brand-cyanAccent via-sky-300 to-brand-electricBlue bg-clip-text text-transparent drop-shadow-[0_0_30px_rgba(0,200,232,0.35)]">
-              BUSINESSES.
+            <span className="block bg-gradient-to-r from-amber-300 via-orange-200 to-white bg-clip-text text-transparent drop-shadow-[0_0_25px_rgba(245,158,11,0.25)]">
+              CRAFTED BY REAL HUMANS.
             </span>
           </h1>
 
-          {/* Subtitle / Supporting copy */}
+          {/* Subtitle / Supporting copy: Conversational & Grounded */}
           <p className="text-base sm:text-lg lg:text-[1.0625rem] text-slate-200/90 leading-relaxed max-w-xl font-normal drop-shadow-[0_1px_8px_rgba(0,0,0,0.85)]">
-            Production-ready cloud infrastructure, DevOps automation and intelligent software engineered for security, scale and reliability.
+            Teciaura is an independent software studio based in Noida, India. We partner with ambitious founders to build high-converting websites, rock-solid cloud backends, and smart automation — with weekly video demos, honest advice, and zero corporate fluff.
           </p>
+
+          {/* Real Human Social Proof & Ratings */}
+          <div className="pt-1 flex items-center gap-3.5">
+            <div className="flex -space-x-2.5 overflow-hidden">
+              <img className="inline-block h-10 w-10 rounded-full ring-2 ring-slate-900 object-cover" src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?auto=format&fit=crop&w=100&h=100&q=80" alt="Client Arjun" />
+              <img className="inline-block h-10 w-10 rounded-full ring-2 ring-slate-900 object-cover" src="https://images.unsplash.com/photo-1580489944761-15a19d654956?auto=format&fit=crop&w=100&h=100&q=80" alt="Client Sarah" />
+              <img className="inline-block h-10 w-10 rounded-full ring-2 ring-slate-900 object-cover" src="https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?auto=format&fit=crop&w=100&h=100&q=80" alt="Client Vikram" />
+              <img className="inline-block h-10 w-10 rounded-full ring-2 ring-slate-900 object-cover" src="https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?auto=format&fit=crop&w=100&h=100&q=80" alt="Client Meera" />
+            </div>
+            <div>
+              <div className="flex items-center gap-1.5 text-amber-400 text-xs font-bold">
+                <span>★★★★★</span>
+                <span className="text-white">4.9/5 Rating</span>
+              </div>
+              <p className="text-[11px] text-slate-300">
+                Trusted by 20+ founders across India, UK & UAE
+              </p>
+            </div>
+          </div>
 
           {/* CTAs */}
           <div className="pt-2 flex flex-col sm:flex-row items-stretch sm:items-center gap-4">
@@ -223,16 +242,16 @@ export const HeroVideoSection: React.FC<HeroVideoSectionProps> = ({ onScrollClic
               variant="primary"
               size="lg"
               icon={<ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />}
-              className="shadow-[0_0_35px_rgba(22,119,255,0.45)] hover:shadow-[0_0_50px_rgba(0,200,232,0.7)] font-bold px-8 py-4 ring-1 ring-white/20 text-base"
+              className="bg-amber-500 hover:bg-amber-400 text-slate-950 font-bold border-amber-400 shadow-[0_0_30px_rgba(245,158,11,0.35)] px-8 py-4 text-base"
             >
-              Start a Project
+              Talk to an Engineer (Free 20-Min Call)
             </Button>
             <Button
               to="/portfolio"
               variant="secondary"
               size="lg"
               icon={<ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />}
-              className="border-slate-700/80 hover:border-brand-cyanAccent/60 bg-[#071328]/85 hover:bg-[#0B1A38] backdrop-blur-md px-7 py-4 text-base"
+              className="border-slate-700/80 hover:border-amber-400/60 bg-[#0E172A]/85 hover:bg-[#15233E] backdrop-blur-md px-7 py-4 text-base text-white"
             >
               Explore Our Work
             </Button>
@@ -241,7 +260,7 @@ export const HeroVideoSection: React.FC<HeroVideoSectionProps> = ({ onScrollClic
           {/* Category Pills Strip */}
           <div className="pt-6">
             <p className="text-xs uppercase tracking-wider text-slate-400 font-mono mb-3">
-              Core Capabilities & Architecture
+              What We Help You Build
             </p>
             <div className="grid grid-cols-2 sm:grid-cols-4 gap-2.5">
               {CATEGORY_PILLS.map((pill) => {
@@ -250,10 +269,10 @@ export const HeroVideoSection: React.FC<HeroVideoSectionProps> = ({ onScrollClic
                   <a
                     key={pill.name}
                     href={pill.href}
-                    className="group relative flex flex-col p-3 rounded-xl bg-[#0B1528]/80 border border-slate-800/90 hover:border-brand-cyanAccent/60 backdrop-blur-md transition-all duration-200 hover:-translate-y-0.5 hover:shadow-[0_4px_20px_rgba(0,200,232,0.18)]"
+                    className="group relative flex flex-col p-3 rounded-xl bg-[#0E172A]/80 border border-slate-800/90 hover:border-amber-400/50 backdrop-blur-md transition-all duration-200 hover:-translate-y-0.5 hover:shadow-[0_4px_20px_rgba(245,158,11,0.12)]"
                   >
                     <div className="flex items-center gap-2 mb-1">
-                      <IconComponent className="w-4 h-4 text-brand-cyanAccent group-hover:text-white transition-colors" />
+                      <IconComponent className="w-4 h-4 text-amber-400 group-hover:text-white transition-colors" />
                       <span className="text-xs font-semibold text-slate-200 group-hover:text-white transition-colors truncate">
                         {pill.name}
                       </span>
@@ -267,19 +286,19 @@ export const HeroVideoSection: React.FC<HeroVideoSectionProps> = ({ onScrollClic
             </div>
           </div>
 
-          {/* Quick Security & Reliability Badges */}
-          <div className="pt-2 flex flex-wrap items-center gap-y-2 gap-x-5 text-xs text-slate-400">
-            <div className="flex items-center gap-1.5">
-              <PremiumShieldCheckIcon className="w-4 h-4 text-brand-cyanAccent" />
-              <span className="text-slate-300">99.99% Uptime Architecture</span>
-            </div>
+          {/* Quick Human Commitments Badges */}
+          <div className="pt-2 flex flex-wrap items-center gap-y-2 gap-x-5 text-xs text-slate-300">
             <div className="flex items-center gap-1.5">
               <span className="w-1.5 h-1.5 rounded-full bg-emerald-400" />
-              <span className="text-slate-300">Production-Ready Deployment</span>
+              <span>Direct senior engineer on your project</span>
             </div>
             <div className="flex items-center gap-1.5">
-              <span className="w-1.5 h-1.5 rounded-full bg-brand-cyanAccent" />
-              <span className="text-slate-300">Enterprise AI Security</span>
+              <span className="w-1.5 h-1.5 rounded-full bg-amber-400" />
+              <span>Weekly live video staging walkthroughs</span>
+            </div>
+            <div className="flex items-center gap-1.5">
+              <span className="w-1.5 h-1.5 rounded-full bg-cyan-400" />
+              <span>100% Code & IP Ownership from Day 1</span>
             </div>
           </div>
 

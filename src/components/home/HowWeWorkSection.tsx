@@ -16,76 +16,70 @@ export const HowWeWorkSection: React.FC = () => {
   const steps = [
     {
       step: '01',
-      title: 'Discover',
-      subtitle: 'Technical & Commercial Discovery',
-      description: 'Deep dive into your technical vision, commercial objectives, user expectations, and architectural constraints through a structured intake.',
-      details: ['Technical requirements intake', 'System & security discovery', 'Feasibility roadmap & scoping'],
+      title: 'Discovery & Scope',
+      subtitle: 'Clear Alignment Upfront',
+      description: 'We dig deep into your product vision, commercial goals, and technical requirements to create an honest scope and transparent fixed-price proposal.',
+      details: ['Technical requirements definition', 'Architecture recommendations', 'Fixed roadmap & milestones'],
       icon: PremiumCompassIcon,
       variant: 'cyan' as const,
-      tag: 'Phase 1'
+      tag: 'Step 1'
     },
     {
       step: '02',
-      title: 'Design & Architect',
-      subtitle: 'Systems & UI Architecture',
-      description: 'Blueprint scalable system designs, design tokens, data models, and resilient cloud topographies before writing production code.',
-      details: ['High-availability blueprints', 'UI/UX design & design systems', 'IaC & database schema planning'],
+      title: 'Design & Architecture',
+      subtitle: 'Modern UI & Clean Foundations',
+      description: 'We draft high-fidelity UI designs and engineer clean database schemas and APIs before writing production code.',
+      details: ['Responsive UI/UX design', 'Database & API specifications', 'Design system setup'],
       icon: PremiumCpuIcon,
       variant: 'blue' as const,
-      tag: 'Phase 2'
+      tag: 'Step 2'
     },
     {
       step: '03',
-      title: 'Build & Launch',
-      subtitle: 'Agile Engineering & Cutover',
-      description: 'Agile engineering sprints with automated CI/CD pipelines, containerized builds, rigorous QA, and zero-downtime production cutover.',
-      details: ['Iterative sprint delivery', 'Automated QA & regression testing', 'Zero-downtime production cutover'],
+      title: 'Sprints & Live Demos',
+      subtitle: 'Weekly Working Progress',
+      description: 'We ship code in rapid 1-2 week sprints. You get weekly video walkthroughs and live staging access to test features in real-time.',
+      details: ['Weekly video walkthroughs', 'Interactive staging environments', 'Direct WhatsApp & Slack channel'],
       icon: PremiumRocketIcon,
       variant: 'indigo' as const,
-      tag: 'Phase 3'
+      tag: 'Step 3'
     },
     {
       step: '04',
-      title: 'Optimize & Scale',
-      subtitle: 'Continuous Telemetry & SLA',
-      description: 'Continuous telemetry monitoring, cloud cost right-sizing, search performance improvements, and SLA support for seamless stability.',
-      details: ['Observability & APM telemetry', 'Performance & resource tuning', 'Continuous engineering & support'],
+      title: 'Launch & Handoff',
+      subtitle: 'Zero-Downtime & Long-Term Care',
+      description: 'Production cutover with zero downtime, full code repository transfer, domain setup, and ongoing maintenance support.',
+      details: ['Zero-downtime deployment', '100% Code & IP ownership', 'Ongoing updates & maintenance'],
       icon: PremiumGaugeIcon,
       variant: 'emerald' as const,
-      tag: 'Phase 4'
+      tag: 'Step 4'
     }
   ];
 
   return (
-    <section className="py-24 bg-[#070F1E] border-y border-slate-800/80 relative overflow-hidden">
-      {/* Dynamic ambient lights */}
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[40rem] h-[40rem] bg-brand-cyanAccent/5 rounded-full blur-[140px] pointer-events-none -z-10" />
-
+    <section className="py-24 bg-[#070D1A] border-y border-white/[0.06] relative overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Section Heading */}
         <SectionHeading
-          eyebrow="Predictable Delivery Methodology"
-          title="How We Work"
-          description="Our structured four-phase engineering framework ensures architectural clarity, transparent progress, and dependable execution at every stage."
+          eyebrow="Our Process"
+          title="How We Collaborate & Ship"
+          description="A transparent, collaborative workflow designed for fast momentum, clear weekly milestones, and zero surprises."
           align="center"
         />
 
-        {/* Progress Connector Lines: Desktop Horizontal + Mobile/Tablet Vertical */}
+        {/* Progress Connector Lines */}
         <div className="relative mt-16">
           {/* Desktop Horizontal Line */}
-          <div className="hidden lg:block absolute top-12 left-12 right-12 h-0.5 bg-slate-800 -z-0">
+          <div className="hidden lg:block absolute top-12 left-12 right-12 h-0.5 bg-white/[0.06] -z-0">
             <div 
-              className="h-full bg-gradient-to-r from-brand-cyanAccent via-brand-electricBlue to-brand-cyanAccent transition-all duration-500 shadow-[0_0_12px_rgba(0,200,232,0.8)]"
+              className="h-full bg-white/[0.3] transition-all duration-500"
               style={{ width: `${((activeStep + 1) / steps.length) * 100}%` }}
             />
           </div>
 
-          {/* Mobile & Tablet Vertical Connecting Line */}
-          <div className="lg:hidden absolute top-10 bottom-10 left-9 w-0.5 bg-slate-800/80 -z-0" />
-
           {/* 4 Steps Grid */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 relative z-10">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 relative z-10">
             {steps.map((item, index) => {
               const Icon = item.icon;
               const isSelected = activeStep === index;
@@ -94,58 +88,56 @@ export const HowWeWorkSection: React.FC = () => {
                 <div
                   key={item.step}
                   onMouseEnter={() => setActiveStep(index)}
-                  className={`group rounded-3xl p-6 sm:p-7 transition-all duration-300 flex flex-col justify-between cursor-pointer border ${
+                  className={`group rounded-2xl p-6 sm:p-7 transition-all duration-300 flex flex-col justify-between cursor-pointer border ${
                     isSelected
-                      ? 'bg-gradient-to-b from-[#0E1E3C] to-[#071328] border-brand-cyanAccent/80 border-t-cyan-300 shadow-glow-cyan -translate-y-2'
-                      : 'bg-[#09152C]/80 border-white/[0.08] border-t-white/[0.22] shadow-[0_8px_30px_rgba(0,0,0,0.6),inset_0_1px_0_0_rgba(255,255,255,0.12)] hover:border-brand-cyanAccent/50 hover:bg-[#09152C]'
+                      ? 'bg-white/[0.05] border-white/[0.2] shadow-xl -translate-y-1'
+                      : 'bg-white/[0.02] border-white/[0.06] hover:border-white/[0.14] hover:bg-white/[0.04]'
                   }`}
                 >
                   <div>
                     {/* Top Step Number Badge & Icon */}
                     <div className="flex items-center justify-between mb-6">
-                      <div className={`w-12 h-12 rounded-2xl flex items-center justify-center font-mono font-extrabold text-base transition-all ${
+                      <div className={`w-9 h-9 rounded-xl flex items-center justify-center font-mono font-bold text-xs transition-all ${
                         isSelected
-                          ? 'bg-gradient-to-tr from-brand-electricBlue to-brand-cyanAccent text-white shadow-glow-blue'
-                          : 'bg-slate-900 border border-slate-800 text-slate-400 group-hover:text-brand-cyanAccent'
+                          ? 'bg-white text-slate-950'
+                          : 'bg-white/[0.04] border border-white/[0.08] text-slate-400'
                       }`}>
                         {item.step}
                       </div>
 
                       <PremiumIconBadge variant={item.variant} size="sm">
-                        <Icon className="w-5 h-5" />
+                        <Icon className="w-4 h-4" />
                       </PremiumIconBadge>
                     </div>
 
-                    <div className="text-[11px] font-mono uppercase tracking-wider text-brand-cyanAccent font-bold mb-1">
+                    <div className="text-[11px] font-medium text-slate-400 mb-1">
                       {item.tag}
                     </div>
-                    <h3 className="text-xl font-bold text-white group-hover:text-brand-cyanAccent transition-colors">
+                    <h3 className="text-lg font-bold text-white transition-colors">
                       {item.title}
                     </h3>
-                    <p className="text-xs font-medium text-slate-400 mt-0.5">
+                    <p className="text-xs text-slate-400 mt-0.5">
                       {item.subtitle}
                     </p>
 
-                    <p className="mt-4 text-xs sm:text-sm text-slate-300 leading-relaxed font-normal">
+                    <p className="mt-3.5 text-xs sm:text-sm text-slate-300 leading-relaxed font-normal">
                       {item.description}
                     </p>
 
                     {/* Step details checklist */}
-                    <div className="mt-5 pt-4 border-t border-slate-800/80 space-y-2">
+                    <div className="mt-5 pt-4 border-t border-white/[0.06] space-y-2">
                       {item.details.map((detail, idx) => (
                         <div key={idx} className="flex items-center gap-2 text-xs text-slate-300">
-                          <CheckCircle2 className={`w-3.5 h-3.5 flex-shrink-0 ${
-                            isSelected ? 'text-brand-cyanAccent' : 'text-emerald-400'
-                          }`} />
+                          <CheckCircle2 className="w-3.5 h-3.5 flex-shrink-0 text-emerald-400" />
                           <span>{detail}</span>
                         </div>
                       ))}
                     </div>
                   </div>
 
-                  <div className="mt-6 pt-4 border-t border-slate-800/60 flex items-center justify-between text-xs text-slate-500 font-mono">
-                    <span>STATUS: DEPENDABLE</span>
-                    <span className="text-brand-cyanAccent font-bold">READY</span>
+                  <div className="mt-6 pt-3 border-t border-white/[0.06] flex items-center justify-between text-xs text-slate-400">
+                    <span>Milestone-Driven</span>
+                    <span className="text-white font-medium">{item.tag}</span>
                   </div>
                 </div>
               );
@@ -157,14 +149,14 @@ export const HowWeWorkSection: React.FC = () => {
         <div className="mt-14 text-center">
           <Button
             to="/contact"
-            variant="primary"
+            variant="secondary"
             size="md"
             icon={<ArrowRight className="w-4 h-4" />}
+            className="border-white/[0.12] hover:border-white/[0.24] bg-white/[0.04] hover:bg-white/[0.08] text-white"
           >
-            Start Phase 01: Discover
+            Start With a Free Discovery Call
           </Button>
         </div>
-
       </div>
     </section>
   );
